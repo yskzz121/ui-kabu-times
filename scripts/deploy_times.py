@@ -92,16 +92,30 @@ def send_line(token, group_id, message, max_retries=3):
 
 
 def extract_headline(html_path):
-    """HTMLからsummary-topicまたはtop-story-titleを抽出"""
+    """HTMLから見出しを抽出（複数パターンにフォールバック）"""
     try:
         with open(html_path, encoding="utf-8") as f:
-            content = f.read(20000)
+            content = f.read(30000)
+        # 1. summary-topic（朝刊マーケットサマリーの見出し）
         m = re.search(r'class="summary-topic[^"]*">(.*?)</span>', content)
         if m:
             return re.sub(r'<[^>]+>', '', m.group(1)).strip()
+        # 2. top-story-title（朝刊TOP STORY）
         m = re.search(r'class="top-story-title">(.*?)</h2>', content, re.DOTALL)
         if m:
             return re.sub(r'<[^>]+>', '', m.group(1)).strip()[:80]
+        # 3. og:description（OGPメタタグ）
+        m = re.search(r'og:description"\s+content="([^"]+)"', content)
+        if m:
+            return m.group(1).strip()[:80]
+        # 4. og:title から「—」以降を抽出（例: "号外 — NVIDIA GTC 2026 特集"）
+        m = re.search(r'og:title"\s+content="[^"]*—\s*([^"]+)"', content)
+        if m:
+            return m.group(1).strip()[:80]
+        # 5. <title>タグから「—」以降を抽出
+        m = re.search(r'<title>[^<]*—\s*([^<]+)</title>', content)
+        if m:
+            return m.group(1).strip()[:80]
     except Exception:
         pass
     return ""
