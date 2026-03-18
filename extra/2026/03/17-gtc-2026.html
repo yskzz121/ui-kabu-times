@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>U&I株倶楽部新聞 号外 — NVIDIA GTC 2026 特集</title>
+<meta property="og:title" content="U&I株倶楽部新聞 号外 — NVIDIA GTC 2026 特集">
+<meta property="og:description" content="Vera Rubin量産開始、Feynman詳細発表、受注1兆ドル。NVIDIA GTC 2026の全発表を完全レポート。">
+<meta property="og:image" content="https://yskzz121.github.io/ui-kabu-times/assets/hero-bg.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yskzz121.github.io/ui-kabu-times/extra/2026/03/17-gtc-2026.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/jpeg" href="https://yskzz121.github.io/ui-kabu-times/assets/hero-bg.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
 <style>
@@ -78,6 +85,22 @@ body {
   padding: 32px 20px 24px;
   text-align: center;
   position: relative;
+  background: url('https://yskzz121.github.io/ui-kabu-times/assets/hero-bg.jpg') center/cover no-repeat;
+  overflow: hidden;
+}
+.paper-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(13,17,23,.65) 0%, rgba(13,17,23,.85) 100%);
+  z-index: 0;
+}
+[data-theme="light"] .paper-header::before {
+  background: linear-gradient(to bottom, rgba(245,240,232,.7) 0%, rgba(245,240,232,.9) 100%);
+}
+.paper-header > * {
+  position: relative;
+  z-index: 1;
 }
 .paper-header::after {
   content: '';
@@ -85,6 +108,7 @@ body {
   bottom: -3px; left: 0; right: 0;
   height: 3px;
   background: var(--border);
+  z-index: 1;
 }
 .paper-date {
   font-size: 14px;
@@ -758,6 +782,19 @@ body {
   margin-top: 20px;
 }
 .paper-footer p { font-size: 12px; color: var(--text-muted); line-height: 1.8; }
+.paper-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.paper-footer a:hover { text-decoration: underline; }
+.paper-footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
 
 /* ==========================================
    Responsive
@@ -800,12 +837,41 @@ body {
   .roadmap-item { border-right: none; border-bottom: 1px solid var(--border); }
   .roadmap-item:last-child { border-bottom: none; }
 }
+/* ==========================================
+   Print
+   ========================================== */
+@media print {
+  [data-theme="dark"] {
+    --bg-primary: #fff;
+    --bg-card: #f9f9f9;
+    --text-primary: #111;
+    --text-secondary: #444;
+    --text-muted: #777;
+    --border: #ddd;
+    --accent: #0066cc;
+    --accent-green: #1a7f37;
+    --accent-red: #cf222e;
+    --accent-amber: #9a6700;
+    --accent-purple: #7c3aed;
+    --shadow-card: none;
+  }
+  .back-link, .theme-toggle { display: none !important; }
+  .paper-header { background: none !important; }
+  .paper-header::before { display: none !important; }
+  .event-banner-hero { filter: none; }
+  body { padding: 0; }
+  .main { padding: 20px 0; }
+  .news-card:hover, .top-story:hover, .earnings-item:hover { transform: none; box-shadow: none; }
+  .term { border-bottom: none; color: inherit; }
+  .term .tip { display: none; }
+  .section-hero img { height: auto; max-height: 200px; }
+}
 </style>
 </head>
 <body>
 
 <!-- Back Link -->
-<a class="back-link" href="../../">
+<a class="back-link" href="https://yskzz121.github.io/ui-kabu-times/">
 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>ポータル</a>
 
 <!-- Theme Toggle -->
@@ -1397,9 +1463,14 @@ body {
 </main>
 
 <footer class="paper-footer">
+  <div class="paper-footer-nav">
+    <a href="https://yskzz121.github.io/ui-kabu-times/extra/">号外アーカイブ</a>
+    <a href="https://yskzz121.github.io/ui-kabu-times/morning/latest.html">最新朝刊</a>
+  </div>
   <p>U&I株倶楽部新聞 号外 — NVIDIA GTC 2026 特集号<br>
-  2026年3月17日 発行 ｜ U&I株倶楽部 編集部<br>
-  ※ 本記事は情報提供を目的としたものであり、特定の銘柄の売買を推奨するものではありません。投資判断はご自身の責任でお願いいたします。</p>
+  2026年3月17日 発行 ｜ <a href="https://yskzz121.github.io/ui-kabu-times/">新聞ポータル</a> ｜ <a href="https://yskzz121.github.io/ui-kabu-reports/">決算分析</a></p>
+  <p>※ 本記事は情報提供を目的としたものであり、特定の銘柄の売買を推奨するものではありません。投資判断はご自身の責任でお願いいたします。</p>
+  <p>&copy; 2026 U&I株倶楽部</p>
 </footer>
 
 <script>
