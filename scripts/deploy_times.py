@@ -293,6 +293,13 @@ def main():
         print(f"   スラッグ: {slug}")
     print()
 
+    # 0. ブランチチェック（gh-pages以外なら中断）
+    current_branch = run("git rev-parse --abbrev-ref HEAD", cwd=REPO_DIR)
+    if current_branch != "gh-pages":
+        print(f"❌ エラー: 現在のブランチが '{current_branch}' です。'gh-pages' に切り替えてください。")
+        print(f"   → cd {REPO_DIR} && git checkout gh-pages")
+        sys.exit(1)
+
     # 1. git pull
     print("1️⃣  リポジトリを最新化...")
     run("git pull --rebase", cwd=REPO_DIR)
