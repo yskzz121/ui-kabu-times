@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U&I株倶楽部新聞 号外 — NVIDIA GTC 2026 特集</title>
+<meta property="og:title" content="U&I株倶楽部新聞 号外 — NVIDIA GTC 2026 特集">
+<meta property="og:description" content="Vera Rubin量産開始、Feynman詳細発表、受注1兆ドル。NVIDIA GTC 2026の全発表を完全レポート。">
+<meta property="og:image" content="https://yskzz121.github.io/ui-kabu-times/assets/hero-bg.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yskzz121.github.io/ui-kabu-times/extra/2026/03/17-gtc-2026.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/jpeg" href="https://yskzz121.github.io/ui-kabu-times/assets/hero-bg.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-sans: 'Noto Sans JP', 'Inter', -apple-system, sans-serif;
+  --font-serif: 'Noto Serif JP', serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --transition: .25s cubic-bezier(.4,0,.2,1);
+  --max-w: 1100px;
+  --nvidia-green: #76b900;
+  --nvidia-green-light: rgba(118,185,0,.12);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0d1117;
+  --bg-card: #161b22;
+  --bg-card-hover: #21262d;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --border: #30363d;
+  --accent: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-green-light: rgba(63,185,80,.12);
+  --accent-red: #f85149;
+  --accent-red-light: rgba(248,81,73,.12);
+  --accent-amber: #d29922;
+  --accent-amber-light: rgba(210,153,34,.12);
+  --accent-purple: #bc8cff;
+  --accent-purple-light: rgba(188,140,255,.12);
+  --shadow-card: 0 2px 8px rgba(0,0,0,.3);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f5f0e8;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0ebe3;
+  --text-primary: #2c2418;
+  --text-secondary: #6b5d4d;
+  --text-muted: #9a8c7c;
+  --border: #ddd4c6;
+  --accent: #2563b8;
+  --accent-green: #1a7f37;
+  --accent-green-light: rgba(26,127,55,.1);
+  --accent-red: #cf222e;
+  --accent-red-light: rgba(207,34,46,.1);
+  --accent-amber: #9a6700;
+  --accent-amber-light: rgba(154,103,0,.1);
+  --accent-purple: #7c3aed;
+  --accent-purple-light: rgba(124,58,237,.1);
+  --shadow-card: 0 1px 4px rgba(44,36,24,.08), 0 2px 8px rgba(44,36,24,.04);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  transition: background var(--transition), color var(--transition);
+}
+
+/* ==========================================
+   Newspaper Header
+   ========================================== */
+.paper-header {
+  border-bottom: 1px solid var(--border);
+  padding: 32px 20px 24px;
+  text-align: center;
+  position: relative;
+  background: url('https://yskzz121.github.io/ui-kabu-times/assets/hero-bg.jpg') center/cover no-repeat;
+  overflow: hidden;
+}
+.paper-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, rgba(13,17,23,.65) 0%, rgba(13,17,23,.85) 100%);
+  z-index: 0;
+}
+[data-theme="light"] .paper-header::before {
+  background: linear-gradient(to bottom, rgba(245,240,232,.7) 0%, rgba(245,240,232,.9) 100%);
+}
+.paper-header > * {
+  position: relative;
+  z-index: 1;
+}
+.paper-header::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0; right: 0;
+  height: 3px;
+  background: var(--border);
+  z-index: 1;
+}
+.paper-date {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: .08em;
+  margin-bottom: 12px;
+}
+.paper-logo {
+  display: inline-block;
+  position: relative;
+  padding: 0 32px;
+}
+.paper-logo::before,
+.paper-logo::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: var(--text-primary);
+  opacity: .3;
+}
+.paper-logo::before { right: 100%; margin-right: 8px; }
+.paper-logo::after { left: 100%; margin-left: 8px; }
+.paper-title {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  line-height: 1.2;
+  color: var(--text-primary);
+  position: relative;
+  display: inline-block;
+}
+.paper-title .paper-accent {
+  display: block;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: .25em;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+.paper-edition {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 20px;
+  letter-spacing: .12em;
+  background: linear-gradient(135deg, #f85149, #d94040);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+  0%,100%{ box-shadow: 0 0 8px rgba(248,81,73,.3); }
+  50%{ box-shadow: 0 0 20px rgba(248,81,73,.6); }
+}
+
+/* ==========================================
+   Back Link & Theme Toggle
+   ========================================== */
+.back-link {
+  position: fixed; top: 16px; left: 16px; z-index: 999;
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 8px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  color: var(--accent); text-decoration: none;
+  font-size: .78rem; font-weight: 500;
+  font-family: var(--font-sans);
+  transition: all .15s;
+  box-shadow: var(--shadow-card);
+}
+.back-link:hover { background: var(--accent); color: var(--bg-primary); border-color: var(--accent); }
+.back-link svg { flex-shrink: 0; }
+
+.theme-toggle {
+  position: fixed; top: 16px; right: 16px; z-index: 999;
+  width: 42px; height: 42px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  color: var(--text-secondary);
+  transition: all .15s;
+  box-shadow: var(--shadow-card);
+}
+.theme-toggle:hover { background: var(--bg-card-hover); border-color: var(--accent); }
+
+/* ==========================================
+   Event Banner
+   ========================================== */
+.event-banner {
+  border: 1px solid rgba(118,185,0,.25);
+  border-radius: var(--radius-lg);
+  margin-bottom: 36px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.event-banner-hero {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  filter: brightness(.55);
+}
+.event-banner-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    linear-gradient(to bottom, rgba(13,17,23,.3) 0%, rgba(13,17,23,.85) 60%, rgba(13,17,23,.98) 100%),
+    radial-gradient(ellipse at 20% 40%, rgba(118,185,0,.12) 0%, transparent 60%);
+  z-index: 1;
+}
+.event-banner-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0 32px 32px;
+  z-index: 2;
+}
+.event-nvidia-logo {
+  height: 32px;
+  width: auto;
+  margin-bottom: 14px;
+  opacity: .9;
+}
+.event-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 16px;
+  border-radius: 100px;
+  background: var(--nvidia-green-light);
+  color: var(--nvidia-green);
+  letter-spacing: .06em;
+  margin-bottom: 14px;
+  border: 1px solid rgba(118,185,0,.3);
+}
+.event-title {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+.event-title .nvidia-green { color: var(--nvidia-green); }
+.event-sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.event-meta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 18px;
+}
+.event-meta-item {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.event-meta-item strong { color: var(--text-secondary); }
+
+/* ==========================================
+   Main / Section
+   ========================================== */
+.main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+.section { margin-bottom: 40px; }
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+.section-label-icon { font-size: 20px; }
+.section-label-text {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+.section-label-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ==========================================
+   Tooltip
+   ========================================== */
+.term {
+  position: relative;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: help;
+  border-bottom: 1px dotted var(--accent);
+}
+.term .tip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  background: #1c2333;
+  color: #e6edf3;
+  border: 1px solid #3d4a5c;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.7;
+  white-space: normal;
+  z-index: 100;
+  pointer-events: none;
+  transition: opacity .2s, visibility .2s;
+  box-shadow: 0 8px 24px rgba(0,0,0,.5);
+}
+[data-theme="light"] .term .tip {
+  background: #fff;
+  color: #2c2418;
+  border-color: #ddd4c6;
+  box-shadow: 0 4px 16px rgba(44,36,24,.12);
+}
+.term .tip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #3d4a5c;
+}
+[data-theme="light"] .term .tip::after { border-top-color: #ddd4c6; }
+.term:hover .tip,
+.term:focus .tip {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.tip-title {
+  display: block;
+  font-weight: 700;
+  color: var(--nvidia-green);
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+.term.tip-right .tip { left: 0; transform: translateX(0); }
+.term.tip-right .tip::after { left: 24px; transform: none; }
+.term.tip-left .tip { left: auto; right: 0; transform: translateX(0); }
+.term.tip-left .tip::after { left: auto; right: 24px; transform: none; }
+
+/* ==========================================
+   Summary / Top Story / News
+   ========================================== */
+.summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+.summary-text {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--text-primary);
+}
+.summary-topic {
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: -.01em;
+}
+.summary-topic.positive { color: var(--accent-green); }
+.summary-topic.negative { color: var(--accent-red); }
+.summary-topic.neutral { color: var(--accent); }
+.summary-topic.nvidia { color: var(--nvidia-green); }
+.summary-text p { margin-bottom: 18px; }
+.summary-text p:last-child { margin-bottom: 0; }
+.summary-num { font-family: 'Inter', var(--font-sans); font-weight: 700; }
+.summary-num.up { color: var(--accent-green); }
+.summary-num.down { color: var(--accent-red); }
+.summary-label { font-weight: 700; }
+
+.top-story {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 16px;
+  transition: all var(--transition);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.top-story::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 5px; height: 100%;
+  background: var(--nvidia-green);
+}
+.top-story:hover {
+  background: var(--bg-card-hover);
+  box-shadow: 0 4px 20px rgba(0,0,0,.4);
+  border-color: #484f58;
+}
+.top-story-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: var(--nvidia-green-light);
+  color: var(--nvidia-green);
+  letter-spacing: .04em;
+  margin-bottom: 14px;
+}
+.top-story-title {
+  font-family: var(--font-serif);
+  font-size: 33px;
+  font-weight: 900;
+  line-height: 1.45;
+  letter-spacing: -.01em;
+  margin-bottom: 14px;
+}
+.top-story-body {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+.top-story-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.top-story-source { font-weight: 700; color: var(--text-secondary); }
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.news-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  transition: all var(--transition);
+  cursor: default;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.news-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  border-radius: 4px 0 0 4px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.news-card:hover {
+  background: var(--bg-card-hover);
+  box-shadow: 0 4px 16px rgba(0,0,0,.4);
+  transform: translateY(-2px);
+  border-color: #484f58;
+}
+.news-card:hover::before { opacity: 1; }
+.news-card.nvidia::before { background: var(--nvidia-green); }
+.news-card.ai::before { background: var(--accent-purple); }
+.news-card.robot::before { background: var(--accent); }
+.news-card.auto::before { background: var(--accent-amber); }
+.news-card.gaming::before { background: var(--accent-green); }
+.news-card.health::before { background: var(--accent-red); }
+.news-card.infra::before { background: var(--accent); }
+.news-card-meta { display: flex; align-items: center; gap: 10px; }
+.news-card-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: .02em;
+}
+.news-card-tag.nvidia { background: var(--nvidia-green-light); color: var(--nvidia-green); }
+.news-card-tag.ai { background: var(--accent-purple-light); color: var(--accent-purple); }
+.news-card-tag.robot { background: rgba(88,166,255,.12); color: var(--accent); }
+.news-card-tag.auto { background: var(--accent-amber-light); color: var(--accent-amber); }
+.news-card-tag.gaming { background: var(--accent-green-light); color: var(--accent-green); }
+.news-card-tag.health { background: var(--accent-red-light); color: var(--accent-red); }
+.news-card-tag.infra { background: rgba(88,166,255,.12); color: var(--accent); }
+.news-card-title { font-size: 20px; font-weight: 800; line-height: 1.45; letter-spacing: -.01em; }
+.news-card-excerpt { font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
+
+/* ==========================================
+   Spec Table
+   ========================================== */
+.spec-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 16px; }
+.spec-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.spec-table th {
+  background: rgba(118,185,0,.1);
+  color: var(--nvidia-green);
+  font-weight: 700;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+.spec-table td { padding: 10px 16px; border-bottom: 1px solid var(--border); color: var(--text-primary); }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table tr:hover td { background: rgba(255,255,255,.03); }
+.spec-table .chip-name { font-weight: 700; color: var(--nvidia-green); }
+.spec-table .chip-role { color: var(--text-secondary); font-size: 12px; }
+
+/* ==========================================
+   Roadmap
+   ========================================== */
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.roadmap-item {
+  padding: 20px;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.roadmap-item:last-child { border-right: none; }
+.roadmap-item.current { background: rgba(118,185,0,.06); }
+.roadmap-gen {
+  font-family: 'Inter', var(--font-sans);
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+.roadmap-gen.active { color: var(--nvidia-green); }
+.roadmap-year {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.roadmap-status {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.roadmap-status.shipping { background: var(--accent-green-light); color: var(--accent-green); }
+.roadmap-status.announced { background: var(--nvidia-green-light); color: var(--nvidia-green); }
+.roadmap-status.preview { background: var(--accent-purple-light); color: var(--accent-purple); }
+.roadmap-chips {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================
+   Takeaway / Stock / Partner
+   ========================================== */
+.takeaway-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+.takeaway-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.takeaway-card-icon { font-size: 28px; margin-bottom: 4px; }
+.takeaway-card-title { font-size: 20px; font-weight: 800; color: var(--text-primary); }
+.takeaway-card-body { font-size: 13px; color: var(--text-secondary); line-height: 1.8; }
+
+.stock-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+.stock-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.stock-ticker { font-family: 'Inter', var(--font-sans); font-size: 28px; font-weight: 800; }
+.stock-price { font-family: 'Inter', var(--font-sans); font-size: 28px; font-weight: 800; }
+.stock-change { font-size: 14px; font-weight: 700; margin-left: 8px; }
+.stock-change.up { color: var(--accent-green); }
+.stock-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+.stock-metric {
+  text-align: center;
+  padding: 14px;
+  background: rgba(255,255,255,.03);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.stock-metric-label { font-size: 11px; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; }
+.stock-metric-value { font-family: 'Inter', var(--font-sans); font-size: 16px; font-weight: 800; }
+.stock-metric-value.green { color: var(--accent-green); }
+
+.analyst-bar-wrap { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border); }
+.analyst-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.analyst-bar { display: flex; border-radius: 6px; overflow: hidden; height: 28px; margin-bottom: 8px; }
+.analyst-bar div { display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; }
+.ab-strong-buy { background: #2ea043; }
+.ab-buy { background: #56d364; color: #0d1117 !important; }
+.ab-hold { background: #d29922; }
+.ab-sell { background: #f85149; }
+.analyst-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 11px; color: var(--text-muted); }
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.partner-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.partner-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.partner-name { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.partner-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-top: 2px; }
+
+/* ==========================================
+   Timeline
+   ========================================== */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 24px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+.timeline-item { position: relative; padding: 12px 0 12px 20px; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -20px; top: 18px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--nvidia-green);
+  border: 2px solid var(--bg-primary);
+}
+.timeline-date { font-size: 12px; font-weight: 700; color: var(--nvidia-green); margin-bottom: 2px; }
+.timeline-content { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.timeline-detail { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+/* ==========================================
+   Inline Images
+   ========================================== */
+.roadmap-img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-top: 10px;
+  opacity: .85;
+  border: 1px solid var(--border);
+}
+.section-hero {
+  width: 100%;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.section-hero img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.section-hero.small img { height: 160px; }
+.section-hero-caption {
+  padding: 8px 14px;
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+}
+.news-card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+  border: 1px solid var(--border);
+}
+.video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: var(--accent-red-light);
+  color: var(--accent-red);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all .15s;
+}
+.video-link:hover { background: var(--accent-red); color: #fff; }
+
+/* ==========================================
+   Footer
+   ========================================== */
+.paper-footer {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 2px solid var(--border);
+  margin-top: 20px;
+}
+.paper-footer p { font-size: 12px; color: var(--text-muted); line-height: 1.8; }
+.paper-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.paper-footer a:hover { text-decoration: underline; }
+.paper-footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+@media (min-width: 768px) {
+  .main { padding: 36px 40px 60px; }
+  .paper-header { padding: 40px 40px 28px; }
+  .paper-title { font-size: 52px; }
+}
+@media (max-width: 767px) {
+  .paper-title { font-size: 32px; letter-spacing: .08em; }
+  .paper-logo::before, .paper-logo::after { width: 30px; }
+  .news-grid { grid-template-columns: 1fr; }
+  .top-story { padding: 22px; }
+  .top-story-title { font-size: 20px; }
+  .event-title { font-size: 26px; }
+  .section-hero img { height: 160px; }
+  .section-hero.small img { height: 120px; }
+  .news-card-img { height: 110px; }
+  .roadmap-img { height: 60px; }
+  .event-banner-hero { height: 200px; }
+  .event-banner-content { padding: 0 20px 24px; }
+  .event-nvidia-logo { height: 24px; }
+  .section-label-text { font-size: 20px; }
+  .summary-topic { font-size: 18px; }
+  .top-story-title { font-size: 24px; }
+  .news-card-title { font-size: 17px; }
+  .takeaway-card-title { font-size: 17px; }
+  .takeaway-grid { grid-template-columns: 1fr; }
+  .stock-metrics { grid-template-columns: repeat(2, 1fr); }
+  .partner-grid { grid-template-columns: 1fr; }
+  .back-link { top: 10px; left: 10px; padding: 6px 10px; font-size: .7rem; }
+  .term .tip { width: 260px; font-size: 12px; }
+  .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
+  .roadmap-item:nth-child(2) { border-right: none; }
+  .roadmap-item:nth-child(1), .roadmap-item:nth-child(2) { border-bottom: 1px solid var(--border); }
+}
+@media (max-width: 480px) {
+  .roadmap-grid { grid-template-columns: 1fr; }
+  .roadmap-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .roadmap-item:last-child { border-bottom: none; }
+}
+/* ==========================================
+   Print
+   ========================================== */
+@media print {
+  [data-theme="dark"] {
+    --bg-primary: #fff;
+    --bg-card: #f9f9f9;
+    --text-primary: #111;
+    --text-secondary: #444;
+    --text-muted: #777;
+    --border: #ddd;
+    --accent: #0066cc;
+    --accent-green: #1a7f37;
+    --accent-red: #cf222e;
+    --accent-amber: #9a6700;
+    --accent-purple: #7c3aed;
+    --shadow-card: none;
+  }
+  .back-link, .theme-toggle { display: none !important; }
+  .paper-header { background: none !important; }
+  .paper-header::before { display: none !important; }
+  .event-banner-hero { filter: none; }
+  body { padding: 0; }
+  .main { padding: 20px 0; }
+  .news-card:hover, .top-story:hover, .earnings-item:hover { transform: none; box-shadow: none; }
+  .term { border-bottom: none; color: inherit; }
+  .term .tip { display: none; }
+  .section-hero img { height: auto; max-height: 200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Back Link -->
+<a class="back-link" href="https://yskzz121.github.io/ui-kabu-times/">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><polyline points="12 19 5 12 12 5"/></svg>ポータル</a>
+
+<!-- Theme Toggle -->
+<button class="theme-toggle" id="themeToggle" aria-label="テーマ切替">☀️</button>
+
+<!-- ===== Newspaper Header ===== -->
+<header class="paper-header">
+  <div class="paper-date">2026年3月17日（火曜日）</div>
+  <div class="paper-logo">
+    <h1 class="paper-title">
+      U&I株倶楽部新聞
+      <span class="paper-accent">U & I KABU CLUB TIMES</span>
+    </h1>
+  </div>
+  <div class="paper-edition">号 外</div>
+</header>
+
+<!-- ===== Main ===== -->
+<main class="main">
+
+  <!-- ===== Event Banner ===== -->
+  <div class="event-banner">
+    <img class="event-banner-hero" src="https://blogs.nvidia.com/wp-content/uploads/2026/03/26gtc-sj-preshow-various-_MF92538_sized-scaled.jpg" alt="NVIDIA GTC 2026 会場">
+    <div class="event-banner-overlay"></div>
+    <div class="event-banner-content">
+      <img class="event-nvidia-logo" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/gtc/keynote/_jcr_content/root/responsivegrid/nv_container_copy_co/nv_container_copy_co/nv_image_copy.coreimg.svg/1773685318277/26-nvidia-gtc-live-lockup-color-wht.svg" alt="NVIDIA GTC 2026">
+      <span class="event-badge">SPECIAL COVERAGE</span>
+      <h2 class="event-title"><span class="nvidia-green">NVIDIA GTC 2026</span> 完全レポート</h2>
+      <p class="event-sub">Jensen Huang CEOが語った「1兆ドルの受注」と次々世代GPU「Feynman」<br>— Vera Rubin量産開始、Groq買収の成果、OpenClaw、そしてDisneyオラフの衝撃</p>
+      <div class="event-meta">
+        <span class="event-meta-item">📍 <strong>サンノゼ SAP Center</strong></span>
+        <span class="event-meta-item">📅 <strong>2026年3月16日〜19日</strong></span>
+        <span class="event-meta-item">🎤 <strong>基調講演: 3月16日</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 1. キーノート総括 ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">🎯</span>
+      <span class="section-label-text">キーノート総括 — 今回のGTCで何が起きたのか</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="summary-card">
+      <div class="summary-text">
+        <p>
+          <span class="summary-topic nvidia">受注額が1兆ドル（約150兆円）に到達 — AI半導体の需要は衰えず</span>
+          Jensen Huang CEOは約2時間にわたる基調講演で、<span class="summary-label">BlackwellとVera Rubinの合計受注額が2027年までに1兆ドルに達する見込み</span>と発表しました。これは昨年のGTC 2025で示した5,000億ドル見通しから<span class="summary-num up">わずか1年で倍増</span>。AIコンピューティングへの設備投資がまだまだ加速していることを示す象徴的な数字です。
+        </p>
+        <p>
+          <span class="summary-topic positive">Vera Rubinがいよいよフル量産へ — 6つの新チップを一斉投入</span>
+          昨年のGTC 2025でロードマップが公開された<span class="term tip-right">Vera Rubin<span class="tip"><span class="tip-title">Vera Rubin（ベラ・ルービン）</span>NVIDIAの次世代AIチッププラットフォーム。暗黒物質の存在を示した天文学者にちなんで命名。現行のBlackwellの後継で、2026年後半から出荷開始。GPU・CPU・ネットワーク機器など6つの新チップで構成されます。</span></span>プラットフォームが、ついにフル量産段階に入ったことが正式発表されました。Vera CPU、Rubin GPU、NVLink 6など6つの新チップが2026年後半から順次出荷。現行<span class="term">Blackwell<span class="tip"><span class="tip-title">Blackwell（ブラックウェル）</span>NVIDIAの現行世代AIチップ。2024年のGTCで発表され、現在データセンターで大量に使われている主力製品。上位版の「Blackwell Ultra（GB300）」も2025年後半から出荷中です。</span></span>世代と比べて<span class="summary-num up">推論スループット10倍</span>、<span class="summary-num up">トークンコスト1/10</span>という大幅な性能向上を実現します。
+        </p>
+        <p>
+          <span class="summary-topic positive">次々世代「Feynman」の全貌が初めて明らかに</span>
+          さらにサプライズだったのが、2028年出荷予定の次々世代アーキテクチャ「<span class="term">Feynman<span class="tip"><span class="tip-title">Feynman（ファインマン）</span>ノーベル物理学賞受賞者リチャード・ファインマンにちなんだ、NVIDIAの2028年予定の次々世代GPUアーキテクチャ。業界初の3Dチップ積層技術やシリコンフォトニクス（光でデータを送る技術）を採用し、大幅な性能向上が見込まれます。</span></span>」の詳細公開です。<span class="term tip-left">3Dダイスタッキング<span class="tip"><span class="tip-title">3Dダイスタッキング</span>チップ（ダイ）を平面に並べるのではなく、縦方向に積み重ねる技術。マンションのように「上に積む」ことで、同じ面積でより多くの回路を搭載でき、データの移動距離も短くなるため高速化します。</span></span>、<span class="term tip-left">シリコンフォトニクス<span class="tip"><span class="tip-title">シリコンフォトニクス</span>電気信号の代わりに「光」でデータを伝送する技術。電気配線より圧倒的に高速・低消費電力で大量のデータを送れます。NVIDIA GPUへの搭載は初めてで、データセンター内の通信ボトルネックを解消します。</span></span>（光によるデータ伝送）、新CPU「Rosa」など、革新的な技術が盛りだくさんの内容でした。
+        </p>
+        <p>
+          <span class="summary-topic positive">Groq買収の成果が早くも登場 — Groq 3 LPU</span>
+          2025年12月に約200億ドルで<span class="term tip-right">Groq<span class="tip"><span class="tip-title">Groq（グロック）</span>超高速AI推論チップを開発していたスタートアップ企業。NVIDIAが2025年12月に約200億ドル（約3兆円）で買収。Groqの「LPU」はAIの応答速度を極限まで速くする専用チップで、NVIDIAのGPUと組み合わせることで弱点を補完します。</span></span>の資産を取得した成果が早くも形に。Groq 3 LPU（言語処理ユニット）がVera Rubinプラットフォームに統合され、<span class="summary-num up">毎秒1,500トークン</span>のAI推論性能と、<span class="summary-num up">メガワットあたり35倍</span>のスループット向上を実現します。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. GPUロードマップ ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">🗺️</span>
+      <span class="section-label-text">NVIDIA GPUロードマップ — 4世代の全体像</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="roadmap-grid">
+      <div class="roadmap-item">
+        <div class="roadmap-gen">Blackwell</div>
+        <div class="roadmap-year">2024〜現在</div>
+        <span class="roadmap-status shipping">出荷中</span>
+        <div class="roadmap-chips">B200 / GB200<br>Blackwell Ultra (GB300)<br>NVL72ラック</div>
+        <img class="roadmap-img" src="https://www.nvidia.com/content/nvidiaGDC/us/en_US/data-center/technologies/blackwell-architecture/_jcr_content/root/responsivegrid/nv_container_1760748008/nv_container/nv_teaser.coreimg.jpeg/1766023108273/nvidia-gb300-nvl72.jpeg" alt="GB300 NVL72">
+      </div>
+      <div class="roadmap-item current">
+        <div class="roadmap-gen active">Vera Rubin</div>
+        <div class="roadmap-year">2026年後半〜</div>
+        <span class="roadmap-status announced">量産発表 ← 今回</span>
+        <div class="roadmap-chips">Vera CPU + Rubin GPU<br>NVL144システム<br>Groq 3 LPU統合</div>
+        <img class="roadmap-img" src="https://iprsoftwaremedia.com/219/files/202603/69b832203d63321ac974de07_nvidia-vera-rubin-family/nvidia-vera-rubin-family_mid.jpg" alt="Vera Rubin Family">
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-gen">Vera Rubin Ultra</div>
+        <div class="roadmap-year">2027年予定</div>
+        <span class="roadmap-status preview">プレビュー</span>
+        <div class="roadmap-chips">LP35チップ<br>Kyberラック (144GPU)</div>
+        <img class="roadmap-img" src="https://iprsoftwaremedia.com/219/files/202603/69b83bf73d6332289074debc_vera-cpu-rack/vera-cpu-rack_mid.png" alt="Vera CPU Rack">
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-gen active">Feynman</div>
+        <div class="roadmap-year">2028年予定</div>
+        <span class="roadmap-status announced">詳細発表 ← 今回</span>
+        <div class="roadmap-chips">3Dダイスタッキング<br>シリコンフォトニクス<br>Rosa CPU / NVL1152</div>
+        <img class="roadmap-img" src="https://blogs.nvidia.com/wp-content/uploads/2026/03/gtc26-keynote-kit-corp-blog-1920x1080-1-960x540.jpg" alt="GTC 2026 Keynote">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. TOP STORY: Vera Rubin 量産 ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">🔥</span>
+      <span class="section-label-text">Vera Rubin — フル量産と6つの新チップ</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="top-story">
+      <span class="top-story-badge">HEADLINE</span>
+      <h2 class="top-story-title">GPU・CPU・ネットワーク・ストレージまで「全部入り」— AIインフラの垂直統合が完成</h2>
+      <p class="top-story-body">
+        NVIDIAはGPUだけでなく、CPU・ネットワーク・ストレージまで含む<span class="term tip-right">フルスタック<span class="tip"><span class="tip-title">フルスタック</span>システム全体を一社でカバーすること。従来はGPU（映像処理チップ）が主力でしたが、今回CPU・ネットワーク機器・ストレージまで含む「全部入り」の製品群を揃え、データセンター全体を丸ごと提供できる体制が完成しました。</span></span>の6チップ体制を発表。さらにGroq買収で獲得したGroq 3 LPUも加わり、学習から推論まであらゆるAI処理を最適化。AWS、Google Cloud、Microsoft Azure、Oracle Cloudの4大クラウドすべてが採用を表明。Anthropic、OpenAI、Meta、Mistral AIも開発パートナーとして参画しています。
+      </p>
+      <div class="top-story-footer">
+        <span class="top-story-source">NVIDIA GTC 2026 基調講演</span>
+        <span>·</span>
+        <span>2026年3月16日</span>
+        <span>·</span>
+        <span>2026年後半 出荷開始</span>
+      </div>
+    </div>
+
+    <div class="summary-card">
+      <div style="font-size:19px;font-weight:800;margin-bottom:14px;color:var(--nvidia-green);">Vera Rubin — チップ構成一覧</div>
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <thead>
+            <tr><th>チップ名</th><th>役割</th><th>注目ポイント</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="chip-name">Vera CPU</span></td>
+              <td><span class="chip-role"><span class="term tip-right">エージェンティックAI<span class="tip"><span class="tip-title">エージェンティックAI</span>人間の指示を受けて、自分で考え・計画し・行動できるAI。従来のAIは「質問に答える」だけでしたが、エージェンティックAIはメール対応やデータ分析など「タスクを自律的に実行する」ことができます。</span></span>専用</span></td>
+              <td>88コア搭載、半分の電力で2倍の帯域幅</td>
+            </tr>
+            <tr>
+              <td><span class="chip-name">Rubin GPU</span></td>
+              <td><span class="chip-role">大規模AIモデル訓練</span></td>
+              <td>Blackwell比で1/4のGPU数で同等の訓練が可能</td>
+            </tr>
+            <tr>
+              <td><span class="chip-name">NVLink 6 Switch</span></td>
+              <td><span class="chip-role"><span class="term tip-right">GPU間接続<span class="tip"><span class="tip-title">GPU間接続（NVLink）</span>複数のGPUチップ同士を超高速で接続する技術。大規模AIの学習には数千個のGPUが協調して動く必要があり、GPU間の「高速道路」の役割を果たします。</span></span></span></td>
+              <td>1.8 TB/sのコヒーレント帯域幅</td>
+            </tr>
+            <tr>
+              <td><span class="chip-name">ConnectX-9 SuperNIC</span></td>
+              <td><span class="chip-role">サーバー間ネットワーク</span></td>
+              <td>次世代ネットワークインターフェース</td>
+            </tr>
+            <tr>
+              <td><span class="chip-name">BlueField-4 DPU</span></td>
+              <td><span class="chip-role"><span class="term tip-right">DPU<span class="tip"><span class="tip-title">DPU（Data Processing Unit）</span>データ処理専用のチップ。サーバーのCPUが本来やるべき仕事に集中できるよう、ネットワークやストレージの処理を肩代わりする「裏方」のプロセッサです。</span></span>（ストレージ処理）</span></td>
+              <td>トークンスループット5倍、効率4倍向上</td>
+            </tr>
+            <tr>
+              <td><span class="chip-name">Spectrum-6</span></td>
+              <td><span class="chip-role">イーサネットスイッチ</span></td>
+              <td>データセンター全体のネットワーク最適化</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
+        <div style="font-size:13px;font-weight:700;color:var(--accent-purple);margin-bottom:6px;">+ Groq 3 LPU（買収による統合チップ）</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.7;">
+          各LPUに500MB <span class="term tip-right">SRAM<span class="tip"><span class="tip-title">SRAM（スタティックRAM）</span>非常に高速だが高価なメモリ。通常はCPUのキャッシュ（一時記憶）に数MBだけ使われますが、Groq 3は1チップに500MBも搭載。これにより外部メモリへのアクセスが激減し、AIの応答速度が飛躍的に向上します。</span></span>搭載 / 150TB/s帯域 / 毎秒1,500トークンの推論性能 / Groq 3 LPXラック（256基搭載）は2026年Q3出荷予定
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Feynman ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">⚡</span>
+      <span class="section-label-text">Feynman — 2028年の次々世代アーキテクチャ</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="section-hero">
+      <img src="https://blogs.nvidia.com/wp-content/uploads/2026/03/gtc26-keynote-kit-corp-blog-1920x1080-1-960x540.jpg" alt="GTC 2026 キーノートでFeynmanを発表するJensen Huang">
+      <div class="section-hero-caption">📷 GTC 2026 基調講演 — Jensen Huang CEOがFeynmanアーキテクチャの詳細を発表（NVIDIA公式）</div>
+    </div>
+
+    <div class="top-story">
+      <span class="top-story-badge">NEXT GENERATION</span>
+      <h2 class="top-story-title">3Dチップ積層＋光伝送 — GPU設計の常識を塗り替える「Feynman」の全貌</h2>
+      <p class="top-story-body">
+        Vera Rubinの「さらに次」となるFeynmanアーキテクチャの詳細がGTC 2026で初公開されました。<span class="term tip-right">TSMCのA16プロセス<span class="tip"><span class="tip-title">TSMC A16プロセス（1.6nmクラス）</span>半導体の製造技術の世代を示す名前。数字が小さいほど微細な回路を作れ、チップの性能向上と省電力化が進みます。A16は2028年頃に量産開始予定の最先端プロセスです。</span></span>（1.6nmクラス）で製造され、業界初の3Dダイスタッキング技術を採用。さらに、NVIDIA GPU初となるシリコンフォトニクス（光信号によるデータ伝送）を搭載し、データセンター内の通信速度を劇的に向上させます。新CPU「Rosa」、LP40 LPU設計、BlueField 5、CX 10も含む包括的なプラットフォームとなり、<span class="term tip-left">NVL1152スケール<span class="tip"><span class="tip-title">NVL1152</span>1つのシステムに1,152個のGPUを接続して動かす構成のこと。現行のVera RubinはNVL144（144個）なので、その8倍の規模。超巨大なAIモデルの学習に使われます。</span></span>に対応します。
+      </p>
+      <div class="top-story-footer">
+        <span class="top-story-source">NVIDIA GTC 2026 基調講演</span>
+        <span>·</span>
+        <span>2028年出荷予定</span>
+        <span>·</span>
+        <span>TSMC A16プロセス</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. OpenClaw / NemoClaw ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">🐾</span>
+      <span class="section-label-text">OpenClaw / NemoClaw — 「パーソナルAIのOS」</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
+      <div class="section-hero small" style="margin-bottom:0">
+        <img src="https://iprsoftwaremedia.com/219/files/202603/69b845e73d63326d1774de06_nemoclaw/nemoclaw_mid.jpg" alt="NemoClaw">
+        <div class="section-hero-caption">NemoClaw — エンタープライズ向けAIエージェント基盤</div>
+      </div>
+      <div class="section-hero small" style="margin-bottom:0">
+        <img src="https://blogs.nvidia.com/wp-content/uploads/2026/03/Build-a-claw_v004-4K_v007-scaled.png" alt="Build-a-Claw デモ">
+        <div class="section-hero-caption">Build-a-Claw — OpenClawのデモンストレーション</div>
+      </div>
+    </div>
+
+    <div class="summary-card">
+      <div class="summary-text">
+        <p>
+          <span class="summary-topic nvidia">Jensen Huang：「Mac、Windowsに次ぐソフトウェアの新たなルネサンス」</span>
+          今回のGTCで Jensen Huangが最も熱を込めて語ったソフトウェア発表が「<span class="term tip-right">OpenClaw<span class="tip"><span class="tip-title">OpenClaw（オープンクロー）</span>NVIDIAが提唱する「パーソナルAIのOS（基本ソフト）」。WindowsやmacOSのように、AIアプリケーションが動く基盤となるプラットフォーム。オープンソースで公開されており、誰でも利用・改良が可能です。</span></span>」です。Jensen Huangはこれを「人類史上最も人気のあるオープンソースプロジェクトになる」「パーソナルAIのOS」と表現し、MacやWindowsに次ぐ<span class="summary-label">「ソフトウェアの新たなルネサンスの始まり」</span>と位置づけました。
+        </p>
+        <p>
+          <span class="summary-topic positive">NemoClaw — 企業向けのセキュアなAIエージェント基盤</span>
+          OpenClawの企業向けバージョンが「<span class="term">NemoClaw<span class="tip"><span class="tip-title">NemoClaw（ネモクロー）</span>OpenClawの企業向けスタック。企業のセキュリティポリシーに従ったAIエージェントの運用を可能にします。1つのコマンドでNVIDIAのAIモデル（Nemotron）とセキュリティ付きランタイム（OpenShell）をまとめて導入できます。</span></span>」です。<span class="term">OpenShellランタイム<span class="tip"><span class="tip-title">OpenShell</span>AIエージェントを安全に動かすための実行環境。ポリシーベースのセキュリティガードレール、プライバシールーティング、ネットワーク保護機能を備え、企業が安心してAIエージェントを業務に導入できるようにします。</span></span>によるポリシーベースのセキュリティ・プライバシーガードレールを備え、1コマンドでNemotronモデル＋OpenShellランタイムをインストール可能。RTX PC、DGX Station、DGX Sparkで動作します。
+        </p>
+        <p>
+          <span class="summary-topic neutral">投資家の視点：ソフトウェアがハードウェアの「堀」になる</span>
+          OpenClaw / NemoClawの真の意味は、NVIDIAのチップを使う「理由」がハード性能だけでなく、<span class="summary-label">ソフトウェアエコシステム全体</span>に広がっていくこと。<span class="term tip-left">CUDA<span class="tip"><span class="tip-title">CUDA（クーダ）</span>NVIDIA GPU上でプログラムを動かすための開発環境。世界中のAI研究者がCUDAを使っており、「CUDAで書いたプログラムはNVIDIA GPUでしか動かない」ため、他社への乗り換えが難しくなる効果があります。</span></span>に続く新たなロックインの層が形成されつつあり、AMDやIntelなどの競合がハード性能で追いついても、ソフトウェアの差で勝負がつく構造が強化されています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. 分野別ニュース ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">📰</span>
+      <span class="section-label-text">その他の主要発表</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="news-grid">
+      <div class="news-card ai">
+        <div class="news-card-meta">
+          <span class="news-card-tag ai">AI ソフトウェア</span>
+        </div>
+        <h3 class="news-card-title">Dynamo 1.0 — AIファクトリーを動かす「推論OS」をオープンソース公開</h3>
+        <p class="news-card-excerpt">
+          <span class="term tip-right">AIファクトリー<span class="tip"><span class="tip-title">AIファクトリー</span>大量のAI処理を行う大規模データセンターのこと。従来のデータセンターが「データの保管庫」だったのに対し、AIファクトリーは「AIの製造工場」として24時間AIの学習・推論を行います。</span></span>を効率的に動かす分散型OS。Blackwell GPUで最大7倍の推論性能向上。AWS、Azure、Google Cloud、Oracle全てが採用。Cursor、Perplexity、ByteDanceなど人気サービスも導入。
+        </p>
+      </div>
+
+      <div class="news-card robot">
+        <div class="news-card-meta">
+          <span class="news-card-tag robot">ロボティクス</span>
+        </div>
+        <h3 class="news-card-title">Disneyの「オラフ」が舞台上を自律歩行 — 会場を沸かせたデモ</h3>
+        <p class="news-card-excerpt">
+          映画「アナと雪の女王」のオラフが、NVIDIAのNewton物理エンジン＋Omniverseシミュレーションで訓練されたAIロボットとして舞台上を自律歩行。物理AIの可能性を示す最もインパクトのあるデモとなりました。
+        </p>
+        <a class="video-link" href="https://www.youtube.com/live/jIviHI7fqyc?si=Fv09RmpDW_MdbaUx&t=7992" target="_blank" rel="noopener">▶ GTC 2026 キーノート動画で見る</a>
+      </div>
+
+      <div class="news-card robot">
+        <div class="news-card-meta">
+          <span class="news-card-tag robot">ロボティクス</span>
+        </div>
+        <h3 class="news-card-title">GR00T N2 + Isaac Lab 3.0 — 世界の産業用ロボット200万台がNVIDIA AIへ</h3>
+        <p class="news-card-excerpt">
+          次世代ロボットAI「<span class="term tip-right">GR00T N2<span class="tip"><span class="tip-title">GR00T N2（グルート）</span>NVIDIAのロボット用AIの「頭脳」にあたるモデル。さまざまな作業を学習・実行できるロボットの基盤AI。従来版より2倍以上のタスク成功率を実現し、FANUC・ABBなど大手メーカー20社以上が採用します。</span></span>」は従来比2倍以上のタスク成功率。FANUC・ABB・KUKA・安川電機など20社以上が採用を表明。新物理エンジン「Newton 1.0」も発表。
+        </p>
+      </div>
+
+      <div class="news-card auto">
+        <div class="news-card-meta">
+          <span class="news-card-tag auto">自動運転</span>
+        </div>
+        <h3 class="news-card-title">DRIVE Hyperion Level 4 — 日産・BYDが採用、Uberは28都市展開へ</h3>
+        <p class="news-card-excerpt">
+          完全自動運転（<span class="term tip-left">Level 4<span class="tip"><span class="tip-title">自動運転 Level 4</span>特定の条件下で人間の操作が一切不要な自動運転レベル。例えば「都市部の一般道路」など限定エリアで完全な自動運転が可能に。Uberと提携し、2027年からロボタクシーサービスを開始予定です。</span></span>）対応プラットフォームにBYD、Geely、いすゞ、日産、現代が参加。いすゞ＋Tier IVは自動運転バスも開発中。Uberは2028年までに28都市でロボタクシー展開を計画。
+        </p>
+      </div>
+
+      <div class="news-card gaming">
+        <img class="news-card-img" src="https://iprsoftwaremedia.com/219/files/202603/69b7561c3d6332c06474de08_nvidia-dlss-5/nvidia-dlss-5_mid.jpg" alt="NVIDIA DLSS 5">
+        <div class="news-card-meta">
+          <span class="news-card-tag gaming">ゲーミング</span>
+        </div>
+        <h3 class="news-card-title">DLSS 5 — 生成AIでゲームの映像美が次の次元へ</h3>
+        <p class="news-card-excerpt">
+          <span class="term tip-right">DLSS<span class="tip"><span class="tip-title">DLSS（Deep Learning Super Sampling）</span>AIの力で映像を美しく・滑らかにする技術。DLSS 5では生成AIが照明や質感をリアルタイムで生成する「ニューラルレンダリング」を導入。2018年以来最大のグラフィックス革新と位置づけられています。</span></span> 5では生成AIによるリアルタイムニューラルレンダリングを導入。最大4K解像度でフォトリアルな照明・材質をピクセル単位で生成。Assassin's Creed Shadows、Starfield等が対応予定。2026年秋リリース。
+        </p>
+        <a class="video-link" href="https://www.youtube.com/watch?v=dJACkKbN-Eo" target="_blank" rel="noopener">▶ DLSS 5 デモ動画を見る</a>
+      </div>
+
+      <div class="news-card health">
+        <div class="news-card-meta">
+          <span class="news-card-tag health">ヘルスケア</span>
+        </div>
+        <h3 class="news-card-title">創薬AIとロボット手術 — Roche、Novo Nordiskが大規模導入</h3>
+        <p class="news-card-excerpt">
+          タンパク質結合設計AI「Proteina-Complexa」を発表。約3,000万個のタンパク質複合体を予測。Rocheは3,500個のBlackwell GPUを導入。手術ロボット向けデータセット「Open-H」（700時間以上の手術動画）も公開。
+        </p>
+      </div>
+
+      <div class="news-card nvidia">
+        <div class="news-card-meta">
+          <span class="news-card-tag nvidia">宇宙</span>
+        </div>
+        <h3 class="news-card-title">Space-1 — 軌道上でH100の25倍のAI推論を実現</h3>
+        <p class="news-card-excerpt">
+          宇宙コンピューティングモジュール「Vera Rubin Space-1」を発表。Rubin GPU 2基＋Vera CPU 1基の統合設計で、衛星データのリアルタイムAI処理が可能に。Axiom Space、Planet Labs等がパートナー。
+        </p>
+      </div>
+
+      <div class="news-card infra">
+        <img class="news-card-img" src="https://www.nvidia.com/content/dam/en-zz/Solutions/data-center/dgx-platform/nvidia-dgx-spark-bm-md460-offset-d.jpg" alt="NVIDIA DGX Spark">
+        <div class="news-card-meta">
+          <span class="news-card-tag infra">コンシューマー</span>
+        </div>
+        <h3 class="news-card-title">DGX Spark — デスクトップで1,200億パラメータのAIを動かす</h3>
+        <p class="news-card-excerpt">
+          <span class="term tip-right">128GB統合メモリ<span class="tip"><span class="tip-title">128GB統合メモリ</span>一般的なPCのメモリは8〜32GB。128GBはその4〜16倍で、大規模AIモデルを丸ごとPC1台で動かせる容量。データセンター不要でAI開発が可能になります。</span></span>搭載のデスクトップAIスーパーコンピュータ。1,200億パラメータ以上のAIモデルをローカル実行可能。研究者やエンジニアが手元でAI開発を行える時代が到来。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. パートナーシップ ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">🤝</span>
+      <span class="section-label-text">主要パートナーシップ</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="partner-grid">
+      <div class="partner-item">
+        <span class="partner-icon">☁️</span>
+        <div>
+          <div class="partner-name">AWS / Google / Azure / Oracle</div>
+          <div class="partner-desc">4大クラウド全てがVera Rubinの採用を表明</div>
+        </div>
+      </div>
+      <div class="partner-item">
+        <span class="partner-icon">🤖</span>
+        <div>
+          <div class="partner-name">Anthropic / OpenAI / Meta / Mistral</div>
+          <div class="partner-desc">主要AI企業が開発パートナーとして参画</div>
+        </div>
+      </div>
+      <div class="partner-item">
+        <span class="partner-icon">🏭</span>
+        <div>
+          <div class="partner-name">FANUC / ABB / KUKA / 安川電機</div>
+          <div class="partner-desc">世界のロボットメーカー20社以上がIsaac/GR00Tを統合</div>
+        </div>
+      </div>
+      <div class="partner-item">
+        <span class="partner-icon">🚗</span>
+        <div>
+          <div class="partner-name">日産 / BYD / いすゞ / 現代 / Uber</div>
+          <div class="partner-desc">Level 4自動運転採用、Uberと28都市ロボタクシー計画</div>
+        </div>
+      </div>
+      <div class="partner-item">
+        <span class="partner-icon">💼</span>
+        <div>
+          <div class="partner-name">Adobe / Salesforce / SAP / ServiceNow</div>
+          <div class="partner-desc">Agent Toolkit / NemoClawを自社サービスに統合</div>
+        </div>
+      </div>
+      <div class="partner-item">
+        <span class="partner-icon">💊</span>
+        <div>
+          <div class="partner-name">Roche / Novo Nordisk</div>
+          <div class="partner-desc">Roche: 3,500 Blackwell GPU導入、創薬AI共同開発</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. 投資家向けポイント ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">💰</span>
+      <span class="section-label-text">投資家が押さえるべき5つのポイント</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="takeaway-grid">
+      <div class="takeaway-card">
+        <div class="takeaway-card-icon">📈</div>
+        <div class="takeaway-card-title">受注1兆ドル — 需要は加速中</div>
+        <div class="takeaway-card-body">
+          Blackwell＋Vera Rubinの合計受注が1兆ドル（昨年比2倍）。<span class="term tip-right">TAM<span class="tip"><span class="tip-title">TAM（Total Addressable Market）</span>ある製品が狙える市場全体の規模。NVIDIAはGPU単体からCPU・ネットワーク・ソフトウェアまで拡大したことで、狙える市場が大幅に広がりました。</span></span>がGPU単体からフルスタックに拡大し、1社で取れるパイが飛躍的に増大。AI<span class="term tip-left">CAPEX<span class="tip"><span class="tip-title">CAPEX（設備投資）</span>企業が将来の成長のために行う大規模投資。クラウド企業がデータセンターにGPUを大量購入するのもCAPEXの一例。NVIDIAの売上はこのCAPEXに直結します。</span></span>サイクルの長期化を示唆しています。
+        </div>
+      </div>
+      <div class="takeaway-card">
+        <div class="takeaway-card-icon">⚡</div>
+        <div class="takeaway-card-title">推論コスト1/10 → AI普及が加速</div>
+        <div class="takeaway-card-body">
+          Vera Rubinの推論コスト劇的低下は、AIサービスの利益率向上と中小企業へのAI普及を同時に促進。NVIDIAだけでなく、AIを活用するSaaS企業やクラウド事業者にとってもポジティブ。AI関連銘柄全体への好影響が期待されます。
+        </div>
+      </div>
+      <div class="takeaway-card">
+        <div class="takeaway-card-icon">🔒</div>
+        <div class="takeaway-card-title">CUDA + OpenClaw = 鉄壁のモート</div>
+        <div class="takeaway-card-body">
+          <span class="term tip-right">CUDA<span class="tip"><span class="tip-title">CUDAエコシステム</span>NVIDIA GPU上でプログラムを動かすための開発環境。世界中のAI研究者がCUDAを使っており、他社への乗り換えコストが非常に高い。これにOpenClawが加わることで「堀」がさらに深くなっています。</span></span>に加え、OpenClaw / NemoClaw / Dynamoというソフトウェア層が<span class="term tip-left">モート<span class="tip"><span class="tip-title">モート（Economic Moat）</span>「経済的な堀」= 競合が簡単に真似できない競争優位性。城の周りの堀のように、ライバルの参入を防ぐ障壁です。</span></span>を強化。ハードで追いつかれてもソフトで勝つ構造が完成しつつあります。
+        </div>
+      </div>
+      <div class="takeaway-card">
+        <div class="takeaway-card-icon">🌍</div>
+        <div class="takeaway-card-title">新市場への多角化が加速</div>
+        <div class="takeaway-card-body">
+          ロボティクス（200万台ベース）、自動運転（Uber 28都市）、ヘルスケア（Roche 3,500 GPU）、宇宙（Space-1）。データセンター＋ゲーミングの2本柱から4〜5本柱へ。売上構成の多角化が進行中です。
+        </div>
+      </div>
+      <div class="takeaway-card">
+        <div class="takeaway-card-icon">⚠️</div>
+        <div class="takeaway-card-title">注意すべきリスク</div>
+        <div class="takeaway-card-body">
+          Vera Rubinの本格売上はFY2028以降。<span class="term tip-right">Forward PER<span class="tip"><span class="tip-title">Forward PER（予想PER）</span>現在の株価÷来期の予想EPS。「今の株価が将来の利益の何倍で取引されているか」を示す指標。高いほど期待が織り込まれており、期待を下回ると下落リスクがあります。</span></span>約37倍と高い期待が織り込み済み。競合（AMD MI400、Intel Falcon Shores）の進展やAI投資一服リスクにも注意。GTC後の「材料出尽くし」で短期的な利確売りの可能性も。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. ロードマップ ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">📅</span>
+      <span class="section-label-text">今後の注目スケジュール</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="summary-card">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2026年4月</div>
+          <div class="timeline-content">Physical AI Data Factory Blueprint 公開（GitHub）</div>
+          <div class="timeline-detail">ロボット・自動運転向けトレーニングデータ生成の参照設計</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026年Q3</div>
+          <div class="timeline-content">Groq 3 LPXラック出荷開始</div>
+          <div class="timeline-detail">256基のLPU搭載、エージェンティックAI推論特化</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026年後半</div>
+          <div class="timeline-content">Vera Rubin NVL144システム出荷開始</div>
+          <div class="timeline-detail">6チップ＋Groq 3 LPU、4大クラウドへ順次展開</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026年秋</div>
+          <div class="timeline-content">DLSS 5 リリース</div>
+          <div class="timeline-detail">ニューラルレンダリング、GeForce RTXシリーズ対応</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026年末</div>
+          <div class="timeline-content">GR00T N2 商用提供開始</div>
+          <div class="timeline-detail">次世代ロボットAI基盤、商業ライセンス付き</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2027年</div>
+          <div class="timeline-content">Vera Rubin Ultra</div>
+          <div class="timeline-detail">LP35チップ、Kyberラック（144GPU）</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2027年上半期</div>
+          <div class="timeline-content">Uber ロボタクシー初期展開</div>
+          <div class="timeline-detail">LA・サンフランシスコ湾岸エリアから順次開始</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2028年</div>
+          <div class="timeline-content">Feynman アーキテクチャ出荷開始</div>
+          <div class="timeline-detail">3Dダイスタッキング、シリコンフォトニクス、Rosa CPU、NVL1152</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10. NVDA株価 ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">📊</span>
+      <span class="section-label-text">NVDA 株価・アナリスト評価</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="stock-card">
+      <div class="stock-header">
+        <div>
+          <span class="stock-ticker">NVDA</span>
+          <span style="font-size:13px;color:var(--text-muted);margin-left:8px;">NASDAQ</span>
+        </div>
+        <div>
+          <span class="stock-price">$183.86</span>
+          <span class="stock-change up">+0.35%</span>
+        </div>
+      </div>
+
+      <div class="stock-metrics">
+        <div class="stock-metric">
+          <div class="stock-metric-label">時価総額</div>
+          <div class="stock-metric-value">$4.47T</div>
+        </div>
+        <div class="stock-metric">
+          <div class="stock-metric-label">52週高値</div>
+          <div class="stock-metric-value">$212.19</div>
+        </div>
+        <div class="stock-metric">
+          <div class="stock-metric-label">52週安値</div>
+          <div class="stock-metric-value">$86.62</div>
+        </div>
+        <div class="stock-metric">
+          <div class="stock-metric-label"><span class="term tip-right">PER<span class="tip"><span class="tip-title">PER（株価収益率）</span>株価÷1株あたり利益。NVDAのPER 37倍は「投資家が利益の約37年分を先払いしている」ことを意味し、高い成長期待が反映されています。</span></span></div>
+          <div class="stock-metric-value">37.39</div>
+        </div>
+        <div class="stock-metric">
+          <div class="stock-metric-label">FY27 EPS予想</div>
+          <div class="stock-metric-value green">$11.01</div>
+        </div>
+        <div class="stock-metric">
+          <div class="stock-metric-label">平均目標株価</div>
+          <div class="stock-metric-value green">$263.29</div>
+        </div>
+      </div>
+
+      <div class="analyst-bar-wrap">
+        <div class="analyst-title">アナリスト評価（38名）— コンセンサス: <span style="color:var(--accent-green);font-weight:800;">Strong Buy</span></div>
+        <div class="analyst-bar">
+          <div class="ab-strong-buy" style="width:52.6%">20</div>
+          <div class="ab-buy" style="width:42.1%">16</div>
+          <div class="ab-hold" style="width:2.6%">1</div>
+          <div class="ab-sell" style="width:2.6%">1</div>
+        </div>
+        <div class="analyst-legend">
+          <span>🟢 Strong Buy: 20</span>
+          <span>🟩 Buy: 16</span>
+          <span>🟡 Hold: 1</span>
+          <span>🔴 Sell: 1</span>
+          <span style="margin-left:auto;color:var(--accent-green);font-weight:700;">目標株価 $263.29（現在比 +43.2%）</span>
+        </div>
+        <div style="margin-top:14px;text-align:center;">
+          <a href="https://yskzz121.github.io/ui-kabu-reports/NVDA/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;background:rgba(88,166,255,.12);border:1px solid rgba(88,166,255,.3);color:var(--accent);font-size:13px;font-weight:700;text-decoration:none;transition:all .15s;">📊 NVIDIAの過去の決算分析を見る →</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 11. 編集部まとめ ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">✍️</span>
+      <span class="section-label-text">編集部まとめ</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="summary-card">
+      <div class="summary-text">
+        <p>
+          <span class="summary-topic nvidia">GTC 2026のテーマは「実行」— ロードマップが現実になった</span>
+          昨年のGTC 2025ではVera RubinやFeynmanの「ビジョン」が示されましたが、今年のGTC 2026はそれが「現実」になったことを証明する場でした。Vera Rubinのフル量産開始、Groq買収の成果（Groq 3 LPU）の即座の統合、OpenClaw / NemoClawというソフトウェア戦略の具現化。Jensenは「語る」から「出荷する」フェーズに入ったことを印象づけました。
+        </p>
+        <p>
+          <span class="summary-topic positive">Feynmanの詳細公開は「NVIDIAの先手必勝戦略」</span>
+          2028年のFeynmanまでロードマップを具体的に示したことで、競合（AMD MI400、Intel Falcon Shores）に対して「2年先の技術ビジョン」を突きつけた形。3Dダイスタッキングとシリコンフォトニクスの組み合わせは業界初であり、データセンター設計者に「NVIDIAと長期契約する合理性」を与えています。
+        </p>
+        <p>
+          <span class="summary-topic neutral">投資判断：中長期では強気、短期は慎重に</span>
+          アナリスト38名中36名がBuy以上、平均目標株価$263（+43%上値余地）。ファンダメンタルズは極めて強力です。ただし現在のPER 37倍には相当な期待が織り込まれており、GTC後の「材料出尽くし」や、Vera Rubinの本格売上貢献がFY2028以降である点には注意が必要です。ポジション管理は慎重に、中長期の成長ストーリーには引き続き注目です。
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="paper-footer">
+  <div class="paper-footer-nav">
+    <a href="https://yskzz121.github.io/ui-kabu-times/extra/">号外アーカイブ</a>
+    <a href="https://yskzz121.github.io/ui-kabu-times/morning/latest.html">最新朝刊</a>
+  </div>
+  <p>U&I株倶楽部新聞 号外 — NVIDIA GTC 2026 特集号<br>
+  2026年3月17日 発行 ｜ <a href="https://yskzz121.github.io/ui-kabu-times/">新聞ポータル</a> ｜ <a href="https://yskzz121.github.io/ui-kabu-reports/">決算分析</a></p>
+  <p>※ 本記事は情報提供を目的としたものであり、特定の銘柄の売買を推奨するものではありません。投資判断はご自身の責任でお願いいたします。</p>
+  <p>&copy; 2026 U&I株倶楽部</p>
+</footer>
+
+<script>
+// Theme Toggle
+(function() {
+  var toggle = document.getElementById('themeToggle');
+  var html = document.documentElement;
+  var saved = localStorage.getItem('morning-theme');
+  if (saved) {
+    html.setAttribute('data-theme', saved);
+    toggle.textContent = saved === 'dark' ? '☀️' : '🌙';
+  }
+  toggle.addEventListener('click', function() {
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('morning-theme', next);
+  });
+})();
+
+// Mobile: tap-to-toggle tooltips
+(function() {
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    document.querySelectorAll('.term').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        document.querySelectorAll('.term.active').forEach(function(other) {
+          if (other !== el) other.classList.remove('active');
+        });
+        el.classList.toggle('active');
+      });
+    });
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.term.active').forEach(function(el) {
+        el.classList.remove('active');
+      });
+    });
+    var style = document.createElement('style');
+    style.textContent = '.term.active .tip { visibility: visible; opacity: 1; pointer-events: auto; }';
+    document.head.appendChild(style);
+  }
+})();
+</script>
+
+</body>
+</html>

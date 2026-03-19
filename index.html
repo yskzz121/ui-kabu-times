@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U&I株倶楽部新聞 — ポータル</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-sans: 'Noto Sans JP', 'Inter', -apple-system, sans-serif;
+  --font-serif: 'Noto Serif JP', serif;
+  --bg-primary: #0d1117;
+  --bg-card: #161b22;
+  --bg-card-hover: #21262d;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --border: #30363d;
+  --accent: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-red: #f85149;
+  --accent-amber: #d29922;
+  --shadow-card: 0 2px 8px rgba(0,0,0,.3);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.portal-header {
+  border-bottom: 1px solid var(--border);
+  padding: 48px 20px 36px;
+  text-align: center;
+  position: relative;
+}
+.portal-header::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0; right: 0;
+  height: 3px;
+  background: var(--border);
+}
+.portal-title {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  line-height: 1.2;
+}
+.portal-subtitle {
+  display: block;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: .25em;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+.portal-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 16px;
+}
+
+/* Section */
+.section {
+  padding: 36px 0;
+}
+.section + .section {
+  border-top: 1px solid var(--border);
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title-icon { font-size: 22px; }
+.section-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+.section-badge.weekly {
+  background: rgba(63,185,80,.12);
+  color: var(--accent-green);
+}
+.section-badge.irregular {
+  background: rgba(248,81,73,.12);
+  color: var(--accent-red);
+}
+
+/* Article List */
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.article-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all .2s;
+}
+.article-item:hover {
+  background: var(--bg-card-hover);
+  border-color: #484f58;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,.4);
+}
+.article-date {
+  font-family: 'Inter', var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 90px;
+  white-space: nowrap;
+}
+.article-title {
+  font-size: 15px;
+  font-weight: 700;
+  flex: 1;
+}
+.article-tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.article-tag.extra {
+  background: rgba(248,81,73,.12);
+  color: var(--accent-red);
+}
+.article-tag.morning {
+  background: rgba(88,166,255,.12);
+  color: var(--accent);
+}
+
+/* Empty state */
+.empty-state {
+  padding: 32px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  background: var(--bg-card);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+}
+
+/* Footer */
+.portal-footer {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
+}
+.portal-footer p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+.portal-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.portal-footer a:hover { text-decoration: underline; }
+
+/* Structure info */
+.structure-info {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.structure-info code {
+  font-family: 'Inter', monospace;
+  font-size: 12px;
+  background: rgba(255,255,255,.06);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--accent-green);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .portal-title { font-size: 32px; }
+  .article-item { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .article-date { min-width: auto; }
+}
+</style>
+</head>
+<body>
+
+<header class="portal-header">
+  <h1 class="portal-title">
+    U&I株倶楽部新聞
+    <span class="portal-subtitle">U & I KABU CLUB TIMES</span>
+  </h1>
+  <p class="portal-desc">U&I株倶楽部が発行する米国株マーケットニュースレター</p>
+</header>
+
+<main class="container">
+
+  <!-- 号外 -->
+  <div class="section">
+    <h2 class="section-title">
+      <span class="section-title-icon">🔴</span>
+      号外
+      <span class="section-badge irregular">不定期</span>
+    </h2>
+                    <div class="article-list">
+      <a class="article-item" href="extra/2026/03/17-gtc-2026.html">
+        <span class="article-date">2026/03/17</span>
+        <span class="article-title">受注額が1兆ドル（約150兆円）に到達 — AI半導体の需要は衰えず</span>
+        <span class="article-tag extra">号外</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 朝刊 -->
+  <div class="section">
+    <h2 class="section-title">
+      <span class="section-title-icon">📰</span>
+      朝刊
+      <span class="section-badge weekly">週3〜5回</span>
+    </h2>
+                    <div class="article-list">
+      <a class="article-item" href="morning/2026/03/19.html">
+        <span class="article-date">2026/03/19</span>
+        <span class="article-title">FOMC「タカ派的据え置き」で3指数急落 — ダウ-768pt、2026年最安値更新</span>
+        <span class="article-tag morning">朝刊</span>
+      </a>
+      <a class="article-item" href="morning/2026/03/18.html">
+        <span class="article-date">2026/03/18</span>
+        <span class="article-title">NVIDIA GTC効果でテック主導の反発 — NASDAQ +0.47%、VIX急落</span>
+        <span class="article-tag morning">朝刊</span>
+      </a>
+      <a class="article-item" href="morning/2026/03/13.html">
+        <span class="article-date">2026/03/13</span>
+        <span class="article-title">イラン情勢激化で全面安 — ダウ739ドル急落、VIX急騰</span>
+        <span class="article-tag morning">朝刊</span>
+      </a>
+    </div>
+  </div>
+
+
+</main>
+
+<footer class="portal-footer">
+  <p>U&I株倶楽部新聞 ｜ <a href="https://yskzz121.github.io/ui-kabu-club/">会員ポータル</a> ｜ <a href="https://yskzz121.github.io/ui-kabu-reports/">決算分析</a></p>
+  <p>© 2026 U&I株倶楽部</p>
+</footer>
+
+</body>
+</html>
