@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金融用語辞典 — U&I株倶楽部新聞</title>
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<meta name="description" content="U&I株倶楽部新聞の金融用語辞典。FOMC、CPI、EPS、VIXなど投資に必要な用語をわかりやすく解説。">
+<meta property="og:title" content="金融用語辞典 — U&I株倶楽部新聞">
+<meta property="og:description" content="投資に必要な金融用語をわかりやすく解説">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-sans: 'Noto Sans JP', 'Inter', -apple-system, sans-serif;
+  --font-serif: 'Noto Serif JP', serif;
+  --bg-primary: #0d1117;
+  --bg-card: #161b22;
+  --bg-card-hover: #1c2129;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --border: #30363d;
+  --accent: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-red: #f85149;
+  --accent-amber: #d29922;
+  --accent-purple: #bc8cff;
+  --shadow-card: 0 2px 8px rgba(0,0,0,.3);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Back link */
+.back-link {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  color: #58a6ff;
+  text-decoration: none;
+  font-size: .78rem;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  transition: all .15s;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+.back-link:hover { background: #58a6ff; color: #0d1117; border-color: #58a6ff; }
+.back-link svg { flex-shrink: 0; }
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #1a2332 0%, #0d1117 50%, #1a1a2e 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 56px 20px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(88,166,255,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(46,160,67,0.06) 0%, transparent 60%);
+}
+.header-content { position: relative; z-index: 1; }
+.header-icon { font-size: 2.8em; margin-bottom: 8px; }
+.header h1 {
+  font-family: var(--font-serif);
+  font-size: 2.2em;
+  font-weight: 900;
+  letter-spacing: .06em;
+  margin-bottom: 4px;
+}
+.header .subtitle {
+  color: var(--text-secondary);
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+.header .paper-badge {
+  display: inline-block;
+  background: rgba(88,166,255,0.12);
+  border: 1px solid rgba(88,166,255,0.25);
+  border-radius: 20px;
+  padding: 4px 16px;
+  font-size: 12px;
+  color: var(--accent);
+  margin-top: 14px;
+  letter-spacing: .05em;
+}
+
+/* Search */
+.search-section {
+  padding: 28px 0 0;
+}
+.search-box {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.search-box input {
+  width: 100%;
+  padding: 14px 18px 14px 48px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 15px;
+  font-family: var(--font-sans);
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.search-box input::placeholder { color: var(--text-muted); }
+.search-box input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(88,166,255,0.15);
+}
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 18px;
+  pointer-events: none;
+}
+.search-count {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 10px;
+  min-height: 20px;
+}
+
+/* Category Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 0 28px;
+}
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+  background: rgba(88,166,255,0.06);
+}
+.filter-btn.active {
+  background: rgba(88,166,255,0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.filter-btn .count-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 1px 7px;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: 2px;
+}
+.filter-btn.active .count-badge {
+  background: rgba(88,166,255,0.2);
+  color: var(--accent);
+}
+
+/* Sort controls */
+.sort-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 16px;
+}
+.sort-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s;
+}
+.sort-btn:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+}
+.sort-btn.active {
+  background: rgba(188,140,255,0.12);
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+}
+
+/* Terms list */
+.terms-section {
+  padding-bottom: 80px;
+}
+.category-group {
+  margin-bottom: 32px;
+}
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0 8px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+.category-header .cat-icon { font-size: 1.3em; }
+.category-header h2 {
+  font-size: 1.05em;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.category-header .cat-en {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Term card */
+.term-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s;
+}
+.term-card:hover {
+  border-color: #3a424a;
+}
+.term-card.expanded {
+  border-color: rgba(88,166,255,0.3);
+  box-shadow: 0 2px 12px rgba(0,0,0,.2);
+}
+.term-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+.term-header:hover {
+  background: var(--bg-card-hover);
+}
+.term-names {
+  flex: 1;
+  min-width: 0;
+}
+.term-ja {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+.term-en {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 500;
+  margin-top: 1px;
+  font-family: 'Inter', var(--font-sans);
+}
+.term-short {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.term-badges {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.badge-morning {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(63,185,80,0.12);
+  border: 1px solid rgba(63,185,80,0.25);
+  color: var(--accent-green);
+  white-space: nowrap;
+}
+.badge-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(88,166,255,0.08);
+  border: 1px solid rgba(88,166,255,0.15);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.expand-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 12px;
+  transition: transform .25s;
+  margin-top: 2px;
+}
+.term-card.expanded .expand-icon {
+  transform: rotate(180deg);
+}
+
+/* Term body */
+.term-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, opacity .25s ease;
+  opacity: 0;
+}
+.term-card.expanded .term-body {
+  max-height: 600px;
+  opacity: 1;
+}
+.term-body-inner {
+  padding: 0 18px 18px;
+  border-top: 1px solid var(--border);
+  margin-top: 0;
+  padding-top: 16px;
+}
+.term-full {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+}
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
+.no-results .nr-icon { font-size: 2.5em; margin-bottom: 12px; }
+.no-results p { font-size: 14px; }
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 20px;
+  text-align: center;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+.footer-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: opacity .15s;
+}
+.footer-links a:hover { opacity: .7; }
+.footer-copy {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header { padding: 48px 16px 32px; }
+  .header h1 { font-size: 1.6em; }
+  .header-icon { font-size: 2.2em; }
+  .search-box input { font-size: 14px; padding: 12px 16px 12px 44px; }
+  .filters { gap: 6px; padding: 16px 0 20px; }
+  .filter-btn { padding: 6px 12px; font-size: 12px; }
+  .term-header { padding: 14px 14px; gap: 10px; }
+  .term-ja { font-size: 14px; }
+  .term-short { font-size: 12px; }
+  .term-body-inner { padding: 0 14px 14px; padding-top: 14px; }
+  .term-full { font-size: 13px; }
+  .category-header h2 { font-size: .95em; }
+  .back-link { padding: 6px 10px; font-size: .7rem; }
+}
+@media (max-width: 480px) {
+  .header h1 { font-size: 1.3em; }
+  .filter-btn { padding: 5px 10px; font-size: 11px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Back link -->
+<a class="back-link" href="https://yskzz121.github.io/ui-kabu-times/">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+ポータル</a>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-content">
+    <div class="header-icon">📖</div>
+    <h1>金融用語辞典</h1>
+    <div class="subtitle">Financial Glossary</div>
+    <div class="paper-badge">U&I株倶楽部新聞</div>
+  </div>
+</div>
+
+<!-- Search -->
+<div class="container">
+  <div class="search-section">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="用語を検索（日本語・英語）">
+    </div>
+    <div class="search-count" id="searchCount"></div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-cat="all">すべて <span class="count-badge">24</span></button>
+    <button class="filter-btn" data-cat="monetary">🏦 金融政策 <span class="count-badge">7</span></button>
+    <button class="filter-btn" data-cat="indicators">📊 経済指標 <span class="count-badge">4</span></button>
+    <button class="filter-btn" data-cat="markets">📈 マーケット <span class="count-badge">3</span></button>
+    <button class="filter-btn" data-cat="earnings">💰 決算・企業分析 <span class="count-badge">5</span></button>
+    <button class="filter-btn" data-cat="tech">🔧 テクノロジー <span class="count-badge">2</span></button>
+    <button class="filter-btn" data-cat="geo">🌍 地政学・通商 <span class="count-badge">3</span></button>
+  </div>
+
+  <!-- Sort -->
+  <div class="sort-bar">
+    <button class="sort-btn" id="sortBtn" onclick="toggleSort()">あ→わ あいうえお順</button>
+  </div>
+
+  <!-- Terms -->
+  <div class="terms-section" id="termsSection"></div>
+
+  <!-- No Results -->
+  <div class="no-results" id="noResults" style="display:none">
+    <div class="nr-icon">🔎</div>
+    <p>該当する用語が見つかりませんでした</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-links">
+    <a href="https://yskzz121.github.io/ui-kabu-times/">朝刊ポータル</a>
+    <a href="https://yskzz121.github.io/ui-kabu-times/morning/latest.html">最新の朝刊</a>
+    <a href="https://yskzz121.github.io/ui-kabu-reports/">決算レポート</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 U&I株倶楽部新聞</div>
+</div>
+
+<script>
+// === Term Data ===
+var TERMS = [
+  {
+    id: "fomc",
+    ja: "FOMC",
+    en: "Federal Open Market Committee",
+    cat: "monetary",
+    catLabel: "金融政策",
+    catIcon: "🏦",
+    morning: true,
+    short: "連邦公開市場委員会。年8回の金融政策決定会合",
+    full: "FRB（米連邦準備制度理事会）が開催する金融政策を決定する最重要会合。年8回、約6週間ごとに開催される。FRB理事7名と地区連銀総裁5名の計12名が投票権を持ち、政策金利（FF金利）の変更、量的緩和/引き締めの方針を決定する。会合後に声明文が公表され、3週間後に議事要旨（Minutes）が公開される。四半期に1回はSEP（経済見通し要約）とドットプロットも同時に発表される。"
+  },
+  {
+    id: "ffrate",
+    ja: "FF金利",
+    en: "Federal Funds Rate",
+    cat: "monetary",
+    catLabel: "金融政策",
+    catIcon: "🏦",
+    morning: true,
+    short: "フェデラルファンド金利。FRBの金融政策の主要ツール",
+    full: "米国の銀行間で翌日物（オーバーナイト）の資金を貸し借りする際の金利。FOMCが誘導目標レンジ（例: 3.50-3.75%）を設定し、公開市場操作で実効金利をこのレンジ内に誘導する。FF金利は住宅ローン、自動車ローン、クレジットカード金利など、あらゆる金利のベースとなるため「金利の金利」とも呼ばれる。利下げは景気刺激、利上げは景気抑制の効果がある。"
+  },
+  {
+    id: "dotplot",
+    ja: "ドットプロット",
+    en: "Dot Plot",
+    cat: "monetary",
+    catLabel: "金融政策",
+    catIcon: "🏦",
+    morning: true,
+    short: "FOMCメンバーの政策金利予想を点で示したチャート",
+    full: "FOMC参加者19名（理事7名＋地区連銀総裁12名）が、各年末時点の適切な政策金利水準を予想し、それを匿名の「点（ドット）」としてチャート上に表示したもの。四半期に1回、SEPと同時に公表される。市場は中央値（メディアン）から利下げ/利上げの回数を読み取り、ドットの分布の変化から「タカ派（利上げ寄り）」「ハト派（利下げ寄り）」の傾向を判断する。ただし、各ドットが誰の予想かは公表されない。"
+  },
+  {
+    id: "sep",
+    ja: "SEP",
+    en: "Summary of Economic Projections",
+    cat: "monetary",
+    catLabel: "金融政策",
+    catIcon: "🏦",
+    morning: true,
+    short: "FOMC経済見通し要約。四半期ごとに公表",
+    full: "FOMCメンバーによる主要経済指標の見通しをまとめた文書。GDP成長率、失業率、PCEインフレ率、コアPCEインフレ率、FF金利の予測が含まれる。3月・6月・9月・12月のFOMCで公表され、ドットプロットもSEPの一部。前回との変化（例: GDP見通しの上方/下方修正）が市場に大きなインパクトを与えることが多い。"
+  },
+  {
+    id: "bp",
+    ja: "bp（ベーシスポイント）",
+    en: "Basis Point",
+    cat: "monetary",
+    catLabel: "金融政策",
+    catIcon: "🏦",
+    morning: false,
+    short: "金利の変動幅の単位。1bp = 0.01%",
+    full: "金利や利回りの変動を表す最小単位。1ベーシスポイント = 0.01%。例えば「25bp利下げ」は金利を0.25%引き下げることを意味する。パーセントの「パーセント」を表す単位と考えるとわかりやすい。「金利が0.5%上がった」よりも「50bp上昇」のほうが金融の世界では正確で誤解が生じにくい。"
+  },
+  {
+    id: "qt",
+    ja: "QT（量的引き締め）",
+    en: "Quantitative Tightening",
+    cat: "monetary",
+    catLabel: "金融政策",
+    catIcon: "🏦",
+    morning: false,
+    short: "FRBが保有資産を減らし市場から資金を回収すること",
+    full: "QE（量的緩和）の逆のプロセス。FRBが保有する国債やMBS（住宅ローン担保証券）の満期償還分を再投資せずにバランスシートを縮小し、市場から流動性（資金）を回収する。金利引き上げと合わせて実施されることが多く、「ステルス利上げ」とも呼ばれる。QTのペース変更（加速/減速）も市場に大きな影響を与える。"
+  },
+  {
+    id: "forwardguidance",
+    ja: "フォワードガイダンス",
+    en: "Forward Guidance",
+    cat: "monetary",
+    catLabel: "金融政策",
+    catIcon: "🏦",
+    morning: false,
+    short: "中央銀行が将来の金融政策の方向性を事前に示すこと",
+    full: "中央銀行が「今後の金融政策の方向性」を市場に事前に伝えるコミュニケーション手法。「次回会合で利上げの可能性がある」「当面は緩和的な政策を維持する」といった発言が該当する。市場の期待を安定させ、急激な金利変動を防ぐ目的がある。パウエル議長の記者会見での発言は、最も注目されるフォワードガイダンスの一つ。"
+  },
+  {
+    id: "ppi",
+    ja: "PPI",
+    en: "Producer Price Index",
+    cat: "indicators",
+    catLabel: "経済指標",
+    catIcon: "📊",
+    morning: false,
+    short: "生産者物価指数。企業間取引の価格変動を測定",
+    full: "企業が製品を出荷する段階での価格変動を測定する指標。「川上のインフレ指標」とも呼ばれ、CPIに先行する傾向がある。原材料→中間財→最終財の3段階で測定され、原材料の上昇は数ヶ月後にCPI（消費者物価）に波及しやすい。毎月中旬に米労働統計局（BLS）が発表。前月比と前年比の両方が注目される。"
+  },
+  {
+    id: "cpi",
+    ja: "CPI",
+    en: "Consumer Price Index",
+    cat: "indicators",
+    catLabel: "経済指標",
+    catIcon: "📊",
+    morning: true,
+    short: "消費者物価指数。一般消費者が購入する財・サービスの価格変動",
+    full: "都市部の消費者が購入する財・サービスのバスケット（約80,000品目）の価格変動を測定する指標。「ヘッドラインCPI」は食品・エネルギーを含む総合指数、「コアCPI」は変動の激しい食品・エネルギーを除いた指数。毎月中旬にBLSが発表し、FRBの金融政策判断に大きな影響を与える。市場予想との乖離が大きいと株式・債券市場が大きく動く。"
+  },
+  {
+    id: "pce",
+    ja: "PCE",
+    en: "Personal Consumption Expenditures Price Index",
+    cat: "indicators",
+    catLabel: "経済指標",
+    catIcon: "📊",
+    morning: true,
+    short: "個人消費支出物価指数。FRBが最も重視するインフレ指標",
+    full: "米商務省が発表する物価指標で、FRBが金融政策の目標として最も重視するインフレ指標。CPIとの違いは、(1)対象範囲が広い（保険や金融サービスも含む）、(2)消費者の代替行動を考慮する（牛肉が高くなれば鶏肉に切り替えるなど）、(3)支出ウェイトが毎月更新される。FRBのインフレ目標は「PCE前年比2%」。"
+  },
+  {
+    id: "stagflation",
+    ja: "スタグフレーション",
+    en: "Stagflation",
+    cat: "indicators",
+    catLabel: "経済指標",
+    catIcon: "📊",
+    morning: false,
+    short: "景気停滞とインフレが同時に起きる状態",
+    full: "景気停滞（Stagnation）とインフレーション（Inflation）を合わせた造語。通常、景気が悪化すれば需要が減り物価は下がる（デフレ）が、原油価格の急騰や供給制約などの外部ショックにより、不景気なのに物価が上がり続ける異常事態。中央銀行にとって最も対応が難しい状況で、利下げすればインフレ加速、利上げすれば景気悪化というジレンマに陥る。1970年代のオイルショック時が典型例。投資では株式・債券ともに不利で、金・コモディティ・エネルギー株が相対的に有利とされる。"
+  },
+  {
+    id: "vix",
+    ja: "VIX",
+    en: "CBOE Volatility Index",
+    cat: "markets",
+    catLabel: "マーケット",
+    catIcon: "📈",
+    morning: true,
+    short: "S&P 500オプションの予想変動率。恐怖指数とも呼ばれる",
+    full: "シカゴ・オプション取引所（CBOE）が算出する、S&P 500の今後30日間の予想変動率を示す指数。「恐怖指数」の別名を持つ。20以下は市場が安定、20-30はやや警戒、30超は高ストレス（パニック）状態を示す。2020年3月のコロナショック時には82.69まで急騰した。VIX自体を売買するETFや先物もあり、ヘッジ手段としても利用される。"
+  },
+  {
+    id: "topix",
+    ja: "TOPIX",
+    en: "Tokyo Stock Price Index",
+    cat: "markets",
+    catLabel: "マーケット",
+    catIcon: "📈",
+    morning: false,
+    short: "東証プライム全銘柄の時価総額加重型株価指数",
+    full: "東京証券取引所プライム市場に上場する全銘柄を対象とした時価総額加重型の株価指数。日経平均株価が225銘柄の株価単純平均であるのに対し、TOPIXは時価総額の大きい企業ほどウェイトが高い。そのため、TOPIXは市場全体の実態をより正確に反映するとされる。基準日は1968年1月4日（=100）。"
+  },
+  {
+    id: "brent",
+    ja: "Brent原油",
+    en: "Brent Crude Oil",
+    cat: "markets",
+    catLabel: "マーケット",
+    catIcon: "📈",
+    morning: false,
+    short: "北海ブレント原油。国際的な原油価格ベンチマーク",
+    full: "北海（イギリス・ノルウェー沖）で産出される原油の価格指標。世界の原油取引の約2/3がBrent原油を基準に値付けされるため、国際的な原油価格のベンチマークとなっている。米国の指標であるWTI（West Texas Intermediate）よりも国際的な影響力が大きい。ロンドンのICE取引所で取引され、地政学リスク（中東情勢等）に敏感に反応する。"
+  },
+  {
+    id: "eps",
+    ja: "EPS",
+    en: "Earnings Per Share",
+    cat: "earnings",
+    catLabel: "決算・企業分析",
+    catIcon: "💰",
+    morning: false,
+    short: "1株当たり利益。純利益÷発行済株式数",
+    full: "企業の純利益を発行済株式数で割った値で、株主1人あたりがどれだけの利益を得ているかを示す最も基本的な収益性指標。GAAP EPS（会計基準に従った数値）とNon-GAAP EPS（一時的な費用を除いた調整後の数値）がある。決算発表ではアナリストのコンセンサス予想と実績の比較が最も注目され、予想を上回れば「ビート」、下回れば「ミス」と呼ばれる。"
+  },
+  {
+    id: "guidance",
+    ja: "ガイダンス",
+    en: "Guidance",
+    cat: "earnings",
+    catLabel: "決算・企業分析",
+    catIcon: "💰",
+    morning: false,
+    short: "企業が発表する次期の業績見通し",
+    full: "企業が決算発表時に提示する、次の四半期や通期の業績予想。売上高とEPSのレンジ（例: 売上$10.0B-$10.5B）で示されることが多い。実績がどれだけ良くても、ガイダンスが市場予想を下回ると株価は下落する傾向がある。「ガイダンス上方修正」は最も強い買いシグナルの一つ。逆に「ガイダンス撤回」は経営陣が先行きを読めない不確実性の表れで、株価には大きなマイナス。"
+  },
+  {
+    id: "afterhours",
+    ja: "アフターアワーズ",
+    en: "After Hours Trading",
+    cat: "earnings",
+    catLabel: "決算・企業分析",
+    catIcon: "💰",
+    morning: false,
+    short: "通常取引時間後の時間外取引",
+    full: "米国市場の通常取引時間（9:30-16:00 ET）の後に行われる延長取引（16:00-20:00 ET）。決算発表は通常取引終了後に行われることが多いため、決算への最初の市場反応はアフターアワーズで出る。ただし流動性が低く、スプレッドが広いため、翌日の通常取引で反転することも珍しくない。「AH: +5%」のように略記される。寄り前の取引はプレマーケット（PM）と呼ばれる。"
+  },
+  {
+    id: "buyback",
+    ja: "自社株買い",
+    en: "Share Buyback",
+    cat: "earnings",
+    catLabel: "決算・企業分析",
+    catIcon: "💰",
+    morning: false,
+    short: "企業が市場で自社株を買い戻すこと",
+    full: "企業が市場で自社の発行済株式を買い戻すこと。発行済株式数が減少するためEPSが向上し、1株あたりの価値が高まる。配当と並ぶ株主還元策で、米国企業では年間$1兆以上が自社株買いに使われている。経営陣が「自社の株価が割安」と判断していることの表れとも解釈される。税制面では配当より有利な場合が多い。"
+  },
+  {
+    id: "marketcap",
+    ja: "時価総額",
+    en: "Market Capitalization",
+    cat: "earnings",
+    catLabel: "決算・企業分析",
+    catIcon: "💰",
+    morning: false,
+    short: "株価×発行済株式数。企業の市場での評価額",
+    full: "株価 × 発行済株式数で算出される、企業の市場における評価額。例えばAppleの時価総額が$3兆なら、全株式を今の株価で買い占めるのに$3兆必要という意味。大型株（Large Cap: $10B以上）、中型株（Mid Cap: $2-10B）、小型株（Small Cap: $2B以下）の分類に使われる。S&P 500は時価総額加重型のため、Apple、Microsoft、NVIDIAなどの超大型株の動きが指数全体に大きく影響する。"
+  },
+  {
+    id: "hbm",
+    ja: "HBM",
+    en: "High Bandwidth Memory",
+    cat: "tech",
+    catLabel: "テクノロジー",
+    catIcon: "🔧",
+    morning: false,
+    short: "高帯域幅メモリ。AI処理用の積層型メモリ技術",
+    full: "AI/ML処理に必要な大量のデータを超高速でやり取りするための積層型メモリ技術。従来のDDR5メモリと比べて帯域幅が数倍〜10倍以上。メモリチップを縦に積層し、TSV（Through-Silicon Via）で接続することで高速化を実現。NVIDIAのH100/H200/B200 GPUに搭載されており、SK Hynix、Samsung、Micronの3社が供給。AI需要の急拡大に伴い供給不足が続いている。"
+  },
+  {
+    id: "gtc",
+    ja: "GTC",
+    en: "GPU Technology Conference",
+    cat: "tech",
+    catLabel: "テクノロジー",
+    catIcon: "🔧",
+    morning: false,
+    short: "NVIDIAの年次技術カンファレンス",
+    full: "NVIDIAが毎年開催する技術カンファレンス（GPU Technology Conference）。新世代GPU、AIプラットフォーム、ソフトウェア開発キットの発表の場として、半導体・AI銘柄の株価を大きく動かすイベント。ジェンスン・ファンCEOの基調講演は「AIのワールドカップ」とも呼ばれ、発表内容は数日にわたり市場に影響を与える。"
+  },
+  {
+    id: "hormuz",
+    ja: "ホルムズ海峡",
+    en: "Strait of Hormuz",
+    cat: "geo",
+    catLabel: "地政学・通商",
+    catIcon: "🌍",
+    morning: false,
+    short: "ペルシャ湾の出口。世界原油輸送の約20%が通過",
+    full: "イランとオマーンに挟まれた、ペルシャ湾からアラビア海への唯一の出口。最も狭い部分は約33km。サウジアラビア、イラク、クウェート、UAE、カタールなどの産油国からの原油輸出の大部分がここを通過し、世界の原油輸送量の約20%（日量約2,100万バレル）を占める。イランが封鎖を示唆するだけで原油価格が急騰するため、地政学リスクの最重要ポイントの一つ。"
+  },
+  {
+    id: "jonesact",
+    ja: "ジョーンズ法",
+    en: "Jones Act",
+    cat: "geo",
+    catLabel: "地政学・通商",
+    catIcon: "🌍",
+    morning: false,
+    short: "米国の海運保護法。国内輸送を米国籍船に限定",
+    full: "1920年制定の米国商船法（Merchant Marine Act）のセクション27。米国の港間の貨物輸送を、米国籍・米国建造・米国人乗組員の船舶に限定する法律。海運業界と造船業界を保護する目的だが、輸送コストの高止まりの原因としても批判される。緊急時（ハリケーン、エネルギー危機等）に大統領令で一時停止されることがあり、外国船が参入することで輸送コストの低下が期待される。"
+  },
+  {
+    id: "section301",
+    ja: "通商法301条",
+    en: "Section 301",
+    cat: "geo",
+    catLabel: "地政学・通商",
+    catIcon: "🌍",
+    morning: false,
+    short: "不公正な貿易慣行に対する大統領の報復権限",
+    full: "1974年米国通商法の第301条。外国政府の不合理・不公正な貿易慣行に対し、大統領に関税引き上げ等の報復措置をとる権限を与える条項。2018年にトランプ政権が中国の知的財産権侵害を理由に301条を発動し、対中関税の法的根拠とした。WTOの紛争解決手続きを経ずに一方的に制裁を課せるため、「アメリカファースト」の通商政策の象徴的ツール。"
+  }
+];
+
+// Category definitions
+var CATEGORIES = [
+  { key: "monetary", label: "金融政策", labelEn: "Monetary Policy", icon: "🏦" },
+  { key: "indicators", label: "経済指標", labelEn: "Economic Indicators", icon: "📊" },
+  { key: "markets", label: "マーケット", labelEn: "Markets", icon: "📈" },
+  { key: "earnings", label: "決算・企業分析", labelEn: "Earnings & Analysis", icon: "💰" },
+  { key: "tech", label: "テクノロジー", labelEn: "Technology", icon: "🔧" },
+  { key: "geo", label: "地政学・通商", labelEn: "Geopolitics & Trade", icon: "🌍" }
+];
+
+var activeCat = "all";
+var searchQuery = "";
+var sortAiueo = false;
+
+// あいうえお順ソート用：日本語名の読み仮名マップ
+var YOMI = {
+  "FOMC":"えふおーえむしー","FF金利":"えふえふきんり","ドットプロット":"どっとぷろっと",
+  "SEP":"えすいーぴー","bp（ベーシスポイント）":"べーしすぽいんと","QT（量的引き締め）":"きゅーてぃー",
+  "フォワードガイダンス":"ふぉわーどがいだんす","PPI":"ぴーぴーあい","CPI":"しーぴーあい",
+  "PCE":"ぴーしーいー","スタグフレーション":"すたぐふれーしょん","VIX":"びっくす",
+  "TOPIX":"とぴっくす","Brent原油":"ぶれんとげんゆ","EPS":"いーぴーえす",
+  "ガイダンス":"がいだんす","アフターアワーズ":"あふたーあわーず","自社株買い":"じしゃかぶかい",
+  "時価総額":"じかそうがく","HBM":"えいちびーえむ","GTC":"じーてぃーしー",
+  "ホルムズ海峡":"ほるむずかいきょう","ジョーンズ法":"じょーんずほう","通商法301条":"つうしょうほう"
+};
+
+function getYomi(ja) {
+  return YOMI[ja] || ja.toLowerCase();
+}
+
+function toggleSort() {
+  sortAiueo = !sortAiueo;
+  var btn = document.getElementById("sortBtn");
+  btn.classList.toggle("active", sortAiueo);
+  btn.textContent = sortAiueo ? "✓ あいうえお順" : "あ→わ あいうえお順";
+  renderTerms();
+}
+
+function renderTerms() {
+  var section = document.getElementById("termsSection");
+  var noResults = document.getElementById("noResults");
+  var countEl = document.getElementById("searchCount");
+  var q = searchQuery.toLowerCase().trim();
+
+  // Filter terms
+  var filtered = TERMS.filter(function(t) {
+    var catMatch = (activeCat === "all") || (t.cat === activeCat);
+    if (!catMatch) return false;
+    if (!q) return true;
+    return t.ja.toLowerCase().indexOf(q) !== -1 ||
+           t.en.toLowerCase().indexOf(q) !== -1 ||
+           t.short.toLowerCase().indexOf(q) !== -1 ||
+           t.full.toLowerCase().indexOf(q) !== -1;
+  });
+
+  // Show count when searching
+  if (q) {
+    countEl.textContent = filtered.length + "件の用語が見つかりました";
+  } else {
+    countEl.textContent = "";
+  }
+
+  if (filtered.length === 0) {
+    section.innerHTML = "";
+    noResults.style.display = "block";
+    return;
+  }
+  noResults.style.display = "none";
+
+  function renderCard(t) {
+    var h = '';
+    h += '<div class="term-card" data-id="' + t.id + '">';
+    h += '<div class="term-header" onclick="toggleTerm(\'' + t.id + '\')">';
+    h += '<div class="term-names">';
+    h += '<div class="term-ja">' + highlightMatch(t.ja, q) + '</div>';
+    h += '<div class="term-en">' + highlightMatch(t.en, q) + '</div>';
+    h += '<div class="term-short">' + highlightMatch(t.short, q) + '</div>';
+    h += '<div class="term-badges">';
+    if (t.morning) {
+      h += '<span class="badge-morning">📰 朝刊で学ぶ</span>';
+    }
+    h += '<span class="badge-cat">' + t.catIcon + ' ' + t.catLabel + '</span>';
+    h += '</div>';
+    h += '</div>';
+    h += '<div class="expand-icon">▼</div>';
+    h += '</div>';
+    h += '<div class="term-body"><div class="term-body-inner">';
+    h += '<div class="term-full">' + highlightMatch(t.full, q) + '</div>';
+    h += '</div></div>';
+    h += '</div>';
+    return h;
+  }
+
+  var html = "";
+
+  if (sortAiueo) {
+    // あいうえお順: フラット表示
+    var sorted = filtered.slice().sort(function(a, b) {
+      return getYomi(a.ja).localeCompare(getYomi(b.ja), 'ja');
+    });
+    html += '<div class="category-group">';
+    html += '<div class="category-header">';
+    html += '<span class="cat-icon">あ</span>';
+    html += '<h2>あいうえお順 <span class="cat-en">Alphabetical (Japanese)</span></h2>';
+    html += '</div>';
+    sorted.forEach(function(t) { html += renderCard(t); });
+    html += '</div>';
+  } else {
+    // カテゴリ別表示
+    var groups = {};
+    CATEGORIES.forEach(function(c) { groups[c.key] = []; });
+    filtered.forEach(function(t) {
+      if (groups[t.cat]) groups[t.cat].push(t);
+    });
+
+    CATEGORIES.forEach(function(cat) {
+      var terms = groups[cat.key];
+      if (terms.length === 0) return;
+      html += '<div class="category-group">';
+      html += '<div class="category-header">';
+      html += '<span class="cat-icon">' + cat.icon + '</span>';
+      html += '<h2>' + cat.label + ' <span class="cat-en">' + cat.labelEn + '</span></h2>';
+      html += '</div>';
+      terms.forEach(function(t) { html += renderCard(t); });
+      html += '</div>';
+    });
+  }
+
+  section.innerHTML = html;
+}
+
+function highlightMatch(text, q) {
+  if (!q) return text;
+  var idx = text.toLowerCase().indexOf(q);
+  if (idx === -1) return text;
+  return text.substring(0, idx) +
+    '<mark style="background:rgba(88,166,255,0.2);color:var(--accent);border-radius:2px;padding:0 2px">' +
+    text.substring(idx, idx + q.length) + '</mark>' +
+    text.substring(idx + q.length);
+}
+
+function toggleTerm(id) {
+  var card = document.querySelector('.term-card[data-id="' + id + '"]');
+  if (card) card.classList.toggle("expanded");
+}
+
+// Filter buttons
+document.getElementById("filters").addEventListener("click", function(e) {
+  var btn = e.target.closest(".filter-btn");
+  if (!btn) return;
+  activeCat = btn.dataset.cat;
+  document.querySelectorAll(".filter-btn").forEach(function(b) {
+    b.classList.remove("active");
+  });
+  btn.classList.add("active");
+  renderTerms();
+});
+
+// Search
+document.getElementById("searchInput").addEventListener("input", function(e) {
+  searchQuery = e.target.value;
+  renderTerms();
+});
+
+// Initial render
+renderTerms();
+</script>
+
+</body>
+</html>

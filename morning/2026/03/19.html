@@ -506,6 +506,24 @@ body {
   color: var(--text-muted);
 }
 
+.news-why {
+  font-size: 12px;
+  color: var(--accent);
+  background: rgba(88,166,255,.06);
+  border-left: 3px solid var(--accent);
+  padding: 8px 12px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  line-height: 1.6;
+}
+.news-why::before {
+  content: '💡 なぜ重要？';
+  display: block;
+  font-weight: 800;
+  font-size: 11px;
+  margin-bottom: 2px;
+  color: var(--accent);
+}
+
 /* News Card Image */
 .news-card-img {
   margin: -22px -22px 12px -22px;
@@ -927,6 +945,100 @@ body {
   font-weight: 600;
 }
 
+/* Today's Keyword */
+.keyword-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.keyword-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent));
+}
+.keyword-term {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+.keyword-term-en {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.keyword-body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+.keyword-body p { margin-bottom: 12px; }
+.keyword-body strong { color: var(--text-primary); }
+.keyword-points {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 16px 0;
+}
+.keyword-points li {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.keyword-points li strong {
+  display: block;
+  font-size: 12px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.keyword-relevance {
+  background: rgba(88,166,255,.06);
+  border: 1px solid rgba(88,166,255,.15);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.keyword-relevance::before {
+  content: '📌 今日との関連';
+  display: block;
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.keyword-glossary-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid rgba(88,166,255,.3);
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: all .15s;
+}
+.keyword-glossary-link:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+@media (max-width: 767px) {
+  .keyword-points { grid-template-columns: 1fr; }
+  .keyword-term { font-size: 20px; }
+}
+
 /* ==========================================
    Responsive
    ========================================== */
@@ -1118,6 +1230,7 @@ body {
       <p class="top-story-body">
         FRBは3月FOMCで政策金利を3.50-3.75%で据え置き（11対1）。<span class="term">ドットプロット<span class="tip"><span class="tip-title">ドットプロット</span>FOMCメンバー各自が予想する将来の政策金利水準を点（ドット）で示したチャート。利下げ/利上げの見通しを読み取る重要指標。</span></span>中央値は2026年中<span class="term">25bp<span class="tip"><span class="tip-title">bp（ベーシスポイント）</span>金利の変動幅を表す単位。1bp = 0.01%。25bp = 0.25%の利下げ/利上げを意味します。</span></span>利下げ1回を維持したが、委員19名中7名が「年内据え置き」を支持し前回（4名）から増加。<span class="term">SEP<span class="tip"><span class="tip-title">SEP（経済見通し要約）</span>Summary of Economic Projections。FOMCメンバーによるGDP・失業率・インフレ率・政策金利の予測。四半期に1回公表。</span></span>では2026年PCEインフレ見通しを2.5%→2.7%に上方修正、GDP成長率見通しを2.1%→1.7%に下方修正し、<span class="term">スタグフレーション<span class="tip"><span class="tip-title">スタグフレーション</span>景気停滞（Stagnation）とインフレ（Inflation）が同時に起きる状態。経済成長が鈍化する一方で物価が上がり続ける、最も対応が難しい経済状況。</span></span>的な見通しが色濃くなった。パウエル議長は会見で「インフレは進展しているが期待したほどではない」「関税や中東情勢が短期のインフレ期待を押し上げている」と述べ、「データを見て判断する」姿勢を改めて強調。市場は利下げ先送りを織り込み、3指数とも急落した。
       </p>
+      <div class="news-why">FRBの利下げ先送りは、住宅ローンや企業の借入コストが高止まりすることを意味します。成長鈍化＋インフレ高止まりの「スタグフレーション」シナリオは、株式・債券の両方にマイナスで、ポートフォリオの守りが重要になります。</div>
       <div class="top-story-footer">
         <span class="top-story-source">CNBC / Yahoo Finance / Federal Reserve</span>
         <span>·</span>
@@ -1139,6 +1252,7 @@ body {
         </div>
         <h3 class="news-card-title">Micron、EPS $12.20で予想を31%上回る大幅ビート — 売上$23.9Bも前年比3倍</h3>
         <p class="news-card-excerpt"><span class="term">EPS<span class="tip"><span class="tip-title">EPS（1株当たり利益）</span>Earnings Per Share。企業の純利益を発行済株式数で割った値。決算で最も注目される収益性指標の一つ。</span></span>は$12.20（予想$9.31）、売上は$23.86B（予想$20.07B）と大幅ビート。クラウドメモリ売上+160%超の$7.75B。次四半期<span class="term">ガイダンス<span class="tip"><span class="tip-title">ガイダンス</span>企業が発表する次の四半期や年度の業績見通し。コンセンサス予想を上回れば株価にポジティブ、下回ればネガティブに反応しやすい。</span></span>も売上$33.5B、EPS$19.15と予想を大きく上回ったが、<span class="term">アフターアワーズ<span class="tip"><span class="tip-title">アフターアワーズ（時間外取引）</span>米国市場の通常取引時間（9:30-16:00 ET）終了後に行われる時間外取引。決算発表直後の株価反応はここで出ることが多い。</span></span>では-2.7%の「Sell the news」反応。</p>
+        <div class="news-why">決算で大幅ビートしても株価が下がる「Sell the news」は頻出パターン。好決算＝株価上昇ではなく、「期待 vs 現実」の差分が株価を動かすことを示しています。</div>
         <div class="news-card-footer">
           <span>決算</span>
           <span>·</span>
@@ -1157,6 +1271,7 @@ body {
         </div>
         <h3 class="news-card-title">ホルムズ海峡封鎖継続 — 世界原油供給の20%停止、WTI$100目前</h3>
         <p class="news-card-excerpt">米国・イスラエルのイラン攻撃を受け、イランが<span class="term">ホルムズ海峡<span class="tip"><span class="tip-title">ホルムズ海峡</span>ペルシャ湾とオマーン湾を結ぶ海峡。世界の原油輸送の約20%がここを通過するため、封鎖されると原油価格に甚大な影響。</span></span>を事実上封鎖。サウジ・UAE・イラク・クウェートが合計1.4億バレルの出荷を停止。カリフォルニア州のガソリンは$5/ガロン超に。一方、イラクがトルコ・ジェイハン港経由の輸出再開で合意し若干の緩和も。</p>
+        <div class="news-why">原油価格の上昇はガソリン代だけでなく、あらゆる製品の輸送コスト・製造コストを押し上げ、企業利益を圧迫します。エネルギー株には追い風、ハイテク・消費関連株には逆風です。</div>
         <div class="news-card-footer">
           <span>地政学</span>
           <span>·</span>
@@ -1175,6 +1290,7 @@ body {
         </div>
         <h3 class="news-card-title">NVIDIA、中国政府がH200チップの販売を承認 — 中国市場への供給再開へ</h3>
         <p class="news-card-excerpt">中国政府がNVIDIAの<span class="term">H200<span class="tip"><span class="tip-title">H200</span>NVIDIAのデータセンター向けAIアクセラレーター。前世代H100の後継で、HBM3eメモリを搭載しAI推論・学習の性能が大幅向上。</span></span>チップの中国国内販売を承認したとロイターが報道。米中半導体規制の中で一定の緩和シグナルとなり、NVDA株は+約1%の反応。</p>
+        <div class="news-why">米中半導体規制の緩和シグナルは、NVIDIAの中国売上回復への期待につながります。AI需要が世界的に拡大する中、中国市場のアクセス可否は半導体セクター全体の成長見通しを左右します。</div>
         <div class="news-card-footer">
           <span>テクノロジー</span>
           <span>·</span>
@@ -1193,6 +1309,7 @@ body {
         </div>
         <h3 class="news-card-title">トランプ大統領、ジョーンズ法を60日間停止 — 通商法301条の新調査も開始</h3>
         <p class="news-card-excerpt">エネルギーコスト抑制のため<span class="term">ジョーンズ法<span class="tip"><span class="tip-title">ジョーンズ法</span>米国の海運保護法（1920年制定）。米国の港間の貨物輸送を米国籍・米国建造・米国乗組員の船舶に限定する法律。停止すれば外国船も参入でき輸送コスト低下が期待される。</span></span>（外国船籍の国内輸送禁止）を60日間一時停止。同時に中国・ベトナム・台湾・メキシコ・日本・EUに対し<span class="term">301条<span class="tip"><span class="tip-title">通商法301条</span>米国通商法の条項。外国の不公正な貿易慣行に対し、大統領に関税引き上げ等の報復措置をとる権限を与える。対中関税の法的根拠として多用。</span></span>の新調査を開始。連邦裁判所が$130B超の関税還付を命令する判決も。</p>
+        <div class="news-why">関税は輸入品の価格を押し上げ、消費者と企業のコスト増につながります。一方、ジョーンズ法停止はエネルギー輸送コストの低下を狙ったもので、インフレ抑制と保護主義のバランスが焦点です。</div>
         <div class="news-card-footer">
           <span>政策</span>
           <span>·</span>
@@ -1211,6 +1328,7 @@ body {
         </div>
         <h3 class="news-card-title">Qualcomm、$200億の自社株買いプログラムを発表</h3>
         <p class="news-card-excerpt">Qualcommが$200億規模の<span class="term">自社株買い<span class="tip"><span class="tip-title">自社株買い（Share Buyback）</span>企業が市場で自社の株式を買い戻すこと。発行済株式数が減少しEPSが向上するため、株主還元策として好感されやすい。</span></span>プログラムを発表。AI対応チップの需要拡大を背景に株主還元を強化。<span class="term">時価総額<span class="tip"><span class="tip-title">時価総額</span>株価 × 発行済株式数。企業の市場での評価額を示す。$200Bの自社株買いは時価総額の約10%に相当する大型プログラム。</span></span>の約10%に相当する大型プログラム。</p>
+        <div class="news-why">自社株買いは発行済株式数を減らしEPS（1株利益）を押し上げるため、株主にとっては配当と並ぶ還元策。時価総額の10%規模は非常に大きく、経営陣の自社株への自信の表れです。</div>
         <div class="news-card-footer">
           <span>テクノロジー</span>
           <span>·</span>
@@ -1229,6 +1347,7 @@ body {
         </div>
         <h3 class="news-card-title">日経平均+2.87%の大幅反発 — FOMC前のリスクオンもFed後の反動に警戒</h3>
         <p class="news-card-excerpt">日経平均は55,239円（+2.87%）と大幅続伸。NVIDIA <span class="term">GTC<span class="tip"><span class="tip-title">GTC（GPU Technology Conference）</span>NVIDIAが毎年開催する技術カンファレンス。新GPU・AIプラットフォームの発表の場として、半導体・AI銘柄の株価を大きく動かす。</span></span>効果でテック株が牽引し<span class="term">TOPIX<span class="tip"><span class="tip-title">TOPIX（東証株価指数）</span>東京証券取引所プライム市場の全銘柄を対象とした時価総額加重型の株価指数。日経平均が225銘柄の株価平均なのに対し、TOPIXは市場全体の動きを反映。</span></span>も+2.49%。ただし米株FOMC後の急落を受け、本日のアジア市場は下落圧力が強まる見通し。</p>
+        <div class="news-why">日本株と米国株は時差で連動します。前日の米株急落は翌朝のアジア市場に波及しやすく、「米国のくしゃみで日本が風邪をひく」構図は投資タイミングを考える上で重要です。</div>
         <div class="news-card-footer">
           <span>マーケット</span>
           <span>·</span>
@@ -1321,6 +1440,48 @@ body {
         <li><strong><span class="term">QT<span class="tip"><span class="tip-title">QT（量的引き締め）</span>Quantitative Tightening。FRBが保有する国債やMBSを減らし、市場から資金を回収すること。QE（量的緩和）の逆で、金融引き締め効果がある。</span></span>減速:</strong> 4月から国債の月間償還上限を$25B→$5Bに大幅縮小し、量的引き締めペースを減速</li>
         <li><strong>市場の織り込み:</strong> 次回5月FOMCも据え置き確率85%超。初回利下げは6月以降に後ずれ</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- ===== 今日のキーワード ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">📖</span>
+      <span class="section-label-text">今日のキーワード</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="keyword-card">
+      <div class="keyword-term">スタグフレーション</div>
+      <div class="keyword-term-en">Stagflation — Stagnation + Inflation</div>
+      <div class="keyword-body">
+        <p><strong>景気が停滞（Stagnation）しているのに、物価が上がり続ける（Inflation）</strong>という、経済にとって最も厄介な状態です。通常、景気が悪くなれば物価は下がりますが、スタグフレーションではその常識が通用しません。</p>
+
+        <ul class="keyword-points">
+          <li>
+            <strong>🔍 何が起きる？</strong>
+            企業の売上は伸びないのに原材料コストは上昇。利益が圧迫され、雇用を減らし始めます。消費者は物価高で購買力が低下し、さらに景気が悪化する悪循環に。
+          </li>
+          <li>
+            <strong>📜 歴史的な前例</strong>
+            1970年代のオイルショック時が典型例。原油価格が4倍に急騰し、米国のインフレ率は13%超に。FRBは金利を20%まで引き上げ、深刻な景気後退を招きました。
+          </li>
+          <li>
+            <strong>🏦 中央銀行のジレンマ</strong>
+            利下げすればインフレ加速、利上げすれば景気悪化。FRBにとって「どちらを優先するか」の難しい判断を迫られます。今回のFOMCで「据え置き」が選ばれたのはまさにこのジレンマの表れ。
+          </li>
+          <li>
+            <strong>💼 投資への影響</strong>
+            株式・債券ともに下がりやすい環境。一方、金・コモディティ・エネルギー株は相対的に強い傾向。現金比率を高めたり、インフレに強い資産への分散が有効とされます。
+          </li>
+        </ul>
+
+        <div class="keyword-relevance">
+          今日のFOMCでSEPが示した「GDP成長率 2.1%→1.7%に下方修正」＋「PCEインフレ 2.5%→2.7%に上方修正」は、まさにスタグフレーションの初期兆候です。さらにホルムズ海峡封鎖による原油高騰が1970年代のオイルショックと重なる構図も意識されています。
+        </div>
+
+        <a class="keyword-glossary-link" href="https://yskzz121.github.io/ui-kabu-times/glossary/">📚 用語辞典で詳しく学ぶ →</a>
+      </div>
     </div>
   </section>
 
