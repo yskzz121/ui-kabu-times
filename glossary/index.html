@@ -1018,6 +1018,30 @@ var TERMS = [
     short: "不公正な貿易慣行に対する大統領の報復権限",
     full: "1974年米国通商法の第301条。外国政府の不合理・不公正な貿易慣行に対し、大統領に関税引き上げ等の報復措置をとる権限を与える条項。2018年にトランプ政権が中国の知的財産権侵害を理由に301条を発動し、対中関税の法的根拠とした。WTOの紛争解決手続きを経ずに一方的に制裁を課せるため、「アメリカファースト」の通商政策の象徴的ツール。",
     visual: '<div class="vis-diagram"><div class="vis-diagram-title">通商法301条の発動プロセス</div><div class="vis-flow"><div class="vis-flow-step">USTR調査開始<br><small>不公正貿易の調査</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step negative">不公正認定<br><small>知財侵害・補助金等</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step negative">報復関税発動<br><small>大統領権限</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step negative">貿易相手国への影響<br><small>輸出減・報復関税</small></div></div></div><div class="vis-diagram"><div class="vis-diagram-title">対中301条関税率の推移</div><table class="vis-table"><tr><th>対象</th><th>2018年発動時</th><th>2024年改定後</th><th>影響</th></tr><tr><td>半導体</td><td>25%</td><td>50%</td><td>サプライチェーン再編加速</td></tr><tr><td>EV（電気自動車）</td><td>27.5%</td><td>100%</td><td>中国EVの米国進出を事実上遮断</td></tr><tr><td>太陽光パネル</td><td>25%</td><td>50%</td><td>国内製造回帰を促進</td></tr><tr><td>鉄鋼・アルミ</td><td>25%</td><td>25%</td><td>維持（232条と併用）</td></tr><tr><td>リチウム電池</td><td>7.5%</td><td>25%</td><td>バッテリーサプライチェーン再編</td></tr></table></div><div class="vis-callout warning"><strong>⚠️ 市場への影響:</strong> 301条関税の発動・拡大はサプライチェーンのコスト増→企業収益圧迫→株価下落の経路で市場に波及する。特に中国売上比率の高い企業（半導体・アパレル・自動車）は要注意。</div>'
+  },
+  {
+    id: "flashcrash",
+    ja: "フラッシュクラッシュ",
+    en: "Flash Crash",
+    cat: "market",
+    catLabel: "マーケット",
+    catIcon: "📈",
+    morning: true,
+    short: "数分〜数十分で資産価格が急落し急速に戻る現象。アルゴリズム取引の連鎖売りが主因。",
+    full: "数分〜数十分という超短時間で資産価格が急落し、その後急速に戻る現象。アルゴリズム取引やHFT（高頻度取引）が大量の売り注文を検知し、自動的に売りを追随することで流動性が枯渇し、価格が瞬間的に暴落する。2010年5月6日のダウ平均1,000pt急落（約9%、36分間で回復）が最も有名。2026年3月19日には金（Gold）が一時7%急落するフラッシュクラッシュが発生した。",
+    visual: '<img src="https://images.pexels.com/photos/386318/pexels-photo-386318.jpeg?auto=compress&cs=tinysrgb&w=800" alt="金の延べ棒" loading="lazy"><div class="img-caption">Photo: Gold bullion — フラッシュクラッシュの標的になることも</div><div class="vis-diagram"><div class="vis-diagram-title">フラッシュクラッシュの連鎖メカニズム</div><div class="vis-flow"><div class="vis-flow-step negative">大量売り注文<br><small>パニック or 誤発注</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step negative">アルゴ追随売り<br><small>自動損切り連鎖</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step negative">流動性枯渇<br><small>買い手不在</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">価格急反発<br><small>割安感で買い殺到</small></div></div></div><div class="vis-diagram"><div class="vis-diagram-title">主要フラッシュクラッシュ事例</div><table class="vis-table"><tr><th>日付</th><th>対象</th><th>下落幅</th><th>回復時間</th><th>原因</th></tr><tr><td>2010年5月</td><td>ダウ平均</td><td>-9%（1,000pt）</td><td>約36分</td><td>スプーフィング</td></tr><tr><td>2015年8月</td><td>S&P 500 ETF</td><td>-5%超</td><td>数時間</td><td>中国株暴落連鎖</td></tr><tr><td>2019年1月</td><td>ドル円</td><td>-4%（109→104円）</td><td>数分</td><td>薄商い+アルゴ</td></tr><tr><td>2026年3月</td><td>金（Gold）</td><td>-7%（$4,918→$4,551）</td><td>—</td><td>FOMC+中東パニック</td></tr></table></div><div class="vis-callout warning"><strong>⚠️ 個人投資家への注意:</strong> フラッシュクラッシュ時のストップロス（逆指値）注文は想定外の安値で約定するリスクあり。指値注文の活用やパニック時に売らない心構えが重要。</div>'
+  },
+  {
+    id: "lng",
+    ja: "LNG",
+    en: "Liquefied Natural Gas",
+    cat: "geo",
+    catLabel: "地政学・通商",
+    catIcon: "🌍",
+    morning: true,
+    short: "天然ガスを-162℃に冷却して液化したもの。タンカーで海上輸送が可能になり、日本のエネルギー供給の重要な柱。",
+    full: "Liquefied Natural Gas（液化天然ガス）。天然ガスをマイナス162℃に冷却して液化することで、体積を気体時の約1/600に圧縮し、専用タンカーで海上輸送可能にしたもの。日本は世界最大級のLNG輸入国で、電力・都市ガスの主要燃料。カタール・オーストラリア・米国が主要供給国。ホルムズ海峡はカタール産LNGの輸送ルートであり、同海峡の封鎖はLNG供給に甚大な影響を与える。",
+    visual: '<div class="vis-diagram"><div class="vis-diagram-title">LNGのサプライチェーン</div><div class="vis-flow"><div class="vis-flow-step">天然ガス採掘<br><small>ガス田</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">液化プラント<br><small>-162℃に冷却</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">LNGタンカー<br><small>海上輸送</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">受入基地<br><small>再気化→発電・都市ガス</small></div></div></div><div class="vis-diagram"><div class="vis-diagram-title">世界のLNG供給国シェア（2025年）</div><div class="vis-bars"><div class="vis-bar-row"><span class="vis-bar-label">カタール</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:22%">22%</div></div></div><div class="vis-bar-row"><span class="vis-bar-label">オーストラリア</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:21%">21%</div></div></div><div class="vis-bar-row"><span class="vis-bar-label">米国</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:20%">20%</div></div></div><div class="vis-bar-row"><span class="vis-bar-label">ロシア</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:8%">8%</div></div></div><div class="vis-bar-row"><span class="vis-bar-label">マレーシア</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:7%">7%</div></div></div></div></div><div class="vis-callout warning"><strong>⚠️ 日本への影響:</strong> 日本の電力の約35%がLNG火力発電。カタール産LNGがホルムズ海峡封鎖で途絶えた場合、電力供給と都市ガス料金に直接影響する。</div>'
   }
 ];
 
