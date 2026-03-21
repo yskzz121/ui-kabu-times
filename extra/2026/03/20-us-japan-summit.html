@@ -932,13 +932,29 @@ body {
 .profile-card {
   display: flex;
   gap: 18px;
-  padding: 18px;
+  padding: 24px;
   background: rgba(188,140,255,.06);
   border: 1px solid rgba(188,140,255,.15);
   border-radius: var(--radius-md);
   margin: 16px 0;
   align-items: flex-start;
+  position: relative;
+  overflow: hidden;
 }
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 55%;
+  height: 100%;
+  background: url('takaosuguru.jpg') center top / cover no-repeat;
+  opacity: .12;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.6) 40%, rgba(0,0,0,1) 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.6) 40%, rgba(0,0,0,1) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.profile-card > * { position: relative; z-index: 1; }
 .profile-icon { font-size: 40px; flex-shrink: 0; }
 .profile-info { flex: 1; }
 .profile-name { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
@@ -965,6 +981,7 @@ body {
   .feature-title { font-size: 22px; }
   .feature-chapter { font-size: 16px; }
   .profile-card { flex-direction: column; gap: 12px; }
+  .profile-card::before { width: 100%; opacity: .08; mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.8) 100%); -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.8) 100%); }
   .profile-stats { grid-template-columns: repeat(3, 1fr); }
 }
 
@@ -1260,7 +1277,6 @@ body {
         </p>
 
         <div class="profile-card">
-          <img src="takaosuguru.jpg" alt="高尾直氏" style="width:90px;height:90px;object-fit:cover;border-radius:10px;flex-shrink:0;border:1px solid var(--border);">
           <div class="profile-info">
             <div class="profile-name">高尾 直（たかお すぐる）</div>
             <div class="profile-role">外務省北米局 日米地位協定室長（2025年2月〜）</div>
