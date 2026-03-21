@@ -815,6 +815,160 @@ body {
 }
 
 /* ==========================================
+   Side Story / Feature
+   ========================================== */
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent), var(--accent-green));
+}
+.feature-header {
+  padding: 32px 28px 0;
+}
+.feature-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 100px;
+  background: var(--accent-purple-light);
+  color: var(--accent-purple);
+  letter-spacing: .06em;
+  margin-bottom: 12px;
+}
+.feature-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+.feature-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+.feature-body {
+  padding: 24px 28px 28px;
+}
+.feature-body p {
+  font-size: 15px;
+  line-height: 2;
+  margin-bottom: 18px;
+}
+.feature-body p:last-child { margin-bottom: 0; }
+.feature-chapter {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--accent-purple);
+  margin: 28px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.feature-chapter:first-child { margin-top: 0; }
+.feature-quote {
+  margin: 16px 0;
+  padding: 16px 20px;
+  border-left: 4px solid var(--accent-purple);
+  background: var(--accent-purple-light);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+.feature-quote-attr {
+  display: block;
+  font-style: normal;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-weight: 600;
+}
+.feature-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 24px;
+  margin: 16px 0;
+}
+.feature-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: var(--accent-purple);
+  opacity: .3;
+}
+.ft-item { position: relative; padding: 10px 0 10px 20px; }
+.ft-item::before {
+  content: '';
+  position: absolute;
+  left: -20px; top: 16px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent-purple);
+  border: 2px solid var(--bg-primary);
+}
+.ft-item.highlight::before { background: var(--accent-green); }
+.ft-date { font-size: 12px; font-weight: 700; color: var(--accent-purple); }
+.ft-text { font-size: 14px; font-weight: 600; }
+.ft-detail { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+.profile-card {
+  display: flex;
+  gap: 18px;
+  padding: 18px;
+  background: rgba(188,140,255,.06);
+  border: 1px solid rgba(188,140,255,.15);
+  border-radius: var(--radius-md);
+  margin: 16px 0;
+  align-items: flex-start;
+}
+.profile-icon { font-size: 40px; flex-shrink: 0; }
+.profile-info { flex: 1; }
+.profile-name { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+.profile-role { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-bottom: 8px; }
+.profile-bio { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+.profile-stat {
+  text-align: center;
+  padding: 8px;
+  background: rgba(188,140,255,.08);
+  border-radius: 6px;
+}
+.profile-stat-num { font-family: 'Inter', var(--font-sans); font-size: 20px; font-weight: 800; color: var(--accent-purple); }
+.profile-stat-label { font-size: 10px; color: var(--text-muted); font-weight: 600; }
+
+@media (max-width: 767px) {
+  .feature-header { padding: 24px 20px 0; }
+  .feature-body { padding: 20px 20px 24px; }
+  .feature-title { font-size: 22px; }
+  .feature-chapter { font-size: 16px; }
+  .profile-card { flex-direction: column; gap: 12px; }
+  .profile-stats { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ==========================================
    Print
    ========================================== */
 @media print {
@@ -1062,6 +1216,164 @@ body {
           トランプ大統領はホルムズ海峡の安全保障貢献を要請。高市首相は「日本の法律の範囲内でできることとできないことがある」と法的制約を説明し、艦船派遣要求への直接的な回答は「機微なやりとり」として明言を避けました。今後の日米同盟における最大の「宿題」として残されています。
         </p>
         <div class="news-why">ホルムズ海峡封鎖リスクは原油価格急騰に直結。自衛隊の海外派遣を巡る国内議論が再燃する可能性があり、政治リスクとしても注視。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SIDE STORY: 安倍→高市のトランプ外交 ===== -->
+  <section class="section">
+    <div class="section-label">
+      <span class="section-label-icon">📖</span>
+      <span class="section-label-text">特集 — 安倍外交の継承者たち</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-header">
+        <span class="feature-badge">SIDE STORY</span>
+        <h2 class="feature-title">「ジャパン・イズ・バック」— 安倍から高市へ受け継がれたトランプ外交の系譜</h2>
+        <p class="feature-subtitle">ゴルフクラブ、スーパー通訳、そしてファーストネーム外交。日米関係の「裏の主役」たちの物語</p>
+      </div>
+
+      <div class="feature-body">
+
+        <!-- Chapter 1 -->
+        <div class="feature-chapter">🏌️ 第1章 — 安倍晋三が築いた「ゴルフ外交」の伝説</div>
+        <p>
+          始まりは2016年11月。大統領選に勝利したばかりのトランプ氏のもとに、世界中の首脳に先駆けて駆けつけた人物がいました。安倍晋三首相です。ニューヨークのトランプタワーでの異例の会談 — <span class="summary-label">就任前の次期大統領と外国首脳が会うのは「近年例がない」</span>と外務省も認める前代未聞の出来事でした。安倍首相はゴルフクラブを贈り、トランプ氏からはゴルフシャツが返されました。ここから始まった「ゴルフ外交」は通算5回に及びます。
+        </p>
+        <p>
+          安倍氏は後にこう語っています。
+        </p>
+        <div class="feature-quote">
+          「ゴルフは抑止力のためにやっていた。あれだけ仲が良かったら、日本が攻撃を受けた場合は米国は絶対に報復するだろう — と他国は思う」
+          <span class="feature-quote-attr">— 安倍晋三元首相</span>
+        </div>
+        <p>
+          ジョン・ボルトン元米大統領補佐官は回顧録で<span class="summary-label">「世界のリーダーでトランプ大統領と最も個人的な関係を築いたのは安倍晋三だ」</span>と記しています。両首脳は「ドナルド」「シンゾー」とファーストネームで呼び合い、首脳会談14回以上、電話会談36回以上という驚異的な頻度の対話を重ねました。
+        </p>
+
+        <!-- Chapter 2: 高尾直 -->
+        <div class="feature-chapter">🎙️ 第2章 — 「総理大臣ジュニア」と呼ばれた男</div>
+        <p>
+          安倍・トランプのあらゆる対話の傍らに、常に一人の日本人がいました。外務省通訳官・<span class="summary-label">高尾直（たかお すぐる）氏</span>です。
+        </p>
+
+        <div class="profile-card">
+          <div class="profile-icon">🎙️</div>
+          <div class="profile-info">
+            <div class="profile-name">高尾 直（たかお すぐる）</div>
+            <div class="profile-role">外務省北米局 日米地位協定室長（2025年2月〜）</div>
+            <div class="profile-bio">
+              米国生まれの帰国子女。開成高校 → 東京大学法学部 → ハーバード大学ケネディ・スクール（公共政策修士）。2003年外務省入省。安倍首相の英語通訳を約8年間務めた「スーパー通訳」。ピアノの腕前は同窓生とリサイタルを開くほど。
+            </div>
+            <div class="profile-stats">
+              <div class="profile-stat">
+                <div class="profile-stat-num">14+</div>
+                <div class="profile-stat-label">首脳会談</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-num">36+</div>
+                <div class="profile-stat-label">電話会談</div>
+              </div>
+              <div class="profile-stat">
+                <div class="profile-stat-num">5</div>
+                <div class="profile-stat-label">ゴルフ会合</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          高尾氏の名を世に知らしめたのは、安倍首相とトランプ大統領のゴルフ外交でした。ゴルフカートの後部座席に同乗し、<span class="summary-label">プレー中も安倍首相の日本語をリアルタイムで英語に通訳し続ける</span>姿が大きな話題に。朝鮮日報は「トランプ大統領と一緒にゴルフカートに乗るハーバード卒エリート外交官」と報じました。
+        </p>
+        <p>
+          トランプ大統領は高尾氏を単なる通訳とは見ていませんでした。呼び名は<span class="summary-label">「Little Prime Minister（小さな首相）」</span>、あるいは<span class="summary-label">「Junior Prime Minister（総理大臣ジュニア）」</span>。高尾氏の通訳は「コンパクトで伝わりやすい」と評され、単なる逐語訳ではなく双方の発言の真意を理解した上での意訳を行いました。外務省幹部が「よくもここまで双方の真意を理解して通訳しているものだ」と舌を巻くほどの腕前です。会談前にはトランプ大統領の演説を徹夜で研究するなど、徹底した準備でも知られています。
+        </p>
+        <p>
+          2022年の安倍元首相の死去後も、高尾氏はトランプとの「パイプ」として重用され続けています。2025年2月の石破・トランプ会談、そして今回の高市・トランプ会談でも通訳を担当。幹部ポストである日米地位協定室長を通訳に起用するのは異例中の異例であり、共同通信は<span class="summary-label">「トランプ・シフト」</span>と報じました。日経新聞も「トランプ大統領に高市首相の言葉は響いたか — 通訳の表現を分析」と題した記事を掲載しています。
+        </p>
+
+        <!-- Chapter 3 -->
+        <div class="feature-chapter">🇯🇵 第3章 — 高市早苗、安倍外交を継承する</div>
+        <p>
+          2025年10月、高市早苗氏が日本初の女性首相に就任。就任からわずか1週間後の10月28日、東京・迎賓館でトランプ大統領との初首脳会談に臨みました。The Diplomatはこの会談を<span class="summary-label">「高市、安倍レガシー・お世辞・防衛計画でトランプに切り込む」</span>と評しています。
+        </p>
+        <p>
+          高市首相が用意したサプライズは、故安倍晋三元首相が生前使っていた<span class="summary-label">ゴルフ用パター</span>の贈呈でした。あわせて松山英樹選手のサイン入りキャディバッグ、金沢の金箔を施したゴルフボールも。安倍氏のゴルフ外交の精神を形にした贈り物です。両首脳は「Japan is Back」と金色で刺繍された黒い野球帽にサインしました。
+        </p>
+        <p>
+          米シンクタンクの専門家は高市首相に対し「安倍氏のように懐に飛び込む、褒めまくる、腹心には敬意と配慮を」と助言したとJBpressが報じています。高市首相はこの助言を忠実に実践。安倍昭恵夫人の人脈も活用し — 昭恵夫人は2024年12月にトランプの別荘マール・ア・ラーゴに招待されています — 関係構築を加速させました。
+        </p>
+
+        <!-- Chapter 4 -->
+        <div class="feature-chapter">✊ 第4章 — 「ジャパン・イズ・バック！」</div>
+        <p>
+          そして2026年3月19日。初の訪米でホワイトハウスの夕食会に臨んだ高市首相は、スピーチでこう切り出しました。
+        </p>
+        <div class="feature-quote">
+          「ドナルドと親交が深かった安倍晋三元総理が、かつてこのワシントンD.C.の地で高らかにうたわれた言葉を、誇りと自信を持ってこの場で皆さんに再びお伝えいたします」
+          <span class="feature-quote-attr">— 高市早苗首相、ホワイトハウス夕食会にて</span>
+        </div>
+        <p>
+          そして<span class="summary-label">拳を突き上げて「ジャパン・イズ・バック！」と叫びました</span>。会場は爆笑と拍手に包まれました。
+        </p>
+        <p>
+          この言葉は、2013年2月に安倍首相がワシントンの<span class="term tip-right">CSIS<span class="tip"><span class="tip-title">CSIS（戦略国際問題研究所）</span>ワシントンD.C.にある世界的に影響力のあるシンクタンク。安倍首相が2013年に「Japan is Back」と題した歴史的演説を行った場所。日本の復活とアベノミクス、積極的平和主義を世界に発信しました。</span></span>で行った歴史的演説のタイトルです。安倍外交の直接的な継承者であることを、世界に向けて宣言した瞬間でした。
+        </p>
+        <p>
+          スピーチではさらに、トランプ氏のご子息バロン氏の誕生日に触れ「立派でイケメンに成長されていると伺っています。間違いなくご両親に似たんだと思います」と述べて爆笑を誘い、「われわれは最強のバディだ」と締めくくりました。夕食会ではX JAPANの楽曲が流れ、桜250本の寄贈にトランプ大統領は「一緒に見に行こう」と応じました。
+        </p>
+
+        <!-- Timeline -->
+        <div class="feature-chapter">📅 安倍→高市トランプ外交 年表</div>
+        <div class="feature-timeline">
+          <div class="ft-item">
+            <div class="ft-date">2016年11月</div>
+            <div class="ft-text">安倍首相、トランプタワーで異例の初会談</div>
+            <div class="ft-detail">就任前のトランプ氏と世界の首脳で最初に会談。ゴルフクラブを贈呈</div>
+          </div>
+          <div class="ft-item">
+            <div class="ft-date">2017年2月〜2019年6月</div>
+            <div class="ft-text">安倍・トランプ「ゴルフ外交」通算5回</div>
+            <div class="ft-detail">高尾直氏がゴルフカートに同乗し通訳。「スーパー通訳」の異名がつく</div>
+          </div>
+          <div class="ft-item">
+            <div class="ft-date">2022年7月</div>
+            <div class="ft-text">安倍晋三元首相、銃撃により死去</div>
+            <div class="ft-detail">トランプ氏「安倍がいなくなりさみしい」と声明</div>
+          </div>
+          <div class="ft-item">
+            <div class="ft-date">2024年12月</div>
+            <div class="ft-text">安倍昭恵夫人、マール・ア・ラーゴに招待</div>
+            <div class="ft-detail">トランプファミリーとの人脈が高市外交に活用される</div>
+          </div>
+          <div class="ft-item">
+            <div class="ft-date">2025年2月</div>
+            <div class="ft-text">高尾直氏、石破・トランプ会談で通訳</div>
+            <div class="ft-detail">幹部ポストを通訳に起用する異例の「トランプ・シフト」</div>
+          </div>
+          <div class="ft-item highlight">
+            <div class="ft-date">2025年10月</div>
+            <div class="ft-text">高市早苗、日本初の女性首相に就任</div>
+            <div class="ft-detail">自民党総裁選で勝利。安倍氏の後継者として保守派を結集</div>
+          </div>
+          <div class="ft-item highlight">
+            <div class="ft-date">2025年10月28日</div>
+            <div class="ft-text">高市・トランプ初首脳会談（東京・迎賓館）</div>
+            <div class="ft-detail">安倍氏のパター贈呈。「Japan is Back」野球帽にサイン。「日米の黄金時代」で合意</div>
+          </div>
+          <div class="ft-item highlight">
+            <div class="ft-date">2026年3月19日</div>
+            <div class="ft-text">高市首相初訪米 — ホワイトハウス夕食会</div>
+            <div class="ft-detail">拳を突き上げ「ジャパン・イズ・バック！」。桜250本寄贈。X JAPANが流れる</div>
+          </div>
+        </div>
+
+        <p>
+          安倍晋三が個人的な信頼関係で築いたトランプ外交を、高市早苗がレガシーとして継承し、高尾直が通訳として一貫性を担保する — この三者の連携が、今回の「ほぼ無傷」の首脳会談を支えた構図です。Bloombergは<span class="summary-label">「トランプ氏歓待成功、高市首相の外交本格始動」</span>と評しています。
+        </p>
+
       </div>
     </div>
   </section>
