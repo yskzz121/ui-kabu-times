@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沖縄不動産地価分析レポート 2026年版 — U&I株倶楽部</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50:'#f0f5ff',100:'#dde8ff',200:'#c0d4ff',300:'#95b6ff',
+          400:'#6492ff',500:'#2b70ef',600:'#2250df',700:'#1a40b5',
+          800:'#13318d',900:'#0e266a',950:'#07194e'
+        }
+      },
+      fontFamily: {
+        sans: ['Inter','Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','sans-serif'],
+        serif: ['Noto Serif JP','serif']
+      }
+    }
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  .text-body { color: #3d4b5f; }
+  .dark .text-body { color: #b0bec5; }
+  .hero-bg {
+    background-image: url('https://images.pexels.com/photos/1412235/pexels-photo-1412235.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(240,245,255,0.88));
+    transition: background 0.3s;
+  }
+  .dark .hero-bg::before {
+    background: linear-gradient(135deg, rgba(13,17,23,0.92), rgba(22,27,34,0.88));
+  }
+  .hero-bg > * { position: relative; z-index: 1; }
+  .section-img {
+    border-radius: 0.75rem;
+    object-fit: cover;
+    width: 100%;
+    height: 12rem;
+    margin-bottom: 1rem;
+  }
+  /* Dark mode transitions */
+  body, .bg-white, .bg-gray-50 dark:bg-slate-900, .border-slate-200, .bg-emerald-50, .bg-primary-50, .bg-red-50, .bg-amber-50 {
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  }
+  /* Theme toggle button */
+  .theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 50;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .theme-toggle:hover { transform: scale(1.08); }
+  @media(max-width:768px) {
+    .metrics-grid { grid-template-columns: 1fr 1fr !important; }
+    .scenario-grid { grid-template-columns: 1fr !important; }
+    .theme-toggle { top: 12px; right: 12px; width: 38px; height: 38px; }
+  }
+  @media(max-width:480px) {
+    .metrics-grid { grid-template-columns: 1fr !important; }
+  }
+</style>
+</head>
+<body class="bg-gray-50 dark:bg-slate-900 dark:bg-slate-900 min-h-screen font-sans transition-colors duration-300">
+
+<!-- Theme Toggle -->
+<button class="theme-toggle bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200" onclick="toggleTheme()" aria-label="テーマ切替" title="ダーク/ライト切替">
+  <span id="themeIcon">🌙</span>
+</button>
+
+<!-- ===== HEADER ===== -->
+<header class="hero-bg">
+  <div class="max-w-5xl mx-auto px-6 py-16 text-center">
+    <div class="inline-flex items-center gap-2 bg-primary-50 border border-primary-200 rounded-full px-4 py-1.5 text-sm font-medium text-primary-600 mb-6">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+      U&I 株倶楽部 ｜ 特集レポート
+    </div>
+    <h1 class="font-serif text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight mb-3">
+      特集 沖縄不動産地価分析レポート<br><span class="text-primary-500">2026年版</span>
+    </h1>
+    <p class="text-body text-lg mb-2">公示地価・基準地価に基づく総合分析</p>
+    <p class="text-slate-500 text-sm">2026年3月22日</p>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-6 py-12">
+
+  <!-- ===== EXECUTIVE SUMMARY ===== -->
+  <section>
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">エグゼクティブサマリー</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">8つのキーポイント</p>
+    <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm">
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+            <svg class="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <span class="text-body"><span class="font-semibold text-emerald-600">13年連続上昇</span> — 全186地点が上昇（全用途平均 <span class="font-semibold text-emerald-600">+6.6%</span>）</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+            <svg class="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <span class="text-body"><span class="font-semibold text-emerald-600">全国2位の上昇率</span>（東京に次ぐ）</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+            <svg class="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <span class="text-body">観光客 <span class="font-semibold text-emerald-600">1,075万人突破</span>（2025年・過去最高）</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 flex items-center justify-center">
+            <svg class="w-3 h-3 text-primary-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </span>
+          <span class="text-body"><span class="font-semibold text-primary-600">基地返還跡地</span>が最大のカタリスト</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+            <svg class="w-3 h-3 text-amber-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </span>
+          <span class="text-body">上昇率の<span class="font-semibold text-amber-600">二極化</span>（+18.6% vs +0.9%）</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center">
+            <svg class="w-3 h-3 text-amber-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </span>
+          <span class="text-body">離島過熱（宮古島 <span class="font-semibold text-amber-600">+12.3%</span>）</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-red-100 flex items-center justify-center">
+            <svg class="w-3 h-3 text-red-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          </span>
+          <span class="text-body"><span class="font-semibold text-red-600">金利上昇</span>が下押し圧力</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center">
+            <svg class="w-3 h-3 text-emerald-600" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          </span>
+          <span class="text-body">投資有望エリア: <span class="font-semibold text-emerald-600">浦添市・豊見城市</span></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== KEY METRICS ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">Key Metrics</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">2026年公示地価 主要指標</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 metrics-grid">
+      <!-- Card 1 -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 text-center shadow-sm">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">全用途平均</p>
+        <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">172,134<span class="text-sm font-normal text-slate-500">円/㎡</span></p>
+        <p class="text-xs text-slate-500 mt-1">≒56.9万円/坪</p>
+        <p class="text-emerald-600 font-medium text-sm mt-2">+6.6%</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 text-center shadow-sm">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">住宅地</p>
+        <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">130,498<span class="text-sm font-normal text-slate-500">円/㎡</span></p>
+        <p class="text-xs text-slate-500 mt-1">≒43.1万円/坪</p>
+        <p class="text-emerald-600 font-medium text-sm mt-2">+6.4%</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 text-center shadow-sm">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">商業地</p>
+        <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">261,270<span class="text-sm font-normal text-slate-500">円/㎡</span></p>
+        <p class="text-xs text-slate-500 mt-1">≒86.4万円/坪</p>
+        <p class="text-emerald-600 font-medium text-sm mt-2">+7.3%</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 text-center shadow-sm">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">全国順位</p>
+        <p class="text-3xl font-bold text-primary-500">2<span class="text-lg font-normal text-slate-500">位</span></p>
+        <p class="text-xs text-slate-500 mt-1">上昇率ランキング</p>
+      </div>
+      <!-- Card 5 -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 text-center shadow-sm">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">連続上昇</p>
+        <p class="text-3xl font-bold text-primary-500">13<span class="text-lg font-normal text-slate-500">年</span></p>
+        <p class="text-xs text-slate-500 mt-1">2014年〜</p>
+      </div>
+      <!-- Card 6 -->
+      <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5 text-center shadow-sm">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">上昇地点</p>
+        <p class="text-3xl font-bold text-emerald-600">186<span class="text-lg font-normal text-slate-500">/186</span></p>
+        <p class="text-xs text-slate-500 mt-1">100%</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 地価推移チャート ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">地価推移（2017〜2026）</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">住宅地・商業地の10年トレンド</p>
+    <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm">
+      <canvas id="chartTrend" height="320"></canvas>
+    </div>
+  </section>
+
+  <!-- ===== エリア別地価 ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">エリア別地価</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">主要市町村の平均地価と変動率</p>
+    <img src="https://images.pexels.com/photos/1044329/pexels-photo-1044329.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="沖縄エリア" class="section-img">
+    <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 dark:bg-slate-900">
+            <th class="text-left px-5 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider">エリア</th>
+            <th class="text-right px-5 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider">平均地価(円/㎡)</th>
+            <th class="text-right px-5 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider">変動率</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+          <tr class="hover:bg-gray-50 dark:bg-slate-900 transition"><td class="px-5 py-3 font-medium text-slate-900">那覇市</td><td class="px-5 py-3 text-right text-body">330,244</td><td class="px-5 py-3 text-right text-emerald-600 font-medium">+5.97%</td></tr>
+          <tr class="hover:bg-gray-50 dark:bg-slate-900 transition"><td class="px-5 py-3 font-medium text-slate-900">北谷町</td><td class="px-5 py-3 text-right text-body">205,600</td><td class="px-5 py-3 text-right text-emerald-600 font-medium">+9.19%</td></tr>
+          <tr class="hover:bg-gray-50 dark:bg-slate-900 transition"><td class="px-5 py-3 font-medium text-slate-900">浦添市</td><td class="px-5 py-3 text-right text-body">180,605</td><td class="px-5 py-3 text-right text-emerald-600 font-medium">+5.46%</td></tr>
+          <tr class="hover:bg-gray-50 dark:bg-slate-900 transition"><td class="px-5 py-3 font-medium text-slate-900">宜野湾市</td><td class="px-5 py-3 text-right text-body">151,176</td><td class="px-5 py-3 text-right text-emerald-600 font-medium">+8.89%</td></tr>
+          <tr class="hover:bg-gray-50 dark:bg-slate-900 transition"><td class="px-5 py-3 font-medium text-slate-900">豊見城市</td><td class="px-5 py-3 text-right text-body">129,192</td><td class="px-5 py-3 text-right text-emerald-600 font-medium">+6.84%</td></tr>
+          <tr class="hover:bg-gray-50 dark:bg-slate-900 transition"><td class="px-5 py-3 font-medium text-slate-900">名護市</td><td class="px-5 py-3 text-right text-body">—</td><td class="px-5 py-3 text-right text-emerald-600 font-medium">+4.82%</td></tr>
+          <tr class="hover:bg-gray-50 dark:bg-slate-900 transition"><td class="px-5 py-3 font-medium text-slate-900">恩納村</td><td class="px-5 py-3 text-right text-body">—</td><td class="px-5 py-3 text-right text-emerald-600 font-medium">+9.88%</td></tr>
+          <tr class="hover:bg-gray-50 dark:bg-slate-900 transition"><td class="px-5 py-3 font-medium text-slate-900">宮古島市</td><td class="px-5 py-3 text-right text-body">34,200</td><td class="px-5 py-3 text-right text-emerald-600 font-medium">+12.30%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== エリア別変動率チャート ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">エリア別変動率</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">全国平均+3.4%との比較</p>
+    <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm">
+      <canvas id="chartArea" height="340"></canvas>
+    </div>
+  </section>
+
+  <!-- ===== 住宅地上昇率TOP10 ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">住宅地 上昇率ランキング TOP10</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">2026年公示地価</p>
+    <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50 dark:bg-slate-900">
+              <th class="text-center px-4 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider w-12">#</th>
+              <th class="text-left px-4 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider">地点</th>
+              <th class="text-right px-4 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider">地価(円/㎡)</th>
+              <th class="text-right px-4 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider">上昇率</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-100 text-amber-700 text-xs font-bold">1</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">宜野湾市野嵩3丁目</td>
+              <td class="px-4 py-3 text-right text-body">121,000</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+18.63%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">2</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">宮古島市上野字野原</td>
+              <td class="px-4 py-3 text-right text-body">15,500</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+16.54%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-orange-100 text-orange-700 text-xs font-bold">3</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">うるま市石川東恩納</td>
+              <td class="px-4 py-3 text-right text-body">53,500</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+12.63%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-50 text-slate-500 text-xs font-bold">4</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">宮古島市平良字西里</td>
+              <td class="px-4 py-3 text-right text-body">64,800</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+12.31%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-50 text-slate-500 text-xs font-bold">5</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">宮古島市城辺字比嘉</td>
+              <td class="px-4 py-3 text-right text-body">11,000</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+11.90%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-50 text-slate-500 text-xs font-bold">6</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">宮古島市平良字下里</td>
+              <td class="px-4 py-3 text-right text-body">52,900</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+11.37%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-50 text-slate-500 text-xs font-bold">7</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">宮古島市平良字東仲宗根</td>
+              <td class="px-4 py-3 text-right text-body">47,600</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+10.70%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-50 text-slate-500 text-xs font-bold">8</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">北谷町桑江1丁目</td>
+              <td class="px-4 py-3 text-right text-body">240,000</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+10.60%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-50 text-slate-500 text-xs font-bold">9</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">北谷町字桑江</td>
+              <td class="px-4 py-3 text-right text-body">157,000</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+9.79%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-50 text-slate-500 text-xs font-bold">10</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">北中城村字喜舎場</td>
+              <td class="px-4 py-3 text-right text-body">98,300</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+9.22%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 商業地TOP5 ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">商業地 上昇率ランキング TOP5</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">2026年公示地価</p>
+    <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50 dark:bg-slate-900">
+              <th class="text-center px-4 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider w-12">#</th>
+              <th class="text-left px-4 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider">地点</th>
+              <th class="text-right px-4 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider">地価(円/㎡)</th>
+              <th class="text-right px-4 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider">上昇率</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-100 text-amber-700 text-xs font-bold">1</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">本部町字大浜大崎原</td>
+              <td class="px-4 py-3 text-right text-body">66,800</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+22.12%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">2</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">宜野湾市新城2丁目</td>
+              <td class="px-4 py-3 text-right text-body">185,000</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+19.35%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-orange-100 text-orange-700 text-xs font-bold">3</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">宮古島市平良字西里羽立</td>
+              <td class="px-4 py-3 text-right text-body">149,000</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+14.62%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-50 text-slate-500 text-xs font-bold">4</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">宜野湾市普天間2丁目</td>
+              <td class="px-4 py-3 text-right text-body">128,000</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+14.29%</td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3"><span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-slate-50 text-slate-500 text-xs font-bold">5</span></td>
+              <td class="px-4 py-3 font-medium text-slate-900">宮古島市平良字下里</td>
+              <td class="px-4 py-3 text-right text-body">73,500</td>
+              <td class="px-4 py-3 text-right text-emerald-600 font-semibold">+12.73%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== マンション市場 ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">マンション市場</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">新築・中古・再販価値</p>
+    <img src="https://images.pexels.com/photos/87223/pexels-photo-87223.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="マンション" class="section-img">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm text-center">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">新築マンション</p>
+        <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">5,160<span class="text-sm font-normal text-slate-500">万円</span></p>
+        <p class="text-xs text-slate-500 mt-1">坪単価 155万円</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm text-center">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">中古マンション</p>
+        <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">2,860<span class="text-sm font-normal text-slate-500">万円</span></p>
+        <p class="text-xs text-slate-500 mt-1">平均取引価格</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm text-center">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">再販価値</p>
+        <p class="text-2xl font-bold text-emerald-600">158.3<span class="text-sm font-normal text-slate-500">%</span></p>
+        <p class="text-xs text-slate-500 mt-1">リセールバリュー</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 投資利回り ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">投資利回り</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">物件タイプ別の想定利回り</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary-50 text-primary-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </span>
+          <div>
+            <p class="text-sm font-medium text-slate-900">区分マンション</p>
+            <p class="text-xs text-slate-500">ワンルーム〜ファミリー</p>
+          </div>
+        </div>
+        <p class="text-2xl font-bold text-primary-500">4〜6<span class="text-sm font-normal text-slate-500">%</span></p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          </span>
+          <div>
+            <p class="text-sm font-medium text-slate-900">一棟アパート</p>
+            <p class="text-xs text-slate-500">木造・RC</p>
+          </div>
+        </div>
+        <p class="text-2xl font-bold text-emerald-600">5〜8<span class="text-sm font-normal text-slate-500">%</span></p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-50 text-amber-600">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </span>
+          <div>
+            <p class="text-sm font-medium text-slate-900">軍用地</p>
+            <p class="text-xs text-slate-500">安定利回り</p>
+          </div>
+        </div>
+        <p class="text-2xl font-bold text-amber-600">1〜2<span class="text-sm font-normal text-slate-500">%</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 軍用地 ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">軍用地 倍率</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">主要施設の借地料倍率</p>
+    <img src="https://images.pexels.com/photos/6828576/pexels-photo-6828576.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="軍用地" class="section-img">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm text-center">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">キャンプ・キンザー</p>
+        <p class="text-xs text-slate-500 mb-3">浦添市・返還予定</p>
+        <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">56〜63<span class="text-sm font-normal text-slate-500">倍</span></p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm text-center">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">嘉手納飛行場</p>
+        <p class="text-xs text-slate-500 mb-3">極東最大の米空軍基地</p>
+        <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">51〜57<span class="text-sm font-normal text-slate-500">倍</span></p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm text-center">
+        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-1">普天間飛行場</p>
+        <p class="text-xs text-slate-500 mb-3">宜野湾市・返還交渉中</p>
+        <p class="text-2xl font-bold text-slate-900 dark:text-slate-100">42〜49<span class="text-sm font-normal text-slate-500">倍</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 観光 ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">観光統計（2025年）</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">入域観光客数と観光収入</p>
+    <img src="https://images.pexels.com/photos/3675435/pexels-photo-3675435.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="沖縄観光" class="section-img">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
+        <p class="text-xs font-medium text-slate-500 mb-1">入域観光客</p>
+        <p class="text-xl font-bold text-slate-900">1,075.6<span class="text-xs font-normal text-slate-500">万人</span></p>
+        <p class="text-emerald-600 font-medium text-xs mt-1">+11.2% 過去最高</p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
+        <p class="text-xs font-medium text-slate-500 mb-1">国内</p>
+        <p class="text-xl font-bold text-slate-900">792<span class="text-xs font-normal text-slate-500">万人</span></p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
+        <p class="text-xs font-medium text-slate-500 mb-1">外国</p>
+        <p class="text-xl font-bold text-slate-900">283.6<span class="text-xs font-normal text-slate-500">万人</span></p>
+      </div>
+      <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
+        <p class="text-xs font-medium text-slate-500 mb-1">観光収入</p>
+        <p class="text-xl font-bold text-slate-900">8,563<span class="text-xs font-normal text-slate-500">億円</span></p>
+      </div>
+    </div>
+    <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm">
+      <canvas id="chartTourism" height="300"></canvas>
+    </div>
+  </section>
+
+  <!-- ===== 将来見通し 3シナリオ ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">将来見通し（2030年予測）</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">3シナリオ分析</p>
+    <img src="https://images.pexels.com/photos/4513940/pexels-photo-4513940.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="開発" class="section-img">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 scenario-grid">
+      <!-- 楽観 -->
+      <div class="rounded-xl border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/30 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-medium">楽観シナリオ</span>
+        </div>
+        <p class="text-sm text-body mb-2">年間成長率</p>
+        <p class="text-2xl font-bold text-emerald-700">+5〜8%</p>
+        <div class="mt-4 pt-4 border-t border-emerald-200">
+          <p class="text-sm text-body mb-1">2030年 全用途平均</p>
+          <p class="text-xl font-bold text-emerald-700">220,000〜235,000<span class="text-sm font-normal text-emerald-600">円/㎡</span></p>
+        </div>
+        <ul class="mt-4 space-y-1 text-xs text-body">
+          <li>・観光客1,500万人超</li>
+          <li>・大型IR誘致成功</li>
+          <li>・基地返還開発加速</li>
+        </ul>
+      </div>
+      <!-- 基本 -->
+      <div class="rounded-xl border border-primary-200 dark:border-primary-800 bg-primary-50 dark:bg-primary-950/30 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-xs font-medium">基本シナリオ</span>
+        </div>
+        <p class="text-sm text-body mb-2">年間成長率</p>
+        <p class="text-2xl font-bold text-primary-700">+3〜5%</p>
+        <div class="mt-4 pt-4 border-t border-primary-200">
+          <p class="text-sm text-body mb-1">2030年 全用途平均</p>
+          <p class="text-xl font-bold text-primary-700">195,000〜210,000<span class="text-sm font-normal text-primary-600">円/㎡</span></p>
+        </div>
+        <ul class="mt-4 space-y-1 text-xs text-body">
+          <li>・観光回復継続</li>
+          <li>・インフラ整備順調</li>
+          <li>・金利緩やかに上昇</li>
+        </ul>
+      </div>
+      <!-- 悲観 -->
+      <div class="rounded-xl border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-950/30 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-medium">悲観シナリオ</span>
+        </div>
+        <p class="text-sm text-body mb-2">年間成長率</p>
+        <p class="text-2xl font-bold text-red-700">+0〜2%</p>
+        <div class="mt-4 pt-4 border-t border-red-200">
+          <p class="text-sm text-body mb-1">2030年 全用途平均</p>
+          <p class="text-xl font-bold text-red-700">170,000〜180,000<span class="text-sm font-normal text-red-600">円/㎡</span></p>
+        </div>
+        <ul class="mt-4 space-y-1 text-xs text-body">
+          <li>・金利急上昇</li>
+          <li>・観光需要減退</li>
+          <li>・人口減少加速</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 投資判断ランキング ===== -->
+  <section class="mt-10">
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100 mb-1">投資判断ランキング</h2>
+    <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">エリア・物件タイプ別の総合評価</p>
+    <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50 dark:bg-slate-900">
+              <th class="text-center px-4 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider w-12">#</th>
+              <th class="text-left px-4 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider">エリア / タイプ</th>
+              <th class="text-center px-4 py-3 text-xs font-medium text-slate-500 uppercase tracking-wider">評価</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3 text-slate-500 font-medium">1</td>
+              <td class="px-4 py-3 font-medium text-slate-900">浦添市</td>
+              <td class="text-center px-4 py-3"><span class="bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full text-xs font-bold">A</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3 text-slate-500 font-medium">2</td>
+              <td class="px-4 py-3 font-medium text-slate-900">豊見城市</td>
+              <td class="text-center px-4 py-3"><span class="bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full text-xs font-bold">A</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3 text-slate-500 font-medium">3</td>
+              <td class="px-4 py-3 font-medium text-slate-900">宜野湾市</td>
+              <td class="text-center px-4 py-3"><span class="bg-primary-50 text-primary-700 border border-primary-200 px-3 py-1 rounded-full text-xs font-bold">B+</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3 text-slate-500 font-medium">4</td>
+              <td class="px-4 py-3 font-medium text-slate-900">那覇市</td>
+              <td class="text-center px-4 py-3"><span class="bg-primary-50 text-primary-700 border border-primary-200 px-3 py-1 rounded-full text-xs font-bold">B+</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3 text-slate-500 font-medium">5</td>
+              <td class="px-4 py-3 font-medium text-slate-900">名護市</td>
+              <td class="text-center px-4 py-3"><span class="bg-slate-100 text-slate-700 border border-slate-200 px-3 py-1 rounded-full text-xs font-bold">B</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3 text-slate-500 font-medium">6</td>
+              <td class="px-4 py-3 font-medium text-slate-900">中部アパート</td>
+              <td class="text-center px-4 py-3"><span class="bg-slate-100 text-slate-700 border border-slate-200 px-3 py-1 rounded-full text-xs font-bold">B</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3 text-slate-500 font-medium">7</td>
+              <td class="px-4 py-3 font-medium text-slate-900">軍用地</td>
+              <td class="text-center px-4 py-3"><span class="bg-slate-100 text-slate-700 border border-slate-200 px-3 py-1 rounded-full text-xs font-bold">B</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3 text-slate-500 font-medium">8</td>
+              <td class="px-4 py-3 font-medium text-slate-900">恩納村</td>
+              <td class="text-center px-4 py-3"><span class="bg-slate-100 text-slate-600 border border-slate-200 px-3 py-1 rounded-full text-xs font-bold">B-</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3 text-slate-500 font-medium">9</td>
+              <td class="px-4 py-3 font-medium text-slate-900">宮古島</td>
+              <td class="text-center px-4 py-3"><span class="bg-amber-50 text-amber-700 border border-amber-200 px-3 py-1 rounded-full text-xs font-bold">C</span></td>
+            </tr>
+            <tr class="hover:bg-gray-50 dark:bg-slate-900 transition">
+              <td class="text-center px-4 py-3 text-slate-500 font-medium">10</td>
+              <td class="px-4 py-3 font-medium text-slate-900">石垣島</td>
+              <td class="text-center px-4 py-3"><span class="bg-amber-50 text-amber-700 border border-amber-200 px-3 py-1 rounded-full text-xs font-bold">C</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="border-t border-slate-200 mt-16">
+  <div class="max-w-5xl mx-auto px-6 py-10 text-center">
+    <p class="text-sm font-medium text-slate-900 mb-2">&copy; 2026 U&I株倶楽部 &mdash; 特集レポート</p>
+    <p class="text-xs text-slate-500 leading-relaxed max-w-2xl mx-auto">
+      本レポートは情報提供を目的としたものであり、特定の不動産の購入・売却を推奨するものではありません。
+      投資判断はご自身の責任で行ってください。掲載データは公示地価・基準地価等の公的データに基づいていますが、
+      正確性・完全性を保証するものではありません。
+    </p>
+  </div>
+</footer>
+
+<!-- ===== Chart.js Scripts ===== -->
+<script>
+// Color palette
+const COLORS = {
+  primary: '#2b70ef',
+  primaryLight: 'rgba(43,112,239,0.1)',
+  emerald: '#059669',
+  emeraldLight: 'rgba(5,150,105,0.1)',
+  gray: '#94a3b8',
+  grayLight: 'rgba(148,163,184,0.1)',
+  red: '#dc2626',
+  redLight: 'rgba(220,38,38,0.1)'
+};
+
+Chart.defaults.font.family = "'Inter','Noto Sans JP','sans-serif'";
+Chart.defaults.color = '#64748b';
+
+// 1. 地価推移チャート
+new Chart(document.getElementById('chartTrend'), {
+  type: 'line',
+  data: {
+    labels: ['2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],
+    datasets: [
+      {
+        label: '商業地（円/㎡）',
+        data: [155000,168000,192000,212000,214000,217000,222000,227500,243392,261270],
+        borderColor: COLORS.primary,
+        backgroundColor: COLORS.primaryLight,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        borderWidth: 2.5
+      },
+      {
+        label: '住宅地（円/㎡）',
+        data: [82000,87000,95000,104000,105000,107000,109000,114251,121689,130498],
+        borderColor: COLORS.emerald,
+        backgroundColor: COLORS.emeraldLight,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        borderWidth: 2.5
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', labels: { usePointStyle: true, padding: 20 } },
+      tooltip: {
+        backgroundColor: '#1e293b',
+        titleColor: '#f8fafc',
+        bodyColor: '#e2e8f0',
+        cornerRadius: 8,
+        padding: 12,
+        callbacks: {
+          label: function(ctx) {
+            return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + ' 円/㎡';
+          }
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: false,
+        grid: { color: 'rgba(148,163,184,0.15)' },
+        ticks: {
+          callback: function(v) { return (v/1000) + 'k'; }
+        }
+      },
+      x: { grid: { display: false } }
+    }
+  }
+});
+
+// 2. エリア別変動率チャート
+new Chart(document.getElementById('chartArea'), {
+  type: 'bar',
+  data: {
+    labels: ['宮古島市','恩納村','北谷町','宜野湾市','豊見城市','那覇市','浦添市','名護市'],
+    datasets: [{
+      label: '変動率（%）',
+      data: [12.30, 9.88, 9.19, 8.89, 6.84, 5.97, 5.46, 4.82],
+      backgroundColor: function(ctx) {
+        const v = ctx.parsed.x;
+        return ctx.raw >= 8 ? COLORS.emerald : COLORS.primary;
+      },
+      borderRadius: 6,
+      barPercentage: 0.6
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1e293b',
+        titleColor: '#f8fafc',
+        bodyColor: '#e2e8f0',
+        cornerRadius: 8,
+        padding: 12,
+        callbacks: {
+          label: function(ctx) { return '+' + ctx.parsed.x + '%'; }
+        }
+      },
+      annotation: undefined
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(148,163,184,0.15)' },
+        ticks: { callback: function(v) { return '+' + v + '%'; } }
+      },
+      y: { grid: { display: false } }
+    }
+  },
+  plugins: [{
+    id: 'avgLine',
+    afterDraw: function(chart) {
+      var xScale = chart.scales.x;
+      var yScale = chart.scales.y;
+      var ctx = chart.ctx;
+      var xPixel = xScale.getPixelForValue(3.4);
+      ctx.save();
+      ctx.beginPath();
+      ctx.setLineDash([6, 4]);
+      ctx.strokeStyle = COLORS.red;
+      ctx.lineWidth = 1.5;
+      ctx.moveTo(xPixel, yScale.top);
+      ctx.lineTo(xPixel, yScale.bottom);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = COLORS.red;
+      ctx.font = '11px Inter, sans-serif';
+      ctx.fillText('全国平均 +3.4%', xPixel + 4, yScale.top + 14);
+      ctx.restore();
+    }
+  }]
+});
+
+// 3. 観光客数チャート
+new Chart(document.getElementById('chartTourism'), {
+  type: 'bar',
+  data: {
+    labels: ['2019','2020','2021','2022','2023','2024','2025'],
+    datasets: [
+      {
+        label: '国内（万人）',
+        data: [694, 258, 302, 567, 718, 753.6, 792],
+        backgroundColor: COLORS.primary,
+        borderRadius: 4,
+        barPercentage: 0.7
+      },
+      {
+        label: '海外（万人）',
+        data: [300, 15, 1, 13, 62, 212.5, 283.6],
+        backgroundColor: COLORS.emerald,
+        borderRadius: 4,
+        barPercentage: 0.7
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', labels: { usePointStyle: true, padding: 20 } },
+      tooltip: {
+        backgroundColor: '#1e293b',
+        titleColor: '#f8fafc',
+        bodyColor: '#e2e8f0',
+        cornerRadius: 8,
+        padding: 12,
+        callbacks: {
+          label: function(ctx) {
+            return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + ' 万人';
+          }
+        }
+      }
+    },
+    scales: {
+      x: { stacked: true, grid: { display: false } },
+      y: {
+        stacked: true,
+        grid: { color: 'rgba(148,163,184,0.15)' },
+        ticks: {
+          callback: function(v) { return v + '万'; }
+        }
+      }
+    }
+  }
+});
+
+// Theme Toggle
+function toggleTheme() {
+  var html = document.documentElement;
+  var isDark = html.classList.toggle('dark');
+  document.getElementById('themeIcon').textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  updateChartColors(isDark);
+}
+
+// Restore saved theme
+(function() {
+  var saved = localStorage.getItem('theme');
+  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (saved === 'dark' || (!saved && prefersDark)) {
+    document.documentElement.classList.add('dark');
+    document.getElementById('themeIcon').textContent = '☀️';
+    updateChartColors(true);
+  }
+})();
+
+function updateChartColors(isDark) {
+  var gridColor = isDark ? 'rgba(148,163,184,0.12)' : 'rgba(148,163,184,0.15)';
+  var tickColor = isDark ? '#94a3b8' : '#64748b';
+  Chart.instances && Object.values(Chart.instances).forEach(function(chart) {
+    if (chart.options.scales) {
+      Object.values(chart.options.scales).forEach(function(scale) {
+        if (scale.grid) scale.grid.color = gridColor;
+        if (scale.ticks) scale.ticks.color = tickColor;
+      });
+    }
+    if (chart.options.plugins && chart.options.plugins.legend && chart.options.plugins.legend.labels) {
+      chart.options.plugins.legend.labels.color = tickColor;
+    }
+    chart.update('none');
+  });
+}
+</script>
+</body>
+</html>

@@ -1066,6 +1066,174 @@ var TERMS = [
     short: "株価指数先物・株価指数オプション・個別株オプションの3つが同時に満期を迎える日。年4回発生し、大量のポジション調整で出来高とボラティリティが急増する。",
     full: "株価指数先物・株価指数オプション・個別株オプションの3種類のデリバティブが同時に満期（SQ: Special Quotation）を迎える日。3月・6月・9月・12月の第3金曜日に年4回発生する。満期に伴いマーケットメーカーのデルタヘッジが解消され、機械的な売り・買いが大量に発生するため、通常日の3〜5倍の出来高を記録する。S&P 500のリバランスも同日に重なることが多く、個別銘柄の異常な出来高の原因になる。2020年3月のトリプルウィッチングではコロナショック初期と重なり、S&P 500が15分で3%変動した。",
     visual: '<div class="vis-diagram"><div class="vis-diagram-title">トリプルウィッチングの仕組み</div><div class="vis-flow"><div class="vis-flow-step">3種のデリバティブ<br><small>先物・指数OP・個別OP</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">同時満期<br><small>第3金曜日</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">ヘッジ解消<br><small>大量の反対売買</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">出来高急増<br><small>ボラティリティ↑</small></div></div></div><div class="vis-diagram"><div class="vis-diagram-title">年間スケジュール（2026年）</div><table class="vis-table"><tr><th>回</th><th>日付</th><th>備考</th></tr><tr><td>第1回</td><td>3月20日（金）</td><td>過去最大規模</td></tr><tr><td>第2回</td><td>6月19日（金）</td><td>-</td></tr><tr><td>第3回</td><td>9月18日（金）</td><td>-</td></tr><tr><td>第4回</td><td>12月18日（金）</td><td>クアドルプルウィッチング</td></tr></table></div><div class="vis-callout tip"><strong>💡 投資家へのヒント:</strong> トリプルウィッチング前後は「ノイズ」が多く、株価の動きがファンダメンタルズを反映していない可能性が高い。長期投資家は短期的な価格変動に惑わされず、翌週以降のトレンドで判断することが重要。</div>'
+  },
+  {
+    id: "koji-chika",
+    ja: "公示地価",
+    en: "Official Land Price",
+    cat: "realestate",
+    catLabel: "不動産",
+    catIcon: "🏠",
+    morning: false,
+    short: "国土交通省が毎年1月1日時点で調査し3月に公表する土地の価格。土地取引の指標として使われる。",
+    full: "国土交通省の土地鑑定委員会が、全国約2万6千地点の「標準地」について毎年1月1日時点の正常な価格を判定し、3月下旬に公表する。不動産鑑定士が現地調査を行い、近隣の取引事例や収益性を分析して価格を算出する。土地取引の指標、公共用地の取得価格の算定基準、相続税・固定資産税評価の目安として広く利用される。「基準地価」（都道府県が7月1日時点で調査）と合わせて年2回の地価指標となる。",
+    visual: '<div class="vis-flow"><div class="vis-flow-step">不動産鑑定士<br><small>現地調査</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">土地鑑定委員会<br><small>価格判定</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">3月公表<br><small>国土交通省</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">土地取引の指標<br><small>税評価の基準</small></div></div><div class="vis-callout tip"><strong>💡 ポイント:</strong> 公示地価は「あるべき正常な価格」を示すもの。実際の取引価格（実勢価格）は公示地価の1.1〜1.3倍程度になることが多い。</div>'
+  },
+  {
+    id: "kijun-chika",
+    ja: "基準地価",
+    en: "Standard Land Price",
+    cat: "realestate",
+    catLabel: "不動産",
+    catIcon: "🏠",
+    morning: false,
+    short: "都道府県が毎年7月1日時点で調査し9月に公表する土地の価格。公示地価を補完する役割を持つ。",
+    full: "各都道府県知事が、国土利用計画法に基づき毎年7月1日時点の基準地の価格を調査し、9月下旬に公表する。公示地価（1月1日時点）と合わせて半年ごとの地価動向を把握できる。都市計画区域外の土地も調査対象に含まれるため、公示地価では把握できない地方部の地価動向も分かる。",
+    visual: '<table class="vis-table"><tr><th></th><th>公示地価</th><th>基準地価</th></tr><tr><td>調査主体</td><td>国土交通省</td><td>都道府県</td></tr><tr><td>基準日</td><td>1月1日</td><td>7月1日</td></tr><tr><td>公表時期</td><td>3月</td><td>9月</td></tr><tr><td>調査対象</td><td>都市計画区域内中心</td><td>都市計画区域外も含む</td></tr></table>'
+  },
+  {
+    id: "gunyochi",
+    ja: "軍用地",
+    en: "Military Land",
+    cat: "realestate",
+    catLabel: "不動産",
+    catIcon: "🏠",
+    morning: false,
+    short: "米軍や自衛隊が使用するために日本政府が地主から借りている土地。沖縄独自の不動産投資商品。",
+    full: "米軍基地や自衛隊施設として使用されている土地で、日本政府（防衛省）が民間の地主から借り上げている。沖縄県には約5万人の軍用地主がおり、政府が毎年借地料を支払う。この借地権付き土地が売買市場で「年間借地料×倍率」の価格で取引される。借主が日本政府のため滞納リスクがゼロで、毎年約1%ずつ借地料が上昇する「超安定資産」として人気。相続税評価額が時価の約30%に圧縮されるため、相続対策としても活用される。",
+    visual: '<div class="vis-diagram"><div class="vis-diagram-title">軍用地の価格計算</div><div class="vis-flow"><div class="vis-flow-step">年間借地料<br><small>例: 100万円</small></div><div class="vis-flow-arrow">×</div><div class="vis-flow-step">倍率<br><small>例: 55倍</small></div><div class="vis-flow-arrow">=</div><div class="vis-flow-step">売買価格<br><small>5,500万円</small></div></div></div><div class="vis-diagram"><div class="vis-diagram-title">主要施設の倍率（2026年）</div><table class="vis-table"><tr><th>施設</th><th>倍率</th><th>特徴</th></tr><tr><td>キャンプ・キンザー</td><td>56〜63倍</td><td>返還予定・開発期待</td></tr><tr><td>嘉手納飛行場</td><td>51〜57倍</td><td>返還リスク低・安定</td></tr><tr><td>普天間飛行場</td><td>42〜49倍</td><td>返還予定で倍率低め</td></tr></table></div><div class="vis-callout tip"><strong>💡 投資家へのヒント:</strong> 利回りは1〜2%と低いが、借主が日本政府（滞納リスクゼロ）・借地料は毎年+1%上昇・相続税評価約30%圧縮という3つのメリットがある。返還リスクが低い施設ほど倍率が高い。</div>'
+  },
+  {
+    id: "bairitsu",
+    ja: "倍率（軍用地）",
+    en: "Multiplier (Military Land)",
+    cat: "realestate",
+    catLabel: "不動産",
+    catIcon: "🏠",
+    morning: false,
+    short: "軍用地の売買価格を決める指標。「年間借地料×倍率＝売買価格」で計算される。",
+    full: "軍用地の売買価格を算出する際に使われる指標。「年間借地料×倍率＝売買価格」の式で価格が決まる。倍率が高い＝人気が高い＝価格が高いことを意味する。返還リスクが低い施設（嘉手納飛行場等）は倍率が高く、返還予定の施設（普天間飛行場等）は相対的に倍率が低い。2020年代は低金利環境と相続税対策需要を背景に倍率が上昇傾向にある。",
+    visual: '<div class="vis-bars"><div class="vis-bar-item"><span>キンザー</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:90%">56〜63倍</div></div></div><div class="vis-bar-item"><span>嘉手納</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:81%">51〜57倍</div></div></div><div class="vis-bar-item"><span>普天間</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:70%">42〜49倍</div></div></div></div>'
+  },
+  {
+    id: "capital-gain",
+    ja: "キャピタルゲイン",
+    en: "Capital Gain",
+    cat: "realestate",
+    catLabel: "不動産",
+    catIcon: "🏠",
+    morning: false,
+    short: "資産の値上がり益。不動産を購入時より高い価格で売却した際に得られる利益。",
+    full: "資産（不動産・株式等）を購入した価格よりも高い価格で売却した際に得られる差額利益のこと。対義語は「キャピタルロス」（値下がり損）。不動産投資では、地価上昇が見込まれるエリアの物件を安く買い、値上がり後に売却してキャピタルゲインを狙う戦略がある。インカムゲイン（賃料収入）と合わせて不動産投資の2大リターン源泉。",
+    visual: '<div class="vis-flow"><div class="vis-flow-step">物件購入<br><small>3,000万円</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">地価上昇<br><small>+20%</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">売却<br><small>3,600万円</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">キャピタルゲイン<br><small>+600万円</small></div></div>'
+  },
+  {
+    id: "income-gain",
+    ja: "インカムゲイン",
+    en: "Income Gain",
+    cat: "realestate",
+    catLabel: "不動産",
+    catIcon: "🏠",
+    morning: false,
+    short: "資産を保有している間に得られる定期的な収入。不動産では賃料収入が該当する。",
+    full: "資産を保有することで定期的に得られる収益のこと。不動産投資では毎月の家賃収入、株式投資では配当金が該当する。キャピタルゲイン（値上がり益）と対比して使われ、安定した収入を重視する投資スタイルではインカムゲインを最大化することが目標となる。不動産の場合、「表面利回り＝年間賃料÷物件価格」で収益性を評価する。",
+    visual: '<table class="vis-table"><tr><th></th><th>キャピタルゲイン</th><th>インカムゲイン</th></tr><tr><td>内容</td><td>売却益（値上がり益）</td><td>保有中の定期収入</td></tr><tr><td>不動産</td><td>物件売却益</td><td>家賃収入</td></tr><tr><td>株式</td><td>株価上昇益</td><td>配当金</td></tr><tr><td>特徴</td><td>不確実だが大きい</td><td>安定的だが限定的</td></tr></table>'
+  },
+  {
+    id: "rimawari",
+    ja: "利回り（不動産）",
+    en: "Yield (Real Estate)",
+    cat: "realestate",
+    catLabel: "不動産",
+    catIcon: "🏠",
+    morning: false,
+    short: "投資額に対する年間収益の割合。「表面利回り」は年間賃料÷物件価格で計算される。",
+    full: "不動産投資における収益性を示す指標。「表面利回り（グロス利回り）」は年間賃料収入÷物件購入価格×100で計算される最もシンプルな指標。「実質利回り（ネット利回り）」は管理費・修繕積立金・固定資産税等の経費を差し引いた手取り収入で計算し、より実態に近い。一般に表面利回りより1〜2%低くなる。沖縄県の不動産利回りは、区分マンション（那覇）4〜6%、一棟アパート5〜8%、軍用地1〜2%。",
+    visual: '<div class="vis-diagram"><div class="vis-diagram-title">利回りの計算例</div><div class="vis-flow"><div class="vis-flow-step">物件価格<br><small>2,000万円</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">年間賃料<br><small>120万円</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">表面利回り<br><small>6.0%</small></div></div></div><div class="vis-callout tip"><strong>💡 注意:</strong> 表面利回りだけで判断しないこと。管理費・修繕費・空室リスクを含めた「実質利回り」で比較することが重要。</div>'
+  },
+  {
+    id: "kubun-mansion",
+    ja: "区分マンション",
+    en: "Condominium Unit",
+    cat: "realestate",
+    catLabel: "不動産",
+    catIcon: "🏠",
+    morning: false,
+    short: "マンションの1室単位で所有・売買される不動産。個人投資家に人気の不動産投資手法。",
+    full: "マンションの1室（1戸）を区分所有権に基づいて個別に所有・売買できる不動産。建物全体を所有する「一棟マンション」と区別される。投資額が数百万円〜数千万円と比較的少額で始められ、管理会社に委託すれば手間も少ないため、サラリーマン投資家に人気。ただし、管理費・修繕積立金が毎月発生し、空室リスクや管理組合の意思決定に左右される面もある。",
+    visual: '<table class="vis-table"><tr><th></th><th>区分マンション</th><th>一棟マンション</th></tr><tr><td>投資額</td><td>数百万〜数千万円</td><td>数千万〜数億円</td></tr><tr><td>管理の手間</td><td>少ない</td><td>多い</td></tr><tr><td>利回り</td><td>4〜6%</td><td>5〜8%</td></tr><tr><td>空室リスク</td><td>1室空室=収入ゼロ</td><td>分散される</td></tr></table>'
+  },
+  {
+    id: "takuchi-mikomichi",
+    ja: "宅地見込地",
+    en: "Prospective Residential Land",
+    cat: "realestate",
+    catLabel: "不動産",
+    catIcon: "🏠",
+    morning: false,
+    short: "現在は農地や林地だが、将来的に宅地として利用される見込みのある土地。",
+    full: "公示地価や基準地価の調査における土地の用途分類の一つ。現在は農地・林地・原野等として利用されているが、周辺の都市化の進展や開発計画により、将来的に宅地（住宅地・商業地等）として利用される見込みのある土地を指す。開発許可の有無、周辺のインフラ整備状況、用途地域の変更予定などにより地価が変動する。開発が実現すれば地価は大幅に上昇するが、計画が頓挫するリスクもある。",
+    visual: '<div class="vis-flow"><div class="vis-flow-step">農地・林地<br><small>現在の用途</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">開発計画策定<br><small>用途地域変更</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">造成工事<br><small>インフラ整備</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">宅地化完了<br><small>地価大幅上昇</small></div></div>'
+  },
+  {
+    id: "souzokuzei-hyouka",
+    ja: "相続税評価額",
+    en: "Inheritance Tax Assessed Value",
+    cat: "realestate",
+    catLabel: "不動産",
+    catIcon: "🏠",
+    morning: false,
+    short: "相続発生時に税務上その財産がいくらと評価されるかの金額。軍用地は時価の約30%と大幅に低い。",
+    full: "相続が発生した際に、相続税を計算するための基準となる財産の評価額。土地は「路線価方式」または「倍率方式」で評価され、一般に時価（実勢価格）の約80%程度になる。軍用地は「倍率方式」で評価されるため、実際の取引価格に対して約30%と大幅に低く評価される。この差額分だけ相続税の課税対象額が小さくなるため、資産家が軍用地を購入して相続税を節税する手法が沖縄では一般的。",
+    visual: '<div class="vis-diagram"><div class="vis-diagram-title">相続税評価額の比較</div><div class="vis-bars"><div class="vis-bar-item"><span>現金</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:100%">100%</div></div></div><div class="vis-bar-item"><span>一般不動産</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:80%">約80%</div></div></div><div class="vis-bar-item"><span>軍用地</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:30%;background:var(--accent-green)">約30%</div></div></div></div></div><div class="vis-callout tip"><strong>💡 節税メカニズム:</strong> 1億円の現金は相続税評価も1億円だが、同額の軍用地は約3,000万円と評価される。差額7,000万円分の相続税が軽減される。</div>'
+  },
+  {
+    id: "kichi-henkan",
+    ja: "基地返還跡地",
+    en: "Former Military Base Land",
+    cat: "realestate",
+    catLabel: "不動産",
+    catIcon: "🏠",
+    morning: false,
+    short: "米軍基地が返還された後の土地。沖縄では大規模な再開発用地となり地価に大きな影響を与える。",
+    full: "米軍基地として使用された後、日米合意に基づいて日本に返還された土地。沖縄県では県土の8.1%（約186km²）を米軍基地が占めており、返還跡地は大規模な再開発の機会となる。那覇新都心（旧牧港住宅地区、214ha、1987年返還）は商業・住宅地として再開発され地価が数十倍に上昇した成功例。現在はキャンプ・キンザー（274ha）や普天間飛行場（481ha）の返還が注目されている。",
+    visual: '<div class="vis-diagram"><div class="vis-diagram-title">基地返還の経済効果（普天間飛行場の例）</div><table class="vis-table"><tr><th></th><th>返還前</th><th>返還後（計画）</th></tr><tr><td>直接経済効果</td><td>120億円/年</td><td>3,866億円/年</td></tr><tr><td>雇用</td><td>1,074人</td><td>34,093人</td></tr><tr><td>倍率</td><td>-</td><td>約32倍</td></tr></table></div><div class="vis-callout tip"><strong>💡 注目:</strong> 西普天間住宅地区（51ha、2015年返還）では琉大病院の移転開院（2025年）により、周辺の野嵩3丁目が+18.6%と県内最高の地価上昇率を記録。返還跡地開発の波及効果を実証した。</div>'
+  },
+  {
+    id: "catalyst",
+    ja: "カタリスト",
+    en: "Catalyst",
+    cat: "markets",
+    catLabel: "マーケット",
+    catIcon: "📊",
+    morning: false,
+    short: "相場や価格を大きく動かすきっかけとなる出来事や材料のこと。「触媒」の意味。",
+    full: "投資の世界で、株価や地価など資産価格を大きく変動させるきっかけとなる出来事・材料・イベントのこと。化学における「触媒（catalyst）」から転じた用語。ポジティブなカタリスト（好材料）としては大型開発計画の発表・規制緩和・人口増加などがあり、ネガティブなカタリスト（悪材料）としては金利上昇・自然災害・政治リスクなどがある。沖縄の不動産では基地返還・鉄軌道計画・大型テーマパーク開業などがカタリストとなる。",
+    visual: '<div class="vis-diagram"><div class="vis-diagram-title">沖縄不動産のカタリスト一覧</div><table class="vis-table"><tr><th>カタリスト</th><th>影響度</th><th>時間軸</th></tr><tr><td>キンザー返還</td><td>極大</td><td>中長期</td></tr><tr><td>鉄軌道着工</td><td>大</td><td>長期</td></tr><tr><td>JUNGLIA開業</td><td>中〜大</td><td>短期</td></tr><tr><td>インバウンド1000万人</td><td>中</td><td>短期</td></tr><tr><td>普天間返還</td><td>極大</td><td>長期</td></tr></table></div>'
+  },
+  {
+    id: "inbound",
+    ja: "インバウンド",
+    en: "Inbound Tourism",
+    cat: "indicators",
+    catLabel: "経済指標",
+    catIcon: "📊",
+    morning: false,
+    short: "海外から日本を訪れる外国人旅行者のこと。沖縄では地価上昇の大きな要因。",
+    full: "海外から日本を訪れる外国人旅行者、またはその旅行需要全体を指す言葉。円安を背景に2024〜2025年は急回復し、沖縄県には2025年に283万人の外国人観光客が来訪。ホテル開発・商業施設需要・リゾート投資を通じて商業地・住宅地双方の地価上昇に寄与している。台湾・韓国・中国からの旅行者が中心で、クルーズ船による来訪も増加傾向。",
+    visual: '<div class="vis-bars"><div class="vis-bar-item"><span>2019年</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:100%">300万人</div></div></div><div class="vis-bar-item"><span>2020年</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:5%">15万</div></div></div><div class="vis-bar-item"><span>2023年</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:21%">62万</div></div></div><div class="vis-bar-item"><span>2024年</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:71%">213万</div></div></div><div class="vis-bar-item"><span>2025年</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:95%">284万</div></div></div></div>'
+  },
+  {
+    id: "risk-return",
+    ja: "リスク・リターン",
+    en: "Risk-Return",
+    cat: "markets",
+    catLabel: "マーケット",
+    catIcon: "📊",
+    morning: false,
+    short: "投資におけるリスク（損失の可能性）とリターン（利益）の関係。一般にリスクが高いほどリターンも大きい。",
+    full: "投資における損失の可能性（リスク）と期待される利益（リターン）のトレードオフ関係。「ハイリスク・ハイリターン」（大きなリスクを取ればリターンも大きい）、「ローリスク・ローリターン」（安全だがリターンも小さい）が基本原則。不動産投資では、宮古島のような急騰エリアはハイリスク・ハイリターン（過熱→調整リスク）、軍用地はローリスク・ローリターン（安定だが利回り1-2%）、浦添市のキンザー周辺はミドルリスク・ハイリターン（返還が実現すれば大きな値上がり期待）と位置付けられる。",
+    visual: '<div class="vis-diagram"><div class="vis-diagram-title">沖縄不動産のリスク・リターン分布</div><table class="vis-table"><tr><th>投資先</th><th>リスク</th><th>期待リターン</th></tr><tr><td>軍用地（嘉手納）</td><td>低</td><td>低（1-2%/年）</td></tr><tr><td>那覇市 区分マンション</td><td>中低</td><td>中（4-6%/年）</td></tr><tr><td>浦添市（キンザー周辺）</td><td>中</td><td>高（返還時）</td></tr><tr><td>宮古島 リゾート物件</td><td>高</td><td>高（ただし下落リスクも）</td></tr></table></div>'
   }
 ];
 
@@ -1076,7 +1244,8 @@ var CATEGORIES = [
   { key: "markets", label: "マーケット", labelEn: "Markets", icon: "📈" },
   { key: "earnings", label: "決算・企業分析", labelEn: "Earnings & Analysis", icon: "💰" },
   { key: "tech", label: "テクノロジー", labelEn: "Technology", icon: "🔧" },
-  { key: "geo", label: "地政学・通商", labelEn: "Geopolitics & Trade", icon: "🌍" }
+  { key: "geo", label: "地政学・通商", labelEn: "Geopolitics & Trade", icon: "🌍" },
+  { key: "realestate", label: "不動産", labelEn: "Real Estate", icon: "🏠" }
 ];
 
 var activeCat = "all";
@@ -1092,7 +1261,12 @@ var YOMI = {
   "TOPIX":"とぴっくす","Brent原油":"ぶれんとげんゆ","EPS":"いーぴーえす",
   "ガイダンス":"がいだんす","アフターアワーズ":"あふたーあわーず","自社株買い":"じしゃかぶかい",
   "時価総額":"じかそうがく","HBM":"えいちびーえむ","GTC":"じーてぃーしー",
-  "ホルムズ海峡":"ほるむずかいきょう","ジョーンズ法":"じょーんずほう","通商法301条":"つうしょうほう"
+  "ホルムズ海峡":"ほるむずかいきょう","ジョーンズ法":"じょーんずほう","通商法301条":"つうしょうほう",
+  "公示地価":"こうじちか","基準地価":"きじゅんちか","軍用地":"ぐんようち","倍率（軍用地）":"ばいりつ",
+  "キャピタルゲイン":"きゃぴたるげいん","インカムゲイン":"いんかむげいん","利回り（不動産）":"りまわり",
+  "区分マンション":"くぶんまんしょん","宅地見込地":"たくちみこみち","相続税評価額":"そうぞくぜいひょうかがく",
+  "基地返還跡地":"きちへんかんあとち","カタリスト":"かたりすと","インバウンド":"いんばうんど",
+  "リスク・リターン":"りすくりたーん"
 };
 
 function getYomi(ja) {
