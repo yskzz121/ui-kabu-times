@@ -96,6 +96,10 @@ def extract_headline(html_path):
     try:
         with open(html_path, encoding="utf-8") as f:
             content = f.read(30000)
+        # 0. extra-headline メタタグ（号外用の短い見出し、最優先）
+        m = re.search(r'name="extra-headline"\s+content="([^"]+)"', content)
+        if m:
+            return m.group(1).strip()[:80]
         # 1. summary-topic（朝刊マーケットサマリーの見出し）
         m = re.search(r'class="summary-topic[^"]*">(.*?)</span>', content)
         if m:
