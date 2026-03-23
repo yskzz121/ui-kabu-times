@@ -1234,6 +1234,42 @@ var TERMS = [
     short: "投資におけるリスク（損失の可能性）とリターン（利益）の関係。一般にリスクが高いほどリターンも大きい。",
     full: "投資における損失の可能性（リスク）と期待される利益（リターン）のトレードオフ関係。「ハイリスク・ハイリターン」（大きなリスクを取ればリターンも大きい）、「ローリスク・ローリターン」（安全だがリターンも小さい）が基本原則。不動産投資では、宮古島のような急騰エリアはハイリスク・ハイリターン（過熱→調整リスク）、軍用地はローリスク・ローリターン（安定だが利回り1-2%）、浦添市のキンザー周辺はミドルリスク・ハイリターン（返還が実現すれば大きな値上がり期待）と位置付けられる。",
     visual: '<div class="vis-diagram"><div class="vis-diagram-title">沖縄不動産のリスク・リターン分布</div><table class="vis-table"><tr><th>投資先</th><th>リスク</th><th>期待リターン</th></tr><tr><td>軍用地（嘉手納）</td><td>低</td><td>低（1-2%/年）</td></tr><tr><td>那覇市 区分マンション</td><td>中低</td><td>中（4-6%/年）</td></tr><tr><td>浦添市（キンザー周辺）</td><td>中</td><td>高（返還時）</td></tr><tr><td>宮古島 リゾート物件</td><td>高</td><td>高（ただし下落リスクも）</td></tr></table></div>'
+  },
+  {
+    id: "relief-rally",
+    ja: "リリーフラリー",
+    en: "Relief Rally",
+    cat: "markets",
+    catLabel: "マーケット",
+    catIcon: "📈",
+    morning: true,
+    short: "地政学リスクや経済危機の懸念が和らいだとき、売られ過ぎた市場が急速に反発する現象。ショートカバーが上昇を増幅するのが特徴で、持続性はファンダメンタルズの改善に依存する。",
+    full: "地政学リスクや経済不安の後退をきっかけに、売られ過ぎた市場が急反発する現象。「安心感（Relief）」が引き金となるため、ファンダメンタルズの改善を伴わないケースが多い。空売りポジションの買い戻し（ショートカバー）やガンマスクイーズがアルゴリズム取引を巻き込んで上昇を増幅する。歴史的には2022年10月CPI下振れ時のS&P+5.5%、2020年3月FRB無制限緩和後の3日で+17%などが典型例。持続性を見極めるには出来高の持続・VIXの低下トレンド・ファンダメンタルズ改善の3点を確認することが重要。",
+    visual: '<div class="vis-diagram"><div class="vis-diagram-title">リリーフラリーの発生メカニズム</div><div class="vis-flow"><div class="vis-flow-step negative">地政学リスク発生<br><small>恐怖・ショート蓄積</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">リスク後退の報道<br><small>安心感の広がり</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step positive">ショートカバー<br><small>＋アルゴ追随</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step positive">急騰（リリーフラリー）<br><small>持続性は根本解決次第</small></div></div></div><div class="vis-diagram"><div class="vis-diagram-title">過去のリリーフラリー事例</div><table class="vis-table"><tr><th>時期</th><th>トリガー</th><th>反発幅</th></tr><tr><td>2020年3月</td><td>FRB無制限緩和</td><td>S&P500 3日で+17%</td></tr><tr><td>2022年10月</td><td>CPI下振れ</td><td>S&P500 1日で+5.5%</td></tr><tr><td>2023年11月</td><td>利上げ停止観測</td><td>S&P500 2週で+10%</td></tr></table></div><div class="vis-callout tip"><strong>⚠️ 注意:</strong> リリーフラリーに飛び乗るのはリスク大。出来高の持続・VIXの低下トレンド・ファンダメンタルズ改善の3点を確認してから判断すること。</div>'
+  },
+  {
+    id: "project-maven",
+    ja: "Mavenプログラム",
+    en: "Project Maven",
+    cat: "tech",
+    catLabel: "テクノロジー",
+    catIcon: "🔧",
+    morning: true,
+    short: "米国防総省のAI戦略プログラム。AIを活用した情報分析・意思決定支援を行う。「Program of Record」認定は長期安定契約を意味し、受注企業の収益安定性を大きく高める。",
+    full: "米国防総省が2017年に立ち上げたAI戦略プログラム。当初はドローン映像のAI分析から始まり、現在は戦場の情報分析・意思決定支援・予測分析など広範な軍事AI応用をカバー。Google社員の抗議で同社が撤退した経緯もある。「Program of Record」は正式な予算認定であり、実験段階から脱却して長期安定予算が付くことを意味する。Palantirが2026年3月に同認定を獲得し株価が上昇。防衛AI市場は2030年までに180億ドル規模に成長見込み。",
+    visual: '<div class="vis-diagram"><div class="vis-diagram-title">Project Mavenの変遷</div><div class="vis-flow"><div class="vis-flow-step">実験段階<br><small>2017年〜</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step negative">Google撤退<br><small>社員抗議 2018年</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">Palantir等が受注<br><small>実運用拡大</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step positive">Program of Record認定<br><small>2026年・長期安定予算</small></div></div></div><div class="vis-diagram"><div class="vis-diagram-title">防衛AI市場規模の推移</div><div class="vis-bars"><div class="vis-bar-item"><span>2024年</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:44%">$8B</div></div></div><div class="vis-bar-item"><span>2026年</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:67%">$12B</div></div></div><div class="vis-bar-item"><span>2030年（予測）</span><div class="vis-bar-track"><div class="vis-bar-fill" style="width:100%">$18B</div></div></div></div></div><div class="vis-callout tip"><strong>💡 投資ポイント:</strong> 「Program of Record」認定は防衛企業にとって最重要マイルストーン。実験予算から正式予算への移行を意味し、複数年の安定収益が見込める。</div>'
+  },
+  {
+    id: "ai-inference",
+    ja: "AI推論",
+    en: "AI Inference",
+    cat: "tech",
+    catLabel: "テクノロジー",
+    catIcon: "🔧",
+    morning: true,
+    short: "学習済みのAIモデルを実際に動かして予測・判断を行うプロセス。トレーニングより頻度が桁違いに高く、今後のAIコスト構造の中心になると見込まれる。",
+    full: "AI推論（Inference）は、学習済みモデルを本番環境で稼働させ、入力データに対して予測・分類・生成などの出力を返すプロセス。トレーニング（学習）が1回の大規模計算なのに対し、推論はユーザーのリクエストごとに繰り返されるため、総計算量ではトレーニングを上回る。NVIDIAのGTC 2026では「トレーニングから推論へのピボット」が宣言され、専用チップ「Vera」が発表された。クラウド事業者のAI設備投資の焦点もトレーニング用GPUから推論最適化への移行が進んでいる。",
+    visual: '<div class="vis-diagram"><div class="vis-diagram-title">トレーニング vs 推論 比較</div><table class="vis-table"><tr><th>項目</th><th>トレーニング（学習）</th><th>推論（Inference）</th></tr><tr><td>頻度</td><td>1回（定期再学習）</td><td>毎リクエスト（常時稼働）</td></tr><tr><td>コスト特性</td><td>高い初期投資</td><td>継続的な運用コスト</td></tr><tr><td>ハードウェア</td><td>大規模GPU クラスタ</td><td>推論最適化チップ（Vera等）</td></tr><tr><td>市場規模</td><td>2024年 $30B</td><td>2026年 $80B（予測）</td></tr></table></div><div class="vis-diagram"><div class="vis-diagram-title">AI計算需要のシフト</div><div class="vis-flow"><div class="vis-flow-step">モデル開発期<br><small>トレーニング中心</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step">本番運用期<br><small>推論が急増</small></div><div class="vis-flow-arrow">→</div><div class="vis-flow-step positive">推論最適化時代<br><small>専用チップ・効率化</small></div></div></div><div class="vis-callout tip"><strong>💡 投資ポイント:</strong> AIの普及が進むほど推論の計算量が爆発的に増加する。NVIDIA Vera、AWS Inferentia、Google TPUなど推論特化ハードへの注目が高まっている。</div>'
   }
 ];
 
