@@ -998,6 +998,8 @@ body {
   .summary-ticker { padding: 6px 10px; font-size: 12px; }
   .earnings-grid { grid-template-columns: repeat(2, 1fr); }
   .keyword-perspectives { grid-template-columns: 1fr; }
+  .keyword-hero-grid { grid-template-columns: 1fr !important; }
+  .keyword-hero-grid img { height: 160px !important; }
   .section-hero { height: 160px; width: calc(100% + 44px); margin: 0 -22px 12px; }
   .section-hero img { height: 160px; }
   .news-card-img { height: 120px; }
@@ -1445,9 +1447,15 @@ body {
     </div>
 
     <div class="keyword-card">
-      <div class="keyword-hero-wrap" style="margin:-32px -32px 20px;overflow:hidden;border-radius:12px 12px 0 0;position:relative">
-        <img src="https://images.pexels.com/photos/15944128/pexels-photo-15944128.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="ホルムズ海峡を航行するタンカー船" loading="lazy" style="width:100%;height:200px;object-fit:cover;display:block">
-        <span style="position:absolute;bottom:4px;right:8px;font-size:10px;color:#fff;background:rgba(0,0,0,.5);padding:2px 6px;border-radius:4px">Photo: Pexels</span>
+      <div class="keyword-hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin:-32px -32px 20px;overflow:hidden;border-radius:12px 12px 0 0">
+        <div style="position:relative">
+          <img src="https://images.pexels.com/photos/15944128/pexels-photo-15944128.jpeg?auto=compress&cs=tinysrgb&w=600" alt="ホルムズ海峡を航行するタンカー船" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block">
+          <span style="position:absolute;bottom:4px;right:8px;font-size:10px;color:#fff;background:rgba(0,0,0,.5);padding:2px 6px;border-radius:4px">Photo: Pexels</span>
+        </div>
+        <div style="position:relative">
+          <img src="https://images.pexels.com/photos/8828624/pexels-photo-8828624.jpeg?auto=compress&cs=tinysrgb&w=600" alt="中東・ペルシャ湾地域の地図（ホルムズ海峡の位置）" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block">
+          <span style="position:absolute;bottom:4px;right:8px;font-size:10px;color:#fff;background:rgba(0,0,0,.5);padding:2px 6px;border-radius:4px">Photo: Pexels</span>
+        </div>
       </div>
       <div class="keyword-title">ホルムズ海峡（Strait of Hormuz）</div>
       <div class="keyword-sub">Strait of Hormuz — The World's Most Critical Oil Chokepoint</div>
