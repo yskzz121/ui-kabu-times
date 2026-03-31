@@ -999,7 +999,8 @@ body {
   .earnings-grid { grid-template-columns: repeat(2, 1fr); }
   .keyword-perspectives { grid-template-columns: 1fr; }
   .keyword-hero-grid { grid-template-columns: 1fr !important; }
-  .keyword-hero-grid img { height: 160px !important; }
+  .keyword-hero-grid img { height: 180px !important; }
+  .keyword-hero-grid svg { height: 220px !important; }
   .section-hero { height: 160px; width: calc(100% + 44px); margin: 0 -22px 12px; }
   .section-hero img { height: 160px; }
   .news-card-img { height: 120px; }
@@ -1449,12 +1450,103 @@ body {
     <div class="keyword-card">
       <div class="keyword-hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin:-32px -32px 20px;overflow:hidden;border-radius:12px 12px 0 0">
         <div style="position:relative">
-          <img src="https://images.pexels.com/photos/15944128/pexels-photo-15944128.jpeg?auto=compress&cs=tinysrgb&w=600" alt="ホルムズ海峡を航行するタンカー船" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block">
+          <img src="https://images.pexels.com/photos/15944128/pexels-photo-15944128.jpeg?auto=compress&cs=tinysrgb&w=600" alt="ホルムズ海峡を航行するタンカー船" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block">
           <span style="position:absolute;bottom:4px;right:8px;font-size:10px;color:#fff;background:rgba(0,0,0,.5);padding:2px 6px;border-radius:4px">Photo: Pexels</span>
         </div>
-        <div style="position:relative">
-          <img src="https://images.pexels.com/photos/8828624/pexels-photo-8828624.jpeg?auto=compress&cs=tinysrgb&w=600" alt="中東・ペルシャ湾地域の地図（ホルムズ海峡の位置）" loading="lazy" style="width:100%;height:220px;object-fit:cover;display:block">
-          <span style="position:absolute;bottom:4px;right:8px;font-size:10px;color:#fff;background:rgba(0,0,0,.5);padding:2px 6px;border-radius:4px">Photo: Pexels</span>
+        <div style="position:relative;background:#0a1628">
+          <!-- Strait of Hormuz Illustrated Map -->
+          <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:280px;display:block" aria-label="ホルムズ海峡の位置を示すイラストマップ">
+            <defs>
+              <!-- Blockade zone hatching -->
+              <pattern id="blockade" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(220,50,50,0.5)" stroke-width="2.5"/>
+              </pattern>
+              <!-- Sea gradient -->
+              <linearGradient id="seaGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0e2a4a"/>
+                <stop offset="100%" stop-color="#143860"/>
+              </linearGradient>
+              <!-- Land color -->
+              <linearGradient id="landGrad" x1="0" y1="0" x2="0.5" y2="1">
+                <stop offset="0%" stop-color="#2a3a52"/>
+                <stop offset="100%" stop-color="#1e2d42"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Sea background -->
+            <rect width="500" height="280" fill="url(#seaGrad)"/>
+
+            <!-- Iran (top/north) -->
+            <path d="M0,0 L500,0 L500,60 Q460,55 420,62 Q380,70 350,85 Q320,100 300,108 Q280,115 265,125 Q250,135 240,148 Q235,155 232,162 Q228,170 220,175 Q210,180 195,178 Q175,175 160,185 Q150,190 135,188 Q110,184 85,195 Q60,205 30,198 L0,195 Z" fill="url(#landGrad)" stroke="rgba(184,145,42,0.25)" stroke-width="0.8"/>
+
+            <!-- UAE (bottom-right) -->
+            <path d="M310,200 Q325,185 345,180 Q365,175 385,178 Q405,182 420,175 Q435,168 450,172 Q470,178 500,168 L500,280 L280,280 Q285,250 290,235 Q295,220 310,200 Z" fill="url(#landGrad)" stroke="rgba(184,145,42,0.25)" stroke-width="0.8"/>
+
+            <!-- Oman (bottom-right, Musandam peninsula) -->
+            <path d="M230,195 Q240,180 255,172 Q270,168 278,175 Q285,182 280,195 Q275,208 268,218 Q260,228 248,230 Q235,228 228,218 Q225,208 230,195 Z" fill="url(#landGrad)" stroke="rgba(184,145,42,0.25)" stroke-width="0.8"/>
+
+            <!-- Oman (south coast, main) -->
+            <path d="M160,260 Q180,245 200,240 Q220,238 240,245 Q260,248 270,255 Q275,260 278,265 L280,280 L100,280 Q120,270 140,262 Z" fill="url(#landGrad)" stroke="rgba(184,145,42,0.25)" stroke-width="0.8"/>
+
+            <!-- Saudi Arabia (left) -->
+            <path d="M0,195 Q20,202 40,210 Q60,218 80,230 Q100,242 110,255 Q115,262 118,270 L120,280 L0,280 Z" fill="url(#landGrad)" stroke="rgba(184,145,42,0.25)" stroke-width="0.8"/>
+
+            <!-- Qatar peninsula -->
+            <path d="M125,195 Q130,180 138,175 Q145,178 148,190 Q146,200 140,205 Q132,203 125,195 Z" fill="url(#landGrad)" stroke="rgba(184,145,42,0.25)" stroke-width="0.8"/>
+
+            <!-- Blockade zone (Strait of Hormuz) — red hatched area -->
+            <ellipse cx="248" cy="178" rx="45" ry="28" fill="url(#blockade)" transform="rotate(-20,248,178)"/>
+            <ellipse cx="248" cy="178" rx="45" ry="28" fill="none" stroke="#dc3232" stroke-width="1.5" stroke-dasharray="4,3" transform="rotate(-20,248,178)"/>
+
+            <!-- Shipping lane arrows (blocked) -->
+            <line x1="180" y1="190" x2="300" y2="165" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <line x1="300" y1="175" x2="180" y2="200" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+            <!-- X marks on shipping lanes -->
+            <g transform="translate(240,178)" stroke="#dc3232" stroke-width="2.5" stroke-linecap="round">
+              <line x1="-6" y1="-6" x2="6" y2="6"/><line x1="6" y1="-6" x2="-6" y2="6"/>
+            </g>
+
+            <!-- Country labels -->
+            <text x="180" y="55" fill="rgba(255,255,255,0.85)" font-family="Inter,sans-serif" font-size="15" font-weight="700" letter-spacing="3">イラン</text>
+            <text x="195" y="70" fill="rgba(255,255,255,0.4)" font-family="Inter,sans-serif" font-size="9" letter-spacing="2">IRAN</text>
+
+            <text x="380" y="225" fill="rgba(255,255,255,0.7)" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="2">UAE</text>
+
+            <text x="248" y="215" fill="rgba(255,255,255,0.7)" font-family="Inter,sans-serif" font-size="10" font-weight="600" letter-spacing="1" text-anchor="middle">ムサンダム</text>
+            <text x="248" y="225" fill="rgba(255,255,255,0.4)" font-family="Inter,sans-serif" font-size="8" text-anchor="middle">(オマーン)</text>
+
+            <text x="200" y="268" fill="rgba(255,255,255,0.7)" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="2">オマーン</text>
+
+            <text x="20" y="250" fill="rgba(255,255,255,0.6)" font-family="Inter,sans-serif" font-size="10" font-weight="600" letter-spacing="1">サウジ</text>
+            <text x="20" y="262" fill="rgba(255,255,255,0.6)" font-family="Inter,sans-serif" font-size="10" font-weight="600" letter-spacing="1">アラビア</text>
+
+            <text x="128" y="170" fill="rgba(255,255,255,0.5)" font-family="Inter,sans-serif" font-size="8" font-weight="600">カタール</text>
+
+            <!-- Sea labels -->
+            <text x="90" y="145" fill="rgba(100,170,240,0.5)" font-family="Inter,sans-serif" font-size="12" font-weight="600" font-style="italic" letter-spacing="4">ペルシャ湾</text>
+            <text x="90" y="158" fill="rgba(100,170,240,0.3)" font-family="Inter,sans-serif" font-size="8" font-style="italic" letter-spacing="3">Persian Gulf</text>
+
+            <text x="330" y="255" fill="rgba(100,170,240,0.5)" font-family="Inter,sans-serif" font-size="11" font-weight="600" font-style="italic" letter-spacing="3">オマーン湾</text>
+            <text x="330" y="267" fill="rgba(100,170,240,0.3)" font-family="Inter,sans-serif" font-size="8" font-style="italic" letter-spacing="2">Gulf of Oman</text>
+
+            <!-- Strait of Hormuz label with pointer -->
+            <line x1="248" y1="148" x2="248" y2="128" stroke="#dc3232" stroke-width="1.2"/>
+            <rect x="178" y="108" width="140" height="22" rx="4" fill="rgba(220,50,50,0.15)" stroke="#dc3232" stroke-width="1"/>
+            <text x="248" y="123" fill="#dc3232" font-family="Inter,sans-serif" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="1">ホルムズ海峡 封鎖中</text>
+
+            <!-- Legend -->
+            <rect x="12" y="12" width="120" height="42" rx="6" fill="rgba(10,22,40,0.85)" stroke="rgba(184,145,42,0.2)" stroke-width="0.8"/>
+            <rect x="20" y="22" width="14" height="10" fill="url(#blockade)" stroke="#dc3232" stroke-width="0.8"/>
+            <text x="40" y="30" fill="rgba(255,255,255,0.8)" font-family="Inter,sans-serif" font-size="9" font-weight="600">封鎖エリア</text>
+            <line x1="20" y1="42" x2="34" y2="42" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="40" y="45" fill="rgba(255,255,255,0.6)" font-family="Inter,sans-serif" font-size="8">航路（停止中）</text>
+
+            <!-- Oil flow annotation -->
+            <text x="488" y="20" fill="rgba(255,255,255,0.5)" font-family="Inter,sans-serif" font-size="8" text-anchor="end">世界の原油輸送の</text>
+            <text x="488" y="34" fill="#D4A843" font-family="Inter,sans-serif" font-size="16" font-weight="800" text-anchor="end">~20%</text>
+            <text x="488" y="46" fill="rgba(255,255,255,0.5)" font-family="Inter,sans-serif" font-size="8" text-anchor="end">がここを通過</text>
+          </svg>
         </div>
       </div>
       <div class="keyword-title">ホルムズ海峡（Strait of Hormuz）</div>
