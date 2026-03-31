@@ -51,7 +51,41 @@
   --radius-lg: 16px;
   --transition: .25s cubic-bezier(.4,0,.2,1);
   --max-w: 1100px;
+  --font-scale: 1;
 }
+
+/* Font Scale Levels */
+[data-font-scale="1"] { --font-scale: 1; }
+[data-font-scale="2"] { --font-scale: 1.15; }
+[data-font-scale="3"] { --font-scale: 1.3; }
+[data-font-scale="4"] { --font-scale: 1.45; }
+
+/* Scaled text elements */
+.summary-text,
+.top-story-body,
+.news-card-excerpt,
+.keyword-overview,
+.keyword-perspective-text,
+.keyword-relation,
+.editorial-body,
+.editorial-note,
+.why-box,
+.calendar-event,
+.calendar-detail,
+.disclaimer-text { font-size: calc(1em * var(--font-scale)); }
+.top-story-title { font-size: calc(26px * var(--font-scale)); }
+.news-card-title { font-size: calc(16px * var(--font-scale)); }
+.section-label-text { font-size: calc(24px * var(--font-scale)); }
+.keyword-title { font-size: calc(22px * var(--font-scale)); }
+
+/* Font scale toggle button */
+.font-scale-btn {
+  background: none; border: 1px solid rgba(255,255,255,0.25); cursor: pointer;
+  font-family: var(--font-ui); font-size: 12px; font-weight: 700;
+  padding: 2px 7px; line-height: 1.3; color: rgba(255,255,255,0.7);
+  border-radius: 4px; transition: all .15s; white-space: nowrap;
+}
+.font-scale-btn:hover { border-color: var(--gold); color: var(--gold); }
 
 /* ==========================================
    Base
@@ -1177,9 +1211,11 @@ body {
       <a href="https://atlasfinancials.github.io/ui-kabu-reports/">分析</a>
       <a href="https://yskzz121.github.io/ui-kabu-times-preview/glossary/">用語辞典</a>
       <a href="https://atlasfinancials.github.io/ui-kabu-reports/join.html" class="nav-cta">入会する</a>
+      <button class="font-scale-btn" aria-label="文字サイズ切替" onclick="cycleFontScale()">文 小</button>
       <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替" onclick="toggleTheme()">🌙</button>
     </div>
     <div class="nav-mobile-actions">
+      <button class="font-scale-btn" aria-label="文字サイズ切替" onclick="cycleFontScale()">文 小</button>
       <button class="theme-toggle" id="themeToggleMobile" aria-label="テーマ切替" onclick="toggleTheme()">🌙</button>
       <button class="nav-hamburger" id="navHamburger" aria-label="メニュー">☰</button>
     </div>
@@ -1898,6 +1934,31 @@ function toggleTheme(){
   if(saved){document.documentElement.setAttribute('data-theme',saved)}
   var icon=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
   document.querySelectorAll('.theme-toggle').forEach(function(b){b.textContent=icon;});
+})();
+
+// ==========================================
+// Font Scale (4 levels)
+// ==========================================
+var fontScaleLabels = ['文 小','文 中','文 大','文 特大'];
+
+function cycleFontScale(){
+  var html = document.documentElement;
+  var current = parseInt(html.getAttribute('data-font-scale') || '1', 10);
+  var next = current >= 4 ? 1 : current + 1;
+  html.setAttribute('data-font-scale', next);
+  localStorage.setItem('atlas-font-scale', next);
+  document.querySelectorAll('.font-scale-btn').forEach(function(b){
+    b.textContent = fontScaleLabels[next - 1];
+  });
+}
+(function(){
+  var saved = localStorage.getItem('atlas-font-scale');
+  var level = saved ? parseInt(saved, 10) : 1;
+  if (level < 1 || level > 4) level = 1;
+  document.documentElement.setAttribute('data-font-scale', level);
+  document.querySelectorAll('.font-scale-btn').forEach(function(b){
+    b.textContent = fontScaleLabels[level - 1];
+  });
 })();
 </script>
 
