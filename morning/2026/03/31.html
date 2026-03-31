@@ -190,6 +190,13 @@ body {
 }
 .theme-toggle:hover { opacity: .8; }
 
+/* Mobile: theme toggle + hamburger side by side */
+.nav-mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
 /* ==========================================
    Header
    ========================================== */
@@ -1015,6 +1022,7 @@ body {
   .nav-sub { display: none; }
   .nav-links { display: none; }
   .nav-hamburger { display: block; }
+  .nav-mobile-actions { display: flex; }
 
   /* Mobile Tooltip — pointer-events for tap dismiss */
   .term .tip { pointer-events: auto; }
@@ -1171,7 +1179,10 @@ body {
       <a href="https://atlasfinancials.github.io/ui-kabu-reports/join.html" class="nav-cta">入会する</a>
       <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替" onclick="toggleTheme()">🌙</button>
     </div>
-    <button class="nav-hamburger" id="navHamburger" aria-label="メニュー">☰</button>
+    <div class="nav-mobile-actions">
+      <button class="theme-toggle" id="themeToggleMobile" aria-label="テーマ切替" onclick="toggleTheme()">🌙</button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="メニュー">☰</button>
+    </div>
   </nav>
 </header>
 <div class="mobile-menu" id="mobileMenu">
@@ -1879,13 +1890,14 @@ function toggleTheme(){
   var next=html.getAttribute('data-theme')==='dark'?'light':'dark';
   html.setAttribute('data-theme',next);
   localStorage.setItem('atlas-theme',next);
-  document.getElementById('themeToggle').textContent=next==='dark'?'☀️':'🌙';
+  var icon=next==='dark'?'☀️':'🌙';
+  document.querySelectorAll('.theme-toggle').forEach(function(b){b.textContent=icon;});
 }
 (function(){
   var saved=localStorage.getItem('atlas-theme');
   if(saved){document.documentElement.setAttribute('data-theme',saved)}
-  var btn=document.getElementById('themeToggle');
-  if(btn) btn.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
+  var icon=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
+  document.querySelectorAll('.theme-toggle').forEach(function(b){b.textContent=icon;});
 })();
 </script>
 
