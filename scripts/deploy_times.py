@@ -12,8 +12,12 @@ LINE U&I株倶楽部グループに自動通知するスクリプト。
   # 号外
   python3 deploy_times.py extra <HTMLパス> <YYYY-MM-DD> <スラッグ> "<見出し>"
 
+オプション:
+  --line    LINE通知を送信する（デフォルトはOFF）
+
 例:
   python3 deploy_times.py morning ~/Desktop/UI_KabuClub_HP/morning_20260318.html 2026-03-18 "NVIDIA GTC効果で反発、本日FOMC"
+  python3 deploy_times.py morning ~/Desktop/UI_KabuClub_HP/morning_20260318.html 2026-03-18 "見出し" --line
   python3 deploy_times.py extra ~/Desktop/UI_KabuClub_HP/gogai_gtc2026.html 2026-03-17 gtc-2026 "NVIDIA GTC 2026 完全レポート"
 """
 
@@ -267,16 +271,20 @@ def main():
         print('  python3 deploy_times.py extra <HTMLパス> <YYYY-MM-DD> <スラッグ> "<見出し>"')
         sys.exit(1)
 
-    article_type = sys.argv[1]  # "morning" or "extra"
-    html_path = os.path.abspath(sys.argv[2])
-    date_str = sys.argv[3]
+    # --line フラグの検出（どの位置にあっても対応）
+    send_line_flag = "--line" in sys.argv
+    args = [a for a in sys.argv[1:] if a != "--line"]
+
+    article_type = args[0] if len(args) > 0 else ""
+    html_path = os.path.abspath(args[1]) if len(args) > 1 else ""
+    date_str = args[2] if len(args) > 2 else ""
 
     if article_type == "extra":
-        slug = sys.argv[4] if len(sys.argv) > 4 else "special"
-        headline = sys.argv[5] if len(sys.argv) > 5 else ""
+        slug = args[3] if len(args) > 3 else "special"
+        headline = args[4] if len(args) > 4 else ""
     else:
         slug = None
-        headline = sys.argv[4] if len(sys.argv) > 4 else ""
+        headline = args[3] if len(args) > 3 else ""
 
     if not os.path.exists(html_path):
         print(f"❌ ファイルが見つかりません: {html_path}")
@@ -343,12 +351,15 @@ def main():
     print("   ✅ GitHub Pages にプッシュ完了")
 
     # 6. LINE通知
-    print("6️⃣  LINE通知...")
-    line_cfg = load_line_config()
+    if not send_line_flag:
+        print("6️⃣  LINE通知... スキップ（--line フラグなし）")
+    else:
+        print("6️⃣  LINE通知...")
+    line_cfg = load_line_config() if send_line_flag else {}
     token = line_cfg.get("LINE_TOKEN")
     group_id = line_cfg.get("LINE_GROUP_ID")
 
-    if token and group_id:
+    if send_line_flag and token and group_id:
         url = f"{PAGES_BASE_URL}/{article_type}/{y}/{m}/{fname}"
         now_str = datetime.now().strftime("%Y/%m/%d %H:%M")
         msg = f"{type_icon} 【U&I株倶楽部 {type_label}】{y}年{int(m)}月{d}日（{weekday}）\n"
@@ -369,7 +380,7 @@ def main():
             print("   ✅ LINE通知 送信完了")
         else:
             print("   ⚠️  LINE通知 送信失敗（記事は公開済み）")
-    else:
+    elif send_line_flag:
         print("   ⚠️  LINE設定が見つかりません（スキップ）")
 
     print()
