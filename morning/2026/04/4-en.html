@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-font-scale="1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas Daily — April 4, 2026 Morning Edition</title>
+<meta property="og:title" content="Atlas Daily | April 4, 2026 Morning Edition">
+<meta property="og:description" content="Jobs Report Surprise, Crude Above $111 — Good Friday Shock Data and Key Themes for Monday">
+<meta property="og:image" content="https://atlasfinancials.github.io/ui-kabu-times/assets/og-image.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://atlasfinancials.github.io/ui-kabu-times/morning/2026/04/4.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="https://atlasfinancials.github.io/ui-kabu-times/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700;800&family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<style>
+/* ==========================================
+   CSS Variables — Atlas Brand
+   ========================================== */
+:root {
+  --navy: #1A2540;
+  --navy-mid: #243158;
+  --navy-deep: #0F1829;
+  --gold: #B8912A;
+  --gold-lt: #D4A843;
+  --gold-pale: #F0E6C8;
+  --paper: #F5F2EC;
+  --paper-dk: #ECE8DF;
+  --ink: #0F0E0C;
+  --slate: #4A5568;
+  --slate-lt: #718096;
+  --alert: #8B2020;
+  --font-heading: 'Shippori Mincho B1', serif;
+  --font-body: 'Noto Serif JP', serif;
+  --font-ui: 'Noto Sans JP', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-data: 'Inter', 'Noto Sans JP', sans-serif;
+  --surface: #FDFCFA;
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.04);
+  --tip-bg: #FDFCFA;
+  --tip-border: var(--paper-dk);
+  --tip-shadow: 0 8px 24px rgba(0,0,0,.08);
+  --badge-bg: rgba(184,145,42,0.06);
+  --gold-light: rgba(184,145,42,0.08);
+  --alert-light: rgba(139,32,32,0.08);
+  --gold-lt-light: rgba(212,168,67,0.08);
+  --navy-light: rgba(26,37,64,0.06);
+  --slate-light: rgba(74,85,104,0.06);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --transition: .25s cubic-bezier(.4,0,.2,1);
+  --max-w: 1100px;
+  --font-scale: 1;
+}
+
+/* Font Scale Levels */
+[data-font-scale="1"] { --font-scale: 1;    --lh-body: 2;   --lh-text: 1.9; --lh-card: 1.7; --lh-title: 1.5; }
+[data-font-scale="2"] { --font-scale: 1.15; --lh-body: 1.85; --lh-text: 1.8; --lh-card: 1.65; --lh-title: 1.45; }
+[data-font-scale="3"] { --font-scale: 1.3;  --lh-body: 1.75; --lh-text: 1.7; --lh-card: 1.6; --lh-title: 1.4; }
+[data-font-scale="4"] { --font-scale: 1.45; --lh-body: 1.65; --lh-text: 1.65; --lh-card: 1.55; --lh-title: 1.35; }
+
+/* Scaled text elements */
+[data-font-scale] .summary-text        { font-size: calc(15px * var(--font-scale)); line-height: var(--lh-body); }
+[data-font-scale] .top-story-body      { font-size: calc(15px * var(--font-scale)); line-height: var(--lh-text); }
+[data-font-scale] .news-card-excerpt   { font-size: calc(13px * var(--font-scale)); line-height: var(--lh-card); }
+[data-font-scale] .keyword-overview    { font-size: calc(15px * var(--font-scale)); line-height: var(--lh-text); }
+[data-font-scale] .keyword-perspective-text { font-size: calc(13px * var(--font-scale)); line-height: var(--lh-card); }
+[data-font-scale] .keyword-relation    { font-size: calc(14px * var(--font-scale)); line-height: var(--lh-card); }
+[data-font-scale] .editorial-body      { font-size: calc(15px * var(--font-scale)); line-height: var(--lh-text); }
+[data-font-scale] .editorial-note      { font-size: calc(13px * var(--font-scale)); line-height: var(--lh-card); }
+[data-font-scale] .why-box             { font-size: calc(13px * var(--font-scale)); line-height: var(--lh-card); }
+[data-font-scale] .calendar-event      { font-size: calc(14px * var(--font-scale)); }
+[data-font-scale] .calendar-detail     { font-size: calc(12px * var(--font-scale)); }
+[data-font-scale] .disclaimer-text     { font-size: calc(11px * var(--font-scale)); }
+[data-font-scale] .top-story-title     { font-size: calc(26px * var(--font-scale)); line-height: var(--lh-title); }
+[data-font-scale] .news-card-title     { font-size: calc(16px * var(--font-scale)); line-height: var(--lh-title); }
+[data-font-scale] .section-label-text  { font-size: calc(24px * var(--font-scale)); line-height: var(--lh-title); }
+[data-font-scale] .keyword-title       { font-size: calc(22px * var(--font-scale)); line-height: var(--lh-title); }
+
+/* Language switcher */
+.lang-switch {
+  display: inline-flex; align-items: center; gap: 2px;
+  margin-right: 4px;
+}
+.lang-switch a, .lang-switch span {
+  font-size: 13px; text-decoration: none; padding: 2px 4px;
+  border-radius: 3px; line-height: 1; transition: opacity .15s;
+}
+.lang-switch a { opacity: .5; cursor: pointer; }
+.lang-switch a:hover { opacity: .9; }
+.lang-switch .lang-active { opacity: 1; background: rgba(184,145,42,0.2); border-radius: 4px; }
+
+/* Font scale toggle button */
+.font-scale-btn {
+  background: none; border: 1px solid rgba(255,255,255,0.25); cursor: pointer;
+  font-family: var(--font-data); font-size: 11px; font-weight: 700;
+  padding: 3px 6px; line-height: 1; color: rgba(255,255,255,0.7);
+  border-radius: 4px; transition: all .15s; white-space: nowrap;
+  display: inline-flex; align-items: baseline; gap: 1px;
+}
+.font-scale-btn:hover { border-color: var(--gold); color: var(--gold); }
+.font-scale-btn .fs-sm { font-size: 10px; }
+.font-scale-btn .fs-lg { font-size: 15px; }
+.font-scale-btn .fs-level { font-size: 9px; margin-left: 3px; opacity: 0.6; }
+
+/* ==========================================
+   Base
+   ========================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font-ui);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+.heading { color: var(--navy); }
+.sub { color: var(--slate); }
+.muted { color: var(--slate-lt); }
+.accent { color: var(--gold); }
+.up { color: var(--gold); }
+.down { color: var(--alert); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow .25s ease;
+}
+.card:hover { border-color: rgba(184,145,42,0.4); }
+.card-pad { padding: 28px; }
+
+/* ==========================================
+   Site Header — Atlas Nav
+   ========================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--navy-deep);
+  border-bottom: 1px solid rgba(184,145,42,0.2);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+}
+.nav-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(--gold); }
+.nav-sub {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--slate-lt);
+  letter-spacing: 0.06em;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.nav-links a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color .15s;
+  letter-spacing: 0.02em;
+}
+.nav-links a:hover { color: var(--gold-lt); }
+.nav-links a.active { color: #fff; font-weight: 700; }
+.nav-cta {
+  background: var(--gold) !important;
+  color: var(--navy-deep) !important;
+  font-weight: 700 !important;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 12px !important;
+  letter-spacing: 0.04em;
+  transition: background .15s !important;
+}
+.nav-cta:hover { background: var(--gold-lt) !important; color: var(--navy-deep) !important; }
+
+/* Hamburger */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 20px;
+  cursor: pointer;
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  background: rgba(15,24,41,0.98);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,145,42,0.12);
+  padding: 16px 24px;
+  z-index: 99;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 12px 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.mobile-menu a:last-child { border-bottom: none; }
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none; border: none; cursor: pointer; font-size: 18px;
+  padding: 4px 8px; line-height: 1; color: rgba(255,255,255,0.7);
+  transition: opacity .15s;
+}
+.theme-toggle:hover { opacity: .8; }
+
+/* Mobile: theme toggle + hamburger side by side */
+.nav-mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================
+   Header
+   ========================================== */
+.paper-header {
+  border-bottom: 1px solid rgba(184,145,42,0.15);
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  background: var(--navy-deep);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.paper-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(184,145,42,0.08) 0%, transparent 60%);
+  z-index: 0;
+}
+.paper-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-lt), var(--gold));
+  z-index: 1;
+}
+.paper-header > * { position: relative; z-index: 1; }
+
+.paper-date {
+  font-family: var(--font-data);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: .1em;
+  margin-bottom: 16px;
+}
+
+.paper-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+.paper-logo::before,
+.paper-logo::after {
+  content: '';
+  width: 60px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+  opacity: .5;
+  flex-shrink: 0;
+}
+.paper-logo::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.paper-title {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.paper-accent {
+  display: block;
+  font-size: 13px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: .2em;
+  color: var(--gold);
+  opacity: .7;
+}
+
+/* ==========================================
+   Section Label
+   ========================================== */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--paper-dk);
+}
+.section-label-icon { font-size: 20px; }
+.section-label-text {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: var(--navy);
+}
+.section-label-line { flex: 1; height: 1px; background: var(--paper-dk); }
+.section-gap { margin-bottom: 40px; }
+
+/* ==========================================
+   Market Summary
+   ========================================== */
+.summary-text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 2;
+  color: var(--ink);
+}
+.summary-text p { margin-bottom: 0; padding: 18px 0; border-bottom: 1px solid var(--paper-dk); }
+.summary-text p:last-child { border-bottom: none; }
+.summary-text p:first-child { padding-top: 0; }
+.summary-num-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  font-family: var(--font-data);
+  font-size: 12px;
+  font-weight: 800;
+  margin-right: 8px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+[data-theme="dark"] .summary-text p { border-bottom-color: rgba(184,145,42,0.12); }
+
+.summary-topic {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  letter-spacing: -.01em;
+}
+.summary-topic.positive { color: var(--gold); }
+.summary-topic.negative { color: var(--alert); }
+.summary-topic.neutral { color: var(--navy); }
+
+.summary-num { font-family: var(--font-data); font-weight: 700; }
+.summary-num.up { color: var(--gold); }
+.summary-num.down { color: var(--alert); }
+.summary-label { font-weight: 700; }
+
+/* Sector Heatmap */
+.sector-perf {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--paper-dk);
+}
+.sector-perf-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 14px;
+  letter-spacing: .02em;
+}
+.sector-heatmap {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+.sector-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 16px 8px;
+  text-align: center;
+  min-height: 80px;
+  transition: transform .15s, box-shadow .15s;
+  position: relative;
+}
+.sector-tile:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.sector-tile-name {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.sector-tile-ticker {
+  font-family: var(--font-data);
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.6;
+  letter-spacing: .05em;
+  margin-bottom: 2px;
+}
+.sector-tile-chg {
+  font-family: var(--font-data);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+}
+.sector-tile-best {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 12px;
+}
+
+/* Dark theme for sector */
+[data-theme="dark"] .sector-perf { border-top-color: rgba(184,145,42,0.12); }
+
+/* Market Indicator Panels */
+.market-panels {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--paper-dk);
+}
+.market-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 10px;
+  padding: 14px 10px;
+  text-align: center;
+  transition: border-color .2s;
+}
+.market-panel:hover { border-color: rgba(184,145,42,0.4); }
+.panel-name {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate);
+  letter-spacing: .03em;
+  margin-bottom: 4px;
+}
+.panel-val {
+  font-family: var(--font-data);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.panel-chg {
+  font-family: var(--font-data);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Dark theme for market panels */
+[data-theme="dark"] .market-panels { border-top-color: rgba(184,145,42,0.12); }
+[data-theme="dark"] .market-panel { background: #1A2540; border-color: rgba(184,145,42,0.12); }
+[data-theme="dark"] .market-panel:hover { border-color: rgba(184,145,42,0.3); }
+[data-theme="dark"] .panel-val { color: #F5F2EC; }
+
+/* ==========================================
+   Top Story
+   ========================================== */
+.top-story {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 16px;
+  transition: all .25s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  box-shadow: var(--shadow-card);
+}
+.top-story:hover { border-color: rgba(184,145,42,0.4); box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+
+.top-story-badge {
+  display: inline-block;
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: rgba(184,145,42,0.08);
+  color: var(--gold);
+  letter-spacing: .04em;
+  margin-bottom: 14px;
+  border: 1px solid transparent;
+}
+
+/* Section Hero Image */
+.section-hero {
+  width: calc(100% + 64px);
+  margin: 0 -32px 16px;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  overflow: hidden;
+}
+.section-hero img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.section-hero-caption {
+  font-size: 11px;
+  color: var(--slate-lt);
+  margin-top: -8px;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.top-story-title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+  margin-bottom: 14px;
+  color: var(--navy);
+}
+.top-story-body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.9;
+}
+.top-story-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--paper-dk);
+  font-size: 12px;
+  color: var(--slate-lt);
+}
+.top-story-source { font-weight: 700; color: var(--slate); }
+
+/* ==========================================
+   "Why Important?" Box
+   ========================================== */
+.why-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.why-box.positive { background: var(--gold-light); border: 1px solid var(--gold); color: var(--ink); }
+.why-box.negative { background: var(--alert-light); border: 1px solid var(--alert); color: var(--ink); }
+.why-box.warning { background: var(--gold-lt-light); border: 1px solid var(--gold-lt); color: var(--ink); }
+.why-box.default { background: var(--navy-light); border: 1px solid var(--navy); color: var(--ink); }
+.why-icon { font-size: 18px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+.why-label { font-weight: 700; color: var(--navy); margin-right: 4px; }
+
+/* ==========================================
+   Sub News Grid
+   ========================================== */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.news-card {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  padding: 22px;
+  transition: all .25s ease;
+  cursor: default;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: visible;
+  box-shadow: var(--shadow-card);
+}
+.news-card:hover { border-color: rgba(184,145,42,0.4); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+
+/* News Card Image */
+.news-card-img-wrap {
+  margin: -22px -22px 12px -22px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px 12px 0 0;
+}
+.news-card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease;
+}
+.news-card:hover .news-card-img { transform: scale(1.03); }
+.news-card-img-caption {
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  font-size: 10px;
+  color: #fff;
+  background: rgba(0,0,0,.5);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.news-card-meta { display: flex; align-items: center; gap: 10px; }
+.news-card-tag {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  letter-spacing: .02em;
+}
+.news-card-tag.economy { background: var(--gold-light); color: var(--gold); }
+.news-card-tag.tech { background: var(--gold-lt-light); color: var(--gold-lt); }
+.news-card-tag.earnings { background: var(--gold-light); color: var(--gold); }
+.news-card-tag.geopolitics { background: var(--alert-light); color: var(--alert); }
+.news-card-tag.policy { background: var(--slate-light); color: var(--slate); }
+
+.news-card-source { font-size: 11px; color: var(--slate-lt); font-weight: 500; }
+.news-card-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+  color: var(--navy);
+}
+.news-card-excerpt {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.7;
+}
+.news-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--paper-dk);
+  font-size: 12px;
+  color: var(--slate-lt);
+}
+
+/* Editorial Take (hover/tap expand) */
+.ed-take {
+  position: relative;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(184,145,42,0.05);
+  border: 1px solid rgba(184,145,42,0.15);
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.ed-take-icon { font-size: 14px; margin-right: 4px; }
+.ed-take-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: .02em;
+}
+.ed-take-label::after {
+  content: ' \25B8  Hover to show';
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--slate-lt);
+}
+.ed-take-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--slate);
+  transition: max-height .4s ease, opacity .3s ease, margin-top .3s ease;
+}
+.ed-take:hover .ed-take-body,
+.ed-take.open .ed-take-body {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: 10px;
+}
+.ed-take:hover { border-color: var(--gold); background: rgba(184,145,42,0.08); }
+.ed-take:hover .ed-take-label::after { content: ''; }
+[data-theme="dark"] .ed-take { background: rgba(184,145,42,0.06); border-color: rgba(184,145,42,0.12); }
+[data-theme="dark"] .ed-take:hover { background: rgba(184,145,42,0.1); border-color: var(--gold); }
+[data-theme="dark"] .ed-take-body { color: #8b949e; }
+[data-theme="dark"] .ed-take-body strong { color: #F5F2EC; }
+
+/* ==========================================
+   "Today's Keyword" Section
+   ========================================== */
+.keyword-card {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.keyword-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-lt));
+  border-radius: 12px 12px 0 0;
+}
+.keyword-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.keyword-sub {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--slate);
+  margin-bottom: 16px;
+}
+.keyword-overview {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.keyword-perspectives {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.keyword-perspective {
+  background: var(--badge-bg);
+  border: 1px solid var(--paper-dk);
+  border-radius: 8px;
+  padding: 16px;
+}
+.keyword-perspective-icon { font-size: 20px; margin-bottom: 4px; }
+.keyword-perspective-label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.keyword-perspective-text { font-size: 13px; line-height: 1.7; color: var(--slate); }
+
+.keyword-relation {
+  background: var(--gold-light);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.keyword-relation-label { font-weight: 700; color: var(--gold); margin-bottom: 4px; display: block; }
+.keyword-glossary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+}
+.keyword-glossary-link:hover { text-decoration: underline; }
+
+/* ==========================================
+   Editorial
+   ========================================== */
+.editorial-card {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.ed-hero {
+  padding: 28px 32px 24px;
+  background: linear-gradient(135deg, rgba(184,145,42,0.06) 0%, rgba(139,32,32,0.03) 50%, transparent 100%);
+  border-bottom: 1px solid var(--paper-dk);
+}
+.ed-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 100px;
+  background: rgba(184,145,42,0.1);
+  color: var(--gold);
+  letter-spacing: .04em;
+  margin-bottom: 12px;
+}
+.editorial-headline {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  color: var(--navy);
+}
+.editorial-sub {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.editorial-body {
+  padding: 28px 32px;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--slate);
+}
+.editorial-body p { margin-bottom: 16px; }
+.editorial-body p:last-child { margin-bottom: 0; }
+.editorial-body strong { color: var(--ink); }
+.editorial-note {
+  font-size: 11px;
+  color: var(--slate-lt);
+  margin: 0;
+  padding: 16px 32px;
+  line-height: 1.6;
+  border-top: 1px solid var(--paper-dk);
+  background: rgba(74,85,104,0.02);
+}
+
+/* ==========================================
+   Economic Calendar
+   ========================================== */
+.calendar-list {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.calendar-day-label {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--gold);
+  padding: 12px 16px 4px;
+  letter-spacing: .02em;
+}
+.calendar-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--paper-dk);
+  transition: background .25s ease;
+}
+.calendar-item:last-child { border-bottom: none; }
+.calendar-item:hover { background: var(--paper); }
+.calendar-time {
+  font-family: var(--font-data);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold);
+  min-width: 52px;
+  text-align: center;
+}
+.calendar-importance {
+  font-family: var(--font-data);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.calendar-importance.high { background: var(--alert-light); color: var(--alert); }
+.calendar-importance.medium { background: var(--gold-lt-light); color: var(--gold-lt); }
+.calendar-importance.low { background: var(--badge-bg); color: var(--slate-lt); border: 1px solid var(--paper-dk); }
+.calendar-event {
+  flex: 1;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.calendar-flag { font-size: 16px; }
+.calendar-detail { font-size: 12px; color: var(--slate-lt); white-space: nowrap; }
+
+/* ==========================================
+   Earnings Preview
+   ========================================== */
+.earnings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+.earnings-item {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all .25s ease;
+  box-shadow: var(--shadow-card);
+}
+.earnings-item:hover { border-color: rgba(184,145,42,0.4); transform: translateY(-2px); }
+.earnings-item-header { display: flex; align-items: center; gap: 6px; }
+.earnings-item-logo { height: 20px; width: auto; max-width: 60px; object-fit: contain; flex-shrink: 0; }
+.earnings-item-ticker { font-family: var(--font-data); font-size: 18px; font-weight: 800; color: var(--navy); }
+.earnings-item-timing {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--badge-bg);
+  color: var(--slate-lt);
+  border: 1px solid var(--paper-dk);
+  margin-left: auto;
+}
+.earnings-item-timing.bmo { background: var(--gold-lt-light); color: var(--gold-lt); border-color: transparent; }
+.earnings-item-timing.amc { background: var(--navy-light); color: var(--navy-mid); border-color: transparent; }
+.earnings-item-name { font-size: 13px; color: var(--slate); font-weight: 500; }
+.earnings-item-sector {
+  font-family: var(--font-data);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--slate-lt);
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--badge-bg);
+  border: 1px solid var(--paper-dk);
+  display: inline-block;
+  align-self: flex-start;
+  line-height: 1.4;
+}
+.earnings-item-consensus { font-size: 12px; color: var(--slate-lt); display: flex; gap: 12px; }
+.earnings-item-consensus span { font-family: var(--font-data); }
+.earnings-item-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity .25s ease;
+}
+.earnings-item-link:hover { opacity: .7; }
+.earnings-item-note {
+  font-size: 11px;
+  color: var(--gold);
+  font-weight: 600;
+  margin-top: 2px;
+}
+.earnings-item-result {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.earnings-item-result.beat { background: var(--gold-light); color: var(--gold); }
+.earnings-item-result.miss { background: var(--alert-light); color: var(--alert); }
+.earnings-item-result.inline { background: var(--badge-bg); color: var(--slate-lt); }
+
+/* ==========================================
+   Tooltip — fixed positioning (PC & Mobile)
+   ========================================== */
+.term {
+  color: var(--gold);
+  font-weight: 600;
+  cursor: help;
+  position: relative;
+  border-bottom: 1px dotted var(--gold);
+}
+.term .tip {
+  display: none;
+  position: fixed;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  background: var(--tip-bg);
+  border: 1px solid var(--tip-border);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--ink);
+  box-shadow: var(--tip-shadow);
+  z-index: 1001;
+  pointer-events: none;
+}
+.term .tip.tip-visible { display: block; }
+.tip-title { display: block; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+
+/* Mobile overlay */
+.tip-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 1000;
+}
+.tip-overlay.show { display: block; }
+
+/* Disable card hover transform when tooltip is active */
+.news-card.tip-active:hover { transform: none !important; }
+.top-story.tip-active:hover { transform: none !important; }
+
+/* ==========================================
+   Disclaimer
+   ========================================== */
+.disclaimer-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 0;
+}
+.disclaimer-text {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--slate-lt);
+  padding: 16px 20px;
+  background: var(--paper-dk);
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+.paper-footer {
+  background: var(--navy-deep);
+  border-top: 3px solid var(--gold);
+  padding: 32px 20px;
+  text-align: center;
+}
+.footer-day-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-day-nav a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+}
+.footer-day-nav a:hover { text-decoration: underline; color: var(--gold-lt); }
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.footer-nav a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+}
+.footer-nav a:hover { text-decoration: underline; color: var(--gold-lt); }
+.footer-copy { font-family: var(--font-ui); font-size: 12px; color: var(--slate-lt); }
+
+/* ==========================================
+   Responsive
+   ========================================== */
+@media (min-width: 768px) {
+  .main { padding: 36px 40px 60px; }
+  .paper-header { padding: 48px 40px; }
+  .paper-title { font-size: 52px; }
+  .paper-logo::before, .paper-logo::after { width: 80px; }
+  .paper-logo { gap: 24px; }
+  .paper-date { margin-bottom: 20px; }
+}
+
+@media (max-width: 767px) {
+  .paper-header { padding: 28px 16px; }
+  .paper-title { font-size: 28px; letter-spacing: .08em; }
+  .paper-accent { font-size: 11px; letter-spacing: .15em; }
+  .paper-date { font-size: 11px; margin-bottom: 12px; }
+  .paper-logo { gap: 12px; margin-bottom: 8px; }
+  .paper-logo::before, .paper-logo::after { width: 24px; }
+  .news-grid { grid-template-columns: 1fr; }
+  .top-story { padding: 22px; }
+  .top-story-title { font-size: 20px; }
+  .earnings-grid { grid-template-columns: repeat(2, 1fr); }
+  .keyword-perspectives { grid-template-columns: 1fr; }
+  .section-hero { height: 160px; width: calc(100% + 44px); margin: 0 -22px 12px; }
+  .section-hero img { height: 160px; }
+  .news-card-img { height: 120px; }
+  .summary-topic { font-size: 18px; }
+  .section-label-text { font-size: 20px; }
+  .editorial-headline { font-size: 18px; }
+  .editorial-body { padding: 20px; }
+  .editorial-note { padding: 12px 20px; }
+
+  /* Nav responsive */
+  .nav-inner { padding: 0 16px; height: 48px; }
+  .nav-logo { font-size: 18px; }
+  .nav-sub { display: none; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: block; }
+  .nav-mobile-actions { display: flex; }
+
+  /* Sector heatmap mobile */
+  .sector-heatmap { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .sector-tile { padding: 12px 6px; min-height: 68px; }
+  .sector-tile-name { font-size: 11px; }
+  .sector-tile-ticker { font-size: 9px; }
+  .sector-tile-chg { font-size: 14px; }
+
+  /* Market panels mobile */
+  .market-panels { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .market-panel { padding: 10px 6px; }
+  .panel-name { font-size: 10px; }
+  .panel-val { font-size: 16px; }
+  .panel-chg { font-size: 13px; }
+
+  /* Mobile Tooltip — pointer-events for tap dismiss */
+  .term .tip { pointer-events: auto; }
+
+  /* Calendar 2-line layout */
+  .calendar-item { flex-wrap: wrap; gap: 8px; }
+  .calendar-time { order: 1; min-width: auto; }
+  .calendar-flag { order: 2; }
+  .calendar-importance { order: 3; }
+  .calendar-event { order: 4; flex-basis: 100%; font-size: 13px; }
+  .calendar-detail { order: 5; flex-basis: 100%; }
+
+  .ed-take-label::after { content: ' \25B8  Tap to show'; }
+}
+
+@media (max-width: 480px) {
+  .nav-links a:not(.nav-cta) { font-size: 10px; }
+  .earnings-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================
+   Print
+   ========================================== */
+@media print {
+  html { color-scheme: light; }
+  body { background: #fff !important; color: #333 !important; }
+  .site-header, .tip-overlay, .mobile-menu { display: none !important; }
+  .paper-header { background: none !important; color: #333 !important; }
+  .paper-header::before, .paper-header::after { display: none !important; }
+  .paper-title { color: #333 !important; }
+  .paper-date { color: #666 !important; }
+  .paper-accent { color: #666 !important; }
+  .card, .top-story, .news-card, .keyword-card, .calendar-list, .earnings-item, .editorial-card {
+    box-shadow: none !important;
+    border-color: #ddd !important;
+    background: #fff !important;
+  }
+  .term .tip { display: none !important; }
+  .news-card:hover, .top-story:hover { transform: none !important; }
+  .section-hero img, .news-card-img { height: auto; max-height: 160px; }
+}
+
+/* ==========================================
+   Dark Theme Overrides — Atlas Navy
+   ========================================== */
+[data-theme="dark"]{
+  --paper:#0F1829;--paper-dk:#1A2540;
+  --ink:#F5F2EC;--slate:#8b949e;--slate-lt:#6e7681;
+  --gold:#D4A843;--gold-lt:#E8C96A;
+  --alert:#E05555;
+  --surface:#1A2540;
+  --shadow-card:0 2px 8px rgba(0,0,0,0.2);
+  --tip-bg:#1A2540;--tip-border:rgba(184,145,42,0.15);--tip-shadow:0 8px 24px rgba(0,0,0,.3);
+  --badge-bg:rgba(212,168,67,0.1);
+  --gold-light:rgba(212,168,67,0.1);
+  --alert-light:rgba(224,85,85,0.1);
+  --gold-lt-light:rgba(232,201,106,0.1);
+  --navy-light:rgba(26,37,64,0.3);
+  --slate-light:rgba(139,148,158,0.1);
+}
+
+[data-theme="dark"] body{background:var(--paper);color:var(--ink)}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .top-story,
+[data-theme="dark"] .news-card,
+[data-theme="dark"] .keyword-card,
+[data-theme="dark"] .calendar-list,
+[data-theme="dark"] .earnings-item,
+[data-theme="dark"] .editorial-card{
+  background:#1A2540;border-color:rgba(184,145,42,0.12);
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .top-story:hover,
+[data-theme="dark"] .news-card:hover,
+[data-theme="dark"] .earnings-item:hover{
+  border-color:rgba(212,168,67,0.35);
+  box-shadow:0 4px 20px rgba(0,0,0,.25);
+}
+
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,
+[data-theme="dark"] .top-story-title,
+[data-theme="dark"] .news-card-title,
+[data-theme="dark"] .keyword-title,
+[data-theme="dark"] .calendar-event,
+[data-theme="dark"] .earnings-item-ticker,
+[data-theme="dark"] .editorial-headline{color:#F5F2EC}
+
+[data-theme="dark"] .section-label-text{color:#F5F2EC}
+[data-theme="dark"] .section-label{border-bottom-color:rgba(184,145,42,0.15)}
+
+[data-theme="dark"] .summary-text{color:var(--ink)}
+[data-theme="dark"] .summary-topic.neutral{color:#F5F2EC}
+[data-theme="dark"] .top-story-body{color:var(--slate)}
+[data-theme="dark"] .news-card-excerpt{color:var(--slate)}
+[data-theme="dark"] .keyword-overview{color:var(--ink)}
+[data-theme="dark"] .keyword-perspective-text{color:var(--slate)}
+
+[data-theme="dark"] .why-box.positive{background:rgba(212,168,67,0.08);border-color:var(--gold);color:var(--ink)}
+[data-theme="dark"] .why-box.negative{background:rgba(224,85,85,0.08);border-color:var(--alert);color:var(--ink)}
+[data-theme="dark"] .why-box.warning{background:rgba(232,201,106,0.08);border-color:var(--gold-lt);color:var(--ink)}
+[data-theme="dark"] .why-box.default{background:rgba(26,37,64,0.4);border-color:rgba(184,145,42,0.2);color:var(--ink)}
+[data-theme="dark"] .why-label{color:var(--gold)}
+
+[data-theme="dark"] .up{color:#D4A843}
+[data-theme="dark"] .down{color:#E05555}
+[data-theme="dark"] .summary-num.up{color:#D4A843}
+[data-theme="dark"] .summary-num.down{color:#E05555}
+
+[data-theme="dark"] .news-card-tag.economy{background:rgba(212,168,67,0.12);color:var(--gold)}
+[data-theme="dark"] .news-card-tag.tech{background:rgba(232,201,106,0.12);color:var(--gold-lt)}
+[data-theme="dark"] .news-card-tag.earnings{background:rgba(212,168,67,0.12);color:var(--gold)}
+[data-theme="dark"] .news-card-tag.geopolitics{background:rgba(224,85,85,0.12);color:var(--alert)}
+[data-theme="dark"] .news-card-tag.policy{background:rgba(139,148,158,0.12);color:var(--slate)}
+
+[data-theme="dark"] .keyword-perspective{background:rgba(212,168,67,0.06);border-color:rgba(184,145,42,0.12)}
+[data-theme="dark"] .keyword-relation{background:rgba(212,168,67,0.08);border-color:var(--gold)}
+
+[data-theme="dark"] .calendar-item:hover{background:rgba(26,37,64,0.5)}
+[data-theme="dark"] .calendar-item{border-bottom-color:rgba(184,145,42,0.08)}
+
+[data-theme="dark"] .disclaimer-text{background:#1A2540;color:var(--slate-lt);border-color:rgba(184,145,42,0.08)}
+
+[data-theme="dark"] .top-story-footer,
+[data-theme="dark"] .news-card-footer{border-top-color:rgba(184,145,42,0.1)}
+
+[data-theme="dark"] .editorial-body{color:#8b949e}
+[data-theme="dark"] .editorial-body strong{color:#F5F2EC}
+[data-theme="dark"] .editorial-note{background:rgba(74,85,104,0.1);border-top-color:rgba(184,145,42,0.12)}
+[data-theme="dark"] .ed-hero{background:linear-gradient(135deg,rgba(212,168,67,0.06) 0%,rgba(224,85,85,0.03) 50%,rgba(15,24,41,0) 100%)}
+[data-theme="dark"] .section-hero-caption{background:transparent}
+[data-theme="dark"] .mobile-menu{background:rgba(15,24,41,0.98)}
+</style>
+</head>
+<body>
+
+<!-- ===== Atlas Nav Header ===== -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="https://atlasfinancials.github.io/ui-kabu-reports/" class="nav-brand">
+      <span class="nav-logo">Atlas<span>.</span></span>
+      <span class="nav-sub">Powered by U&amp;I CO., LTD.</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://atlasfinancials.github.io/ui-kabu-times/morning/">Archive</a>
+      <a href="https://atlasfinancials.github.io/ui-kabu-times/" class="active">Morning Edition</a>
+      <a href="https://atlasfinancials.github.io/ui-kabu-times/extra/">Extra</a>
+      <a href="https://atlasfinancials.github.io/ui-kabu-reports/">Earnings</a>
+      <a href="https://atlasfinancials.github.io/ui-kabu-times/glossary/">Glossary</a>
+      <a href="https://atlasfinancials.github.io/ui-kabu-reports/join.html" class="nav-cta">Join</a>
+      <div class="lang-switch"><a href="4.html">🇯🇵</a><span class="lang-active">🇺🇸</span><a href="4-zh.html">🇭🇰</a><a href="4-ko.html">🇰🇷</a></div>
+      <button class="font-scale-btn" aria-label="Font size" onclick="cycleFontScale()"><span class="fs-sm">A</span><span class="fs-lg">A</span><span class="fs-level">1/4</span></button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Theme toggle" onclick="toggleTheme()">🌙</button>
+    </div>
+    <div class="nav-mobile-actions">
+      <div class="lang-switch"><a href="4.html">🇯🇵</a><span class="lang-active">🇺🇸</span><a href="4-zh.html">🇭🇰</a><a href="4-ko.html">🇰🇷</a></div>
+      <button class="font-scale-btn" aria-label="Font size" onclick="cycleFontScale()"><span class="fs-sm">A</span><span class="fs-lg">A</span><span class="fs-level">1/4</span></button>
+      <button class="theme-toggle" id="themeToggleMobile" aria-label="Theme toggle" onclick="toggleTheme()">🌙</button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="https://atlasfinancials.github.io/ui-kabu-times/morning/">Archive</a>
+  <a href="https://atlasfinancials.github.io/ui-kabu-times/extra/">Extra</a>
+  <a href="https://atlasfinancials.github.io/ui-kabu-times/glossary/">Glossary</a>
+  <a href="https://atlasfinancials.github.io/ui-kabu-reports/">Earnings</a>
+</div>
+
+<!-- ===== Newspaper Header ===== -->
+<header class="paper-header">
+  <div class="paper-date">April 4, 2026 (Saturday)</div>
+  <div class="paper-logo">
+    <h1 class="paper-title">Atlas Daily</h1>
+  </div>
+  <span class="paper-accent">The Morning Briefing</span>
+</header>
+
+<!-- ===== Main ===== -->
+<main class="main" style="max-width:1100px;margin:0 auto;padding:28px 20px 60px">
+
+  <!-- ===== 1. Market Summary ===== -->
+  <section class="section-gap">
+    <div class="section-label">
+      <span class="section-label-icon">📝</span>
+      <span class="section-label-text">Overnight Market Summary</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="card card-pad">
+      <div class="summary-text">
+        <p><span class="summary-num-label">1</span>On April 3, U.S. markets were closed for Good Friday. Yet the holiday silence was shattered by the March jobs report released at 8:30 AM. <span class="term">Nonfarm Payrolls (NFP)<span class="tip"><span class="tip-title">Nonfarm Payrolls (NFP)</span>A core employment indicator released by the Bureau of Labor Statistics on the first Friday of each month. It measures the change in the number of employed persons across all non-agricultural sectors, heavily influencing the Fed's monetary policy decisions.</span></span> rose by <span class="summary-num up">+178,000</span> month-over-month, a staggering three times the consensus forecast of +59,000. This marked a V-shaped recovery from February's <span class="summary-num down">-133,000</span>. The unemployment rate ticked down to <span class="summary-num">4.3%</span>, reaffirming the resilience of the labor market. Meanwhile, average hourly earnings rose just <span class="summary-num">+3.5%</span> year-over-year, the weakest pace since May 2021, confirming a deceleration in wage inflation.</p>
+        <p><span class="summary-num-label">2</span>The impact of this "surprise payrolls" report, landing on a holiday when traders cannot act, will not be fully priced in until markets reopen on Monday. In the futures market, S&amp;P 500 futures traded at <span class="summary-num">6,604.50</span> (<span class="summary-num down">-0.3%</span>) and Dow futures at <span class="summary-num">46,615</span> (<span class="summary-num down">-0.3%</span>), both slightly lower. Markets are searching for direction between the uncertainty from President Trump's Iran war address the previous day and the unexpectedly robust employment data.</p>
+        <p><span class="summary-num-label">3</span>In energy markets, crude oil continued its sharp rally. <span class="term">WTI<span class="tip"><span class="tip-title">WTI Crude Oil (West Texas Intermediate)</span>The futures price of light sweet crude oil produced in Texas, traded on the New York Mercantile Exchange (NYMEX). It serves as a key global benchmark for North American crude oil pricing.</span></span> crude futures surged <span class="summary-num up">+11.41%</span> to close at <span class="summary-num">$111.54</span>, hitting the highest level since June 2022. With the <span class="term">Strait of Hormuz<span class="tip"><span class="tip-title">Strait of Hormuz</span>A narrow waterway between Iran and Oman through which approximately 20% of the world's seaborne oil passes. It has been effectively blockaded since the Iran war began, making it the primary driver of the crude oil price surge.</span></span> effectively blockaded, supply disruption risks escalated further after President Trump declared he would "hit Iran very, very hard" over the next two to three weeks. Gold briefly touched a record high of <span class="summary-num up">$4,796</span> but reversed sharply after the speech, settling at <span class="summary-num down">$4,688 (-1.98%)</span>. Bitcoin fell to around <span class="summary-num down">$66,246</span>, underscoring the prevailing risk-off tone.</p>
+      </div>
+
+      <!-- Sector Heatmap -->
+      <div class="sector-perf">
+        <div class="sector-perf-title">📊 Sector Performance (April 2 Close)</div>
+        <div class="sector-heatmap">
+          <div class="sector-tile" data-chg="2.62">
+            <span class="sector-tile-name">Energy</span>
+            <span class="sector-tile-ticker">XLE</span>
+            <span class="sector-tile-chg">+2.62%</span>
+          </div>
+          <div class="sector-tile" data-chg="0.04">
+            <span class="sector-tile-name">Staples</span>
+            <span class="sector-tile-ticker">XLP</span>
+            <span class="sector-tile-chg">+0.04%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.57">
+            <span class="sector-tile-name">Utilities</span>
+            <span class="sector-tile-ticker">XLU</span>
+            <span class="sector-tile-chg">-0.57%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.57">
+            <span class="sector-tile-name">Healthcare</span>
+            <span class="sector-tile-ticker">XLV</span>
+            <span class="sector-tile-chg">-0.57%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.90">
+            <span class="sector-tile-name">Materials</span>
+            <span class="sector-tile-ticker">XLB</span>
+            <span class="sector-tile-chg">-0.90%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.96">
+            <span class="sector-tile-name">Real Estate</span>
+            <span class="sector-tile-ticker">XLRE</span>
+            <span class="sector-tile-chg">-0.96%</span>
+          </div>
+          <div class="sector-tile" data-chg="-1.33">
+            <span class="sector-tile-name">Industrials</span>
+            <span class="sector-tile-ticker">XLI</span>
+            <span class="sector-tile-chg">-1.33%</span>
+          </div>
+          <div class="sector-tile" data-chg="-1.56">
+            <span class="sector-tile-name">Financials</span>
+            <span class="sector-tile-ticker">XLF</span>
+            <span class="sector-tile-chg">-1.56%</span>
+          </div>
+          <div class="sector-tile" data-chg="-1.57">
+            <span class="sector-tile-name">Comm. Services</span>
+            <span class="sector-tile-ticker">XLC</span>
+            <span class="sector-tile-chg">-1.57%</span>
+          </div>
+          <div class="sector-tile" data-chg="-1.86">
+            <span class="sector-tile-name">Cons. Disc.</span>
+            <span class="sector-tile-ticker">XLY</span>
+            <span class="sector-tile-chg">-1.86%</span>
+          </div>
+          <div class="sector-tile" data-chg="-2.30">
+            <span class="sector-tile-name">Technology</span>
+            <span class="sector-tile-ticker">XLK</span>
+            <span class="sector-tile-chg">-2.30%</span>
+          </div>
+          <div class="sector-tile" data-chg="-2.50">
+            <span class="sector-tile-name">Semis</span>
+            <span class="sector-tile-ticker">SMH</span>
+            <span class="sector-tile-chg">-2.50%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Market Indicator Panels -->
+      <div class="market-panels">
+        <div class="market-panel" data-chg="0.11">
+          <span class="panel-name">S&amp;P 500</span>
+          <span class="panel-val">6,582.69</span>
+          <span class="panel-chg">+0.11%</span>
+        </div>
+        <div class="market-panel" data-chg="0.18">
+          <span class="panel-name">NASDAQ</span>
+          <span class="panel-val">21,879.18</span>
+          <span class="panel-chg">+0.18%</span>
+        </div>
+        <div class="market-panel" data-chg="-0.13">
+          <span class="panel-name">Dow</span>
+          <span class="panel-val">46,504.67</span>
+          <span class="panel-chg">-0.13%</span>
+        </div>
+        <div class="market-panel" data-chg="0.70">
+          <span class="panel-name">Russell 2000</span>
+          <span class="panel-val">2,530.04</span>
+          <span class="panel-chg">+0.70%</span>
+        </div>
+        <div class="market-panel" data-chg="3.2">
+          <span class="panel-name">VIX</span>
+          <span class="panel-val">24.54</span>
+          <span class="panel-chg">+3.2%</span>
+        </div>
+        <div class="market-panel" data-chg="-0.05">
+          <span class="panel-name">UST 10Y</span>
+          <span class="panel-val">4.31%</span>
+          <span class="panel-chg">-5bp</span>
+        </div>
+        <div class="market-panel" data-chg="0.48">
+          <span class="panel-name">USD/JPY</span>
+          <span class="panel-val">159.60</span>
+          <span class="panel-chg">+0.48%</span>
+        </div>
+        <div class="market-panel" data-chg="11.41">
+          <span class="panel-name">WTI</span>
+          <span class="panel-val">$111.54</span>
+          <span class="panel-chg">+11.41%</span>
+        </div>
+        <div class="market-panel" data-chg="-1.98">
+          <span class="panel-name">Gold</span>
+          <span class="panel-val">$4,688.30</span>
+          <span class="panel-chg">-1.98%</span>
+        </div>
+        <div class="market-panel" data-chg="-2.80">
+          <span class="panel-name">BTC</span>
+          <span class="panel-val">$66,246</span>
+          <span class="panel-chg">-2.80%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. Top News ===== -->
+  <section class="section-gap">
+    <div class="section-label">
+      <span class="section-label-icon">📰</span>
+      <span class="section-label-text">Top Stories</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <!-- Top Story -->
+    <div class="top-story">
+      <span class="top-story-badge">TOP STORY</span>
+      <div class="section-hero">
+        <img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Business meeting" loading="lazy">
+      </div>
+      <div class="section-hero-caption">Photo: Pexels</div>
+      <span class="news-card-tag economy" style="margin-bottom:10px;display:inline-block">ECONOMY</span>
+      <h2 class="top-story-title">March Payrolls Triple Expectations — +178K V-Shaped Recovery as Wage Growth Slows</h2>
+      <p class="top-story-body">
+        The March jobs report released by the Bureau of Labor Statistics on the morning of Good Friday, April 3, delivered a major surprise to markets. Nonfarm payrolls rose +178,000 month-over-month, surpassing every estimate in the Bloomberg survey and tripling the consensus forecast of +59,000. The healthcare sector led with +76,000 new jobs, with construction and transportation/warehousing also adding positions. The data marked a V-shaped recovery from February's strike-related -133,000 decline. However, average hourly earnings rose just +0.2% MoM and +3.5% YoY, the slowest pace since May 2021. This combination of "strong hiring but cooling wage inflation" can be read as either supporting or opposing the case for Fed rate cuts. With markets closed for the holiday, all eyes are on Monday's open for the reaction.
+      </p>
+      <div class="why-box default">
+        <span class="why-icon">💡</span>
+        <div><span class="why-label">Why it matters:</span> A "time-lag surprise" released on Good Friday with no immediate market reaction. Monday's open could be volatile, making weekend position management critical</div>
+      </div>
+      <div class="top-story-footer">
+        <span class="top-story-source">Bureau of Labor Statistics / CNBC</span>
+        <span>·</span>
+        <span>April 3, 2026</span>
+        <span>·</span>
+        <span>Economy</span>
+      </div>
+    </div>
+
+    <!-- Sub News Grid -->
+    <div class="news-grid">
+
+      <!-- サブニュース1: トランプ・イラン戦争演説 -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/2059628/pexels-photo-2059628.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fighter jet" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag geopolitics">GEOPOLITICS</span>
+          <span class="news-card-source">Council on Foreign Relations / CNBC / Al Jazeera</span>
+        </div>
+        <div class="news-card-title">Trump Warns of Sending Iran "Back to the Stone Age" — First Formal War Address</div>
+        <div class="news-card-excerpt">In a primetime address on the evening of April 1, President Trump declared the U.S. would strike Iran "very, very hard" over the next two to three weeks. He signaled willingness to target power plants and even oil infrastructure. On the Strait of Hormuz, he maintained that "America barely imports any oil" and left the issue for other nations to handle. Iran's military warned of "more devastating and widespread" retaliation.</div>
+        <div class="why-box negative">
+          <span class="why-icon">⚠️</span>
+          <div><span class="why-label">Why it matters:</span> Strikes on oil infrastructure could push Brent above $120. The "hands-off" stance on the Strait risks deepening the rift with allies</div>
+        </div>
+      </div>
+
+      <!-- サブニュース2: 原油WTI $111.54 -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Oil refinery" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag economy">ECONOMY</span>
+          <span class="news-card-source">CNBC / IEA</span>
+        </div>
+        <div class="news-card-title">WTI Crude Surges 11.4% to $111.54 — Highest Since June 2022, Gas Tops $4</div>
+        <div class="news-card-excerpt">WTI crude futures soared 11.41% on April 2 to close at $111.54. Since the Iran war began, global oil supply has lost an estimated 4.5-5.0 million barrels per day, with Brent crude also breaking above $109. Average U.S. gasoline prices exceeded $4/gallon for the first time since 2022. The IEA warned that "if the Strait of Hormuz is not reopened by mid-April, supply disruptions will worsen significantly."</div>
+        <div class="why-box negative">
+          <span class="why-icon">⚠️</span>
+          <div><span class="why-label">Why it matters:</span> Elevated crude prices hit both corporate costs and consumer prices. Next Friday's CPI data is expected to heavily reflect the energy price surge</div>
+        </div>
+      </div>
+
+      <!-- サブニュース3: テスラQ1納車 -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/10029880/pexels-photo-10029880.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tesla Model 3 at dealership" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag earnings">EARNINGS</span>
+          <span class="news-card-source">Electrek / CNBC</span>
+        </div>
+        <div class="news-card-title">Tesla Q1 Deliveries Miss at 358K — 50K Production Surplus, Energy Storage Down 38%</div>
+        <div class="news-card-excerpt">Tesla reported Q1 deliveries on April 2 at 358,023 units, falling roughly 7,600 short of the Wall Street consensus of 365,645. Production reached 408,386, exceeding deliveries by more than 50,000 units and highlighting inventory buildup. While up +6% YoY, deliveries dropped -14.4% QoQ. Energy storage also fell to 8.8 GWh from 14.2 GWh in Q4, a 38% decline. Full earnings are scheduled for April 22.</div>
+        <div class="why-box default">
+          <span class="why-icon">💡</span>
+          <div><span class="why-label">Why it matters:</span> The widening gap between production and deliveries signals demand softening. Cybertruck (+111% YoY) is the sole bright spot but insufficient to reverse the broader trend</div>
+        </div>
+      </div>
+
+      <!-- サブニュース4: Amazon Globalstar -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/586030/pexels-photo-586030.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Technology and communications infrastructure" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag tech">TECH</span>
+          <span class="news-card-source">FT / CNBC / Motley Fool</span>
+        </div>
+        <div class="news-card-title">Amazon Exploring $9B Globalstar Acquisition — Satellite Strategy to Rival SpaceX Starlink</div>
+        <div class="news-card-excerpt">According to FT, Amazon is exploring the acquisition of satellite communications company Globalstar for approximately $9B. The aim is to bolster its "Amazon Leo" satellite internet service to compete with SpaceX's <span class="term">Starlink<span class="tip"><span class="tip-title">Starlink</span>A low-Earth orbit satellite internet service operated by SpaceX. It operates approximately 6,000 satellites to deliver broadband connectivity to areas beyond the reach of terrestrial infrastructure, serving over 4 million users worldwide.</span></span>. However, Apple's 2024 stake of $1.5B (securing 85% of network capacity) complicates the negotiations. Globalstar shares surged 18% on the report.</div>
+        <div class="why-box positive">
+          <span class="why-icon">💡</span>
+          <div><span class="why-label">Why it matters:</span> The space internet market is shaping up as a Musk vs. Bezos proxy war. Coexistence terms with Apple's iPhone satellite features are key to the deal</div>
+        </div>
+      </div>
+
+      <!-- サブニュース5: イラン・オマーン通航プロトコル -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/2226458/pexels-photo-2226458.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cargo vessel at sea" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag geopolitics">GEOPOLITICS</span>
+          <span class="news-card-source">CNBC / Bloomberg / AA</span>
+        </div>
+        <div class="news-card-title">Iran and Oman Drafting Strait of Hormuz Transit Protocol — A Potential Market Turning Point</div>
+        <div class="news-card-excerpt">IRNA reported that Iran and Oman are developing a joint protocol to "monitor and coordinate" transit through the Strait of Hormuz. Ships would be required to obtain prior approval and coordinate with both countries. Bloomberg reported that three vessels had already transited via a new route along the Omani coast. This news triggered a sharp afternoon recovery in equity markets on April 2, with the Dow clawing back from a 600+ point decline.</div>
+        <div class="why-box positive">
+          <span class="why-icon">💡</span>
+          <div><span class="why-label">Why it matters:</span> A "diplomatic managed transit" option has emerged as a third path, distinct from military reopening. If realized, crude could rapidly fall back to the $90s</div>
+        </div>
+      </div>
+
+      <!-- サブニュース6: ゴールド史上最高値 -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/4068314/pexels-photo-4068314.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gold bars" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag economy">ECONOMY</span>
+          <span class="news-card-source">Fortune / Sunday Guardian</span>
+        </div>
+        <div class="news-card-title">Gold Hits Record $4,796 Before Reversing Sharply to $4,688 After Trump Speech</div>
+        <div class="news-card-excerpt">Spot gold touched a record high of $4,796.42/oz on April 2, buoyed by dollar weakness and falling Treasury yields. However, it reversed sharply following President Trump's address escalating strikes on Iran, settling at $4,688.30 (-$94.90, -1.98%). This illustrates a classic pattern where, once geopolitical risk exceeds a certain threshold, the "flight to cash" impulse overtakes gold's safe-haven appeal.</div>
+        <div class="why-box default">
+          <span class="why-icon">💡</span>
+          <div><span class="why-label">Why it matters:</span> Gold's upper wick is a pattern historically seen on the eve of sharp sell-offs. Maintaining the $4,600 support level is the key focus</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 3. Editorial ===== -->
+  <section class="section-gap">
+    <div class="section-label">
+      <span class="section-label-icon">🖊️</span>
+      <span class="section-label-text">Editorial Perspective</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="editorial-card">
+      <div class="ed-hero">
+        <div class="ed-badge">✍️ EDITORIAL</div>
+        <h2 class="editorial-headline">$111 Oil Meets 178K Jobs — The Fed's Impossible Choice</h2>
+        <div class="editorial-sub">Monetary policy caught between labor market strength and energy-driven inflation</div>
+      </div>
+      <div class="editorial-body">
+        <p>On the Good Friday holiday, markets received two contradictory signals. One was the jobs report showing unexpected resilience in the U.S. economy. The other was the uncontrolled surge in energy prices driven by geopolitical risk.</p>
+        <p>March's NFP of +178,000 proved that the labor market remains stubbornly strong. Under normal circumstances, this would be a clear "no rate cuts needed" signal. Yet at the same time, WTI crude has broken through $111 and gasoline prices have topped $4/gallon. Rising energy costs will push consumer prices higher and are <strong>expected to be prominently reflected in next Friday's (April 10) CPI release</strong>.</p>
+        <p>The Fed held its policy rate at 3.50-3.75% at its March meeting, with the dot plot suggesting just one rate cut in 2026. Yet markets are not pricing in any cuts until mid-2027. If employment remains strong, the case for cutting is thin. But if inflation reaccelerates on energy, the risk of choking the economy grows.</p>
+        <!-- Chart.js: WTI原油価格推移 -->
+        <div style="position:relative;height:360px;margin:24px 0">
+          <canvas id="wtiChart"></canvas>
+        </div>
+        <p>History teaches us the impotence of monetary policy against <span class="term">supply shock<span class="tip"><span class="tip-title">Supply Shock</span>A sudden, significant decrease (or increase) in the supply of raw materials or commodities. Because price volatility is driven by supply-side rather than demand-side factors, it is difficult for central banks to control through monetary policy.</span></span>-driven inflation. During the 1973 oil shock, the Fed alternated between rate hikes and cuts, ultimately prolonging <span class="term">stagflation<span class="tip"><span class="tip-title">Stagflation</span>A portmanteau of stagnation and inflation. It describes a condition in which economic growth slows or stagnates while prices continue to rise. It is widely considered the most challenging economic environment for central banks to address.</span></span>. In the current case, reopening the Strait of Hormuz is the "only exit" — a structural problem that monetary policy alone cannot solve.</p>
+        <p><strong>Key events next week:</strong> Wednesday's FOMC minutes (discussion from the March meeting) and Friday's CPI (the degree of energy price impact). These two data points will be critical in determining whether this is a "transitory supply shock" or the onset of stagflation. Expect a volatile Monday open as the market prices in the jobs data, but stay focused on the data ahead.</p>
+      </div>
+      <div class="editorial-note">This article does not constitute a recommendation to buy or sell any security. Investment decisions should be made at your own risk.</div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Today's Keyword ===== -->
+  <section class="section-gap">
+    <div class="section-label">
+      <span class="section-label-icon">📚</span>
+      <span class="section-label-text">Today's Keyword</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="keyword-card">
+      <div class="keyword-title">Stagflation</div>
+      <div class="keyword-sub">Stagflation</div>
+      <div class="keyword-overview">
+        A portmanteau of "stagnation" and "inflation," describing an economic condition in which growth slows or stagnates while prices continue to rise persistently. Normally, inflation also moderates during recessions, but when a supply shock (such as surging oil prices) triggers the process, this conventional wisdom breaks down. The phenomenon was first widely recognized during the 1973 oil crisis. <span class="term">OPEC<span class="tip"><span class="tip-title">OPEC (Organization of the Petroleum Exporting Countries)</span>An international organization formed by oil-producing nations to coordinate production volumes and pricing policies. Founded in 1960, it currently has 13 member states accounting for approximately 30% of global crude oil production.</span></span> (Organization of the Petroleum Exporting Countries) imposed an embargo that quadrupled oil prices, plunging the global economy into the dual hardship of high inflation and recession. It recurred during the 1979 second oil shock, when Fed Chair Volcker raised the policy rate to 20% to break inflation.
+      </div>
+
+      <div class="keyword-perspectives">
+        <div class="keyword-perspective">
+          <div class="keyword-perspective-icon">⚙️</div>
+          <div class="keyword-perspective-label">Mechanism</div>
+          <div class="keyword-perspective-text">Supply shock (high oil) -> rising production costs -> businesses raise prices (inflation) -> reduced consumer purchasing power -> weakening demand (stagnation) -> yet costs remain elevated as long as oil stays high -> inflation and recession coexist. The central bank's ultimate dilemma: raising rates worsens the downturn, while cutting rates fuels further inflation.</div>
+        </div>
+        <div class="keyword-perspective">
+          <div class="keyword-perspective-icon">💰</div>
+          <div class="keyword-perspective-label">Impact on Investing</div>
+          <div class="keyword-perspective-text">During stagflation, real assets (commodities, REITs) and energy stocks tend to outperform. Conversely, growth stocks — particularly high-P/E technology names — are vulnerable to significant sell-offs as discount rates rise. Bonds tend to lose to inflation, making <span class="term">TIPS (Treasury Inflation-Protected Securities)<span class="tip"><span class="tip-title">TIPS (Treasury Inflation-Protected Securities)</span>Inflation-linked bonds issued by the U.S. Treasury. The principal is adjusted in line with the CPI (Consumer Price Index), preserving real purchasing power when inflation rises.</span></span> the preferred fixed-income instrument.</div>
+        </div>
+      </div>
+
+      <div class="keyword-relation">
+        <span class="keyword-relation-label">📌 Relevance Today</span>
+        WTI above $111, gasoline over $4, yet employment remains firm while wage growth is at its lowest since 2021 — analysts are increasingly drawing parallels between today's market environment and the 1970s oil shock era. With the Fed holding rates at 3.50-3.75%, next week's CPI data will be the key test for whether the economy is sliding into stagflation.
+      </div>
+
+      <a class="keyword-glossary-link" href="https://atlasfinancials.github.io/ui-kabu-times/glossary/">
+        📖 View in Glossary →
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 5. Economic Calendar ===== -->
+  <section class="section-gap">
+    <div class="section-label">
+      <span class="section-label-icon">📅</span>
+      <span class="section-label-text">Key Events Next Week</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="calendar-list">
+      <div class="calendar-day-label">4/6 (Mon)</div>
+      <div class="calendar-item">
+        <span class="calendar-time">10:00</span>
+        <span class="calendar-flag">🇺🇸</span>
+        <span class="calendar-importance high">HIGH</span>
+        <span class="calendar-event">ISM Services PMI (March)</span>
+        <span class="calendar-detail">Prior: 53.5</span>
+      </div>
+
+      <div class="calendar-day-label">4/7 (Tue)</div>
+      <div class="calendar-item">
+        <span class="calendar-time">08:30</span>
+        <span class="calendar-flag">🇺🇸</span>
+        <span class="calendar-importance medium">MEDIUM</span>
+        <span class="calendar-event">Durable Goods Orders (Feb Final)</span>
+        <span class="calendar-detail"></span>
+      </div>
+      <div class="calendar-item">
+        <span class="calendar-time">15:00</span>
+        <span class="calendar-flag">🇺🇸</span>
+        <span class="calendar-importance medium">MEDIUM</span>
+        <span class="calendar-event">Consumer Credit (Feb)</span>
+        <span class="calendar-detail"></span>
+      </div>
+
+      <div class="calendar-day-label">4/8 (Wed)</div>
+      <div class="calendar-item">
+        <span class="calendar-time">14:00</span>
+        <span class="calendar-flag">🇺🇸</span>
+        <span class="calendar-importance high">HIGH</span>
+        <span class="calendar-event">FOMC Minutes (March Meeting)</span>
+        <span class="calendar-detail">Focus: Tone of rate-cut discussion</span>
+      </div>
+      <div class="calendar-item">
+        <span class="calendar-time">—</span>
+        <span class="calendar-flag">🇳🇿</span>
+        <span class="calendar-importance medium">MEDIUM</span>
+        <span class="calendar-event">RBNZ Rate Decision</span>
+        <span class="calendar-detail"></span>
+      </div>
+
+      <div class="calendar-day-label">4/9 (Thu)</div>
+      <div class="calendar-item">
+        <span class="calendar-time">08:30</span>
+        <span class="calendar-flag">🇺🇸</span>
+        <span class="calendar-importance high">HIGH</span>
+        <span class="calendar-event">PCE Price Index (Feb)</span>
+        <span class="calendar-detail">The Fed's preferred inflation gauge</span>
+      </div>
+
+      <div class="calendar-day-label">4/10 (Fri)</div>
+      <div class="calendar-item">
+        <span class="calendar-time">08:30</span>
+        <span class="calendar-flag">🇺🇸</span>
+        <span class="calendar-importance high">HIGH</span>
+        <span class="calendar-event">Consumer Price Index CPI (March)</span>
+        <span class="calendar-detail">Prior: +3.1% YoY</span>
+      </div>
+      <div class="calendar-item">
+        <span class="calendar-time">10:00</span>
+        <span class="calendar-flag">🇺🇸</span>
+        <span class="calendar-importance medium">MEDIUM</span>
+        <span class="calendar-event">Univ. of Michigan Consumer Sentiment (Apr Prelim)</span>
+        <span class="calendar-detail"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. Earnings ===== -->
+  <section class="section-gap">
+    <div class="section-label">
+      <span class="section-label-icon">📊</span>
+      <span class="section-label-text">Earnings to Watch Next Week</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div style="font-size:13px;font-weight:700;color:var(--navy-mid);margin-bottom:10px;letter-spacing:.02em">📅 Reporting Next Week</div>
+    <div class="earnings-grid">
+      <div class="earnings-item" data-ticker="LEVI">
+        <div class="earnings-item-header">
+          <span class="earnings-item-ticker">LEVI</span>
+          <span class="earnings-item-timing amc">AMC</span>
+        </div>
+        <div class="earnings-item-name">Levi Strauss</div>
+        <div class="earnings-item-sector">Apparel</div>
+        <div class="earnings-item-consensus">
+          <span>EPS: $0.37</span>
+          <span>Rev: $1.65B</span>
+        </div>
+        <div class="earnings-item-note">Reports 4/7</div>
+      </div>
+      <div class="earnings-item" data-ticker="DAL">
+        <div class="earnings-item-header">
+          <span class="earnings-item-ticker">DAL</span>
+          <span class="earnings-item-timing bmo">BMO</span>
+        </div>
+        <div class="earnings-item-name">Delta Air Lines</div>
+        <div class="earnings-item-sector">Airlines</div>
+        <div class="earnings-item-consensus">
+          <span>EPS: $0.64</span>
+          <span>Rev: $14.8B</span>
+        </div>
+        <div class="earnings-item-note">★ Reports 4/8 — Fuel cost impact in focus</div>
+      </div>
+      <div class="earnings-item" data-ticker="STZ">
+        <div class="earnings-item-header">
+          <span class="earnings-item-ticker">STZ</span>
+          <span class="earnings-item-timing amc">AMC</span>
+        </div>
+        <div class="earnings-item-name">Constellation Brands</div>
+        <div class="earnings-item-sector">Beverages</div>
+        <div class="earnings-item-consensus">
+          <span>FY26 Q4 / Full Year</span>
+        </div>
+        <div class="earnings-item-note">Reports 4/8</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Disclaimer ===== -->
+<div class="disclaimer-section">
+  <p class="disclaimer-text">This article is generated based on AI-powered information gathering and summarization. Accuracy and completeness are not guaranteed. This article is for informational purposes only and does not constitute a recommendation to buy or sell any financial instrument. Investment decisions should be made at your own risk.</p>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="paper-footer">
+  <div class="footer-day-nav">
+    <a href="3.html">← Previous: April 3</a>
+  </div>
+  <nav class="footer-nav">
+    <a href="https://atlasfinancials.github.io/ui-kabu-reports/about.html">About Atlas</a>
+    <a href="https://atlasfinancials.github.io/ui-kabu-reports/">📊 Earnings</a>
+    <a href="https://atlasfinancials.github.io/ui-kabu-times/glossary/">📖 Glossary</a>
+    <a href="https://atlasfinancials.github.io/ui-kabu-reports/faq.html">FAQ</a>
+    <a href="https://atlasfinancials.github.io/ui-kabu-reports/terms.html">Terms of Use</a>
+  </nav>
+  <div class="footer-copy">&copy; 2026 Atlas Daily — U&amp;I CO., LTD.</div>
+</footer>
+
+<script>
+// ==========================================
+// Mobile Hamburger Menu
+// ==========================================
+(function() {
+  var btn = document.getElementById('navHamburger');
+  var menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', function() {
+      menu.classList.toggle('open');
+      btn.textContent = menu.classList.contains('open') ? '\u2715' : '\u2630';
+    });
+  }
+})();
+
+// ==========================================
+// Earnings — Portal Logo + Link Auto-Insert
+// ==========================================
+(function(){
+  var logoBase = 'https://raw.githubusercontent.com/AtlasFinancials/reports/main/logos/';
+  var portalBase = 'https://atlasfinancials.github.io/ui-kabu-reports/';
+  var portalTickers = ['ACN','ADBE','ADI','ALAB','AMZN','AVGO','BABA','CCL','CIEN','COST','DAL','DDOG','DG','DOCU','FDX','FN','GOOGL','IOT','LLY','LULU','META','MRVL','MSFT','MU','NKE','NVDA','OKTA','ORCL','PANW','PATH','PAYP','RBRK','RDDT','S','SMCI','SNAP','TM','TSLA','TSM','TXN','VFC','WMT','ZS'];
+  var pngLogos = ['CIEN','S'];
+
+  document.querySelectorAll('.earnings-item[data-ticker]').forEach(function(item){
+    var ticker = item.getAttribute('data-ticker');
+    if(portalTickers.indexOf(ticker)===-1) return;
+    var header = item.querySelector('.earnings-item-header');
+    if(header){
+      var ext = pngLogos.indexOf(ticker)!==-1 ? '.png' : '.svg';
+      var logo = document.createElement('img');
+      logo.src = logoBase + ticker + ext;
+      logo.alt = ticker;
+      logo.className = 'earnings-item-logo';
+      if(ext==='.png') logo.style.borderRadius='4px';
+      header.insertBefore(logo, header.firstChild);
+    }
+    var link = document.createElement('a');
+    link.href = portalBase + ticker + '/';
+    link.target = '_blank';
+    link.className = 'earnings-item-link';
+    link.innerHTML = '📊 View Past Earnings Analysis →';
+    item.appendChild(link);
+  });
+})();
+
+// ==========================================
+// Editorial Take — tap toggle for mobile
+// ==========================================
+document.querySelectorAll('.ed-take').forEach(function(el){
+  el.addEventListener('click', function(){ el.classList.toggle('open'); });
+});
+
+// ==========================================
+// Sector heatmap tile coloring
+// ==========================================
+(function(){
+  var bestTile = null; var bestVal = -Infinity;
+  document.querySelectorAll('.sector-tile').forEach(function(t){
+    var v = parseFloat(t.getAttribute('data-chg')) || 0;
+    if(v > bestVal){ bestVal = v; bestTile = t; }
+  });
+  if(bestTile){
+    var badge = document.createElement('span');
+    badge.className = 'sector-tile-best';
+    badge.textContent = '🔥';
+    bestTile.appendChild(badge);
+  }
+
+  document.querySelectorAll('.sector-tile').forEach(function(tile){
+    var chg = parseFloat(tile.getAttribute('data-chg')) || 0;
+    var abs = Math.abs(chg);
+    var alpha;
+    if(abs >= 3) alpha = 0.35;
+    else if(abs >= 2) alpha = 0.25;
+    else if(abs >= 1) alpha = 0.16;
+    else if(abs > 0) alpha = 0.09;
+    else alpha = 0.08;
+
+    var textAlpha;
+    if(abs >= 3) textAlpha = 1;
+    else if(abs >= 2) textAlpha = 0.85;
+    else if(abs >= 1) textAlpha = 0.7;
+    else if(abs > 0) textAlpha = 0.55;
+    else textAlpha = 0.6;
+
+    if(chg > 0){
+      tile.style.background = 'rgba(34,197,94,' + alpha + ')';
+      tile.querySelector('.sector-tile-chg').style.color = 'rgba(22,163,74,' + textAlpha + ')';
+      tile.querySelector('.sector-tile-name').style.color = 'rgba(22,101,52,0.85)';
+    } else if(chg < 0){
+      tile.style.background = 'rgba(239,68,68,' + alpha + ')';
+      tile.querySelector('.sector-tile-chg').style.color = 'rgba(220,38,38,' + textAlpha + ')';
+      tile.querySelector('.sector-tile-name').style.color = 'rgba(153,27,27,0.85)';
+    } else {
+      tile.style.background = 'rgba(139,148,158,0.08)';
+      tile.querySelector('.sector-tile-chg').style.color = 'rgba(139,148,158,0.8)';
+      tile.querySelector('.sector-tile-name').style.color = 'var(--slate)';
+    }
+  });
+
+  // Dark theme adjustment
+  function adjustDark(){
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.querySelectorAll('.sector-tile').forEach(function(tile){
+      var chg = parseFloat(tile.getAttribute('data-chg')) || 0;
+      if(isDark){
+        if(chg > 0) tile.querySelector('.sector-tile-name').style.color = 'rgba(187,247,208,0.9)';
+        else if(chg < 0) tile.querySelector('.sector-tile-name').style.color = 'rgba(254,202,202,0.9)';
+        else tile.querySelector('.sector-tile-name').style.color = '#8b949e';
+      }
+    });
+  }
+  adjustDark();
+  window._sectorAdjustDark = adjustDark;
+})();
+
+// ==========================================
+// Market panel change color intensity
+// ==========================================
+(function(){
+  function chgColor(val){
+    var abs = Math.abs(val);
+    var alpha;
+    if(abs >= 3) alpha = 1;
+    else if(abs >= 2) alpha = 0.8;
+    else if(abs >= 1) alpha = 0.6;
+    else if(abs > 0) alpha = 0.4;
+    else return 'rgba(139,148,158,0.8)';
+    if(val > 0) return 'rgba(34,197,94,' + alpha + ')';
+    return 'rgba(239,68,68,' + alpha + ')';
+  }
+  document.querySelectorAll('.market-panel').forEach(function(panel){
+    var chg = parseFloat(panel.getAttribute('data-chg')) || 0;
+    var el = panel.querySelector('.panel-chg');
+    if(el) el.style.color = chgColor(chg);
+  });
+})();
+
+// ==========================================
+// Tooltip — unified PC hover + mobile tap
+// ==========================================
+(function() {
+  var overlay = document.createElement('div');
+  overlay.className = 'tip-overlay';
+  document.body.appendChild(overlay);
+
+  var activeTerm = null;
+  var isMobile = function(){ return window.innerWidth <= 767; };
+
+  function positionTip(term, tip) {
+    var rect = term.getBoundingClientRect();
+    var tipW = 320;
+    var pad = 16;
+
+    if (isMobile()) {
+      tip.style.top = '50%';
+      tip.style.left = '50%';
+      tip.style.transform = 'translate(-50%, -50%)';
+      tip.style.width = 'calc(100vw - 48px)';
+      tip.style.maxWidth = '320px';
+    } else {
+      tip.style.transform = 'none';
+      tip.style.width = tipW + 'px';
+
+      var centerX = rect.left + rect.width / 2 - tipW / 2;
+      var clampedX = Math.max(pad, Math.min(centerX, window.innerWidth - tipW - pad));
+      tip.style.left = clampedX + 'px';
+
+      tip.style.top = '';
+      tip.style.bottom = '';
+      var spaceAbove = rect.top;
+      if (spaceAbove > 200) {
+        tip.style.bottom = (window.innerHeight - rect.top + 8) + 'px';
+      } else {
+        tip.style.top = (rect.bottom + 8) + 'px';
+      }
+    }
+  }
+
+  function showTip(term) {
+    var tip = term.querySelector('.tip');
+    if (!tip) return;
+    closeTip();
+    activeTerm = term;
+    positionTip(term, tip);
+    tip.classList.add('tip-visible');
+    var card = term.closest('.news-card, .top-story');
+    if (card) card.classList.add('tip-active');
+    if (isMobile()) overlay.classList.add('show');
+  }
+
+  function closeTip() {
+    if (activeTerm) {
+      var tip = activeTerm.querySelector('.tip');
+      if (tip) { tip.classList.remove('tip-visible'); tip.style.cssText = ''; }
+      var card = activeTerm.closest('.news-card, .top-story');
+      if (card) card.classList.remove('tip-active');
+      activeTerm = null;
+    }
+    overlay.classList.remove('show');
+  }
+
+  overlay.addEventListener('click', function(e) { e.stopPropagation(); closeTip(); });
+
+  document.querySelectorAll('.term').forEach(function(term) {
+    term.addEventListener('click', function(e) {
+      if (!isMobile()) return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (activeTerm === this) { closeTip(); return; }
+      showTip(this);
+    });
+
+    term.addEventListener('mouseenter', function() {
+      if (isMobile()) return;
+      showTip(this);
+    });
+    term.addEventListener('mouseleave', function() {
+      if (isMobile()) return;
+      closeTip();
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (activeTerm && !activeTerm.contains(e.target)) closeTip();
+  });
+
+  window.addEventListener('scroll', function() {
+    if (!isMobile() && activeTerm) closeTip();
+  }, { passive: true });
+})();
+
+// ==========================================
+// Chart.js — WTI原油価格推移（編集部の目線）
+// ==========================================
+(function(){
+  var ctx = document.getElementById('wtiChart');
+  if(!ctx) return;
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  var gridColor = isDark ? 'rgba(184,145,42,0.1)' : 'rgba(0,0,0,0.06)';
+  var textColor = isDark ? '#8b949e' : '#4A5568';
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2/7', '2/14', '2/21', '2/28', '3/7', '3/14', '3/21', '3/28', '4/2'],
+      datasets: [
+        {
+          label: 'WTI Crude ($/barrel)',
+          data: [72, 71, 73, 78, 85, 92, 95, 100, 111.54],
+          borderColor: '#E05555',
+          backgroundColor: 'rgba(224,85,85,0.08)',
+          fill: true,
+          tension: 0.3,
+          borderWidth: 2.5,
+          pointRadius: [3, 3, 3, 5, 3, 3, 3, 3, 6],
+          pointBackgroundColor: function(ctx){
+            return ctx.dataIndex === 3 ? '#D4A843' : ctx.dataIndex === 8 ? '#E05555' : '#E05555';
+          }
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: true,
+          labels: {
+            color: textColor,
+            font: { family: "'Inter','Noto Sans JP',sans-serif", size: 12, weight: 600 },
+            usePointStyle: true,
+            pointStyle: 'circle',
+            padding: 16
+          }
+        },
+        tooltip: {
+          backgroundColor: isDark ? '#1A2540' : '#FDFCFA',
+          titleColor: isDark ? '#F5F2EC' : '#0F0E0C',
+          bodyColor: isDark ? '#8b949e' : '#4A5568',
+          borderColor: isDark ? 'rgba(184,145,42,0.15)' : '#ECE8DF',
+          borderWidth: 1,
+          callbacks: {
+            label: function(ctx){ return 'WTI: $' + ctx.parsed.y + '/barrel'; }
+          }
+        },
+        annotation: {
+          annotations: {
+            warStart: {
+              type: 'line',
+              xMin: 3,
+              xMax: 3,
+              borderColor: '#D4A843',
+              borderWidth: 2,
+              borderDash: [6, 3],
+              label: {
+                display: true,
+                content: 'Iran War Begins 2/28',
+                position: 'start',
+                backgroundColor: 'rgba(212,168,67,0.9)',
+                color: '#0F1829',
+                font: { size: 11, weight: 700, family: "'Noto Sans JP',sans-serif" },
+                padding: { top: 4, bottom: 4, left: 8, right: 8 },
+                borderRadius: 4
+              }
+            },
+            currentPrice: {
+              type: 'label',
+              xValue: 8,
+              yValue: 111.54,
+              content: '$111.54',
+              backgroundColor: 'rgba(224,85,85,0.9)',
+              color: '#fff',
+              font: { size: 12, weight: 800, family: "'Inter',sans-serif" },
+              padding: { top: 4, bottom: 4, left: 8, right: 8 },
+              borderRadius: 4,
+              xAdjust: 0,
+              yAdjust: -20
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: textColor, font: { family: "'Inter',sans-serif", size: 11 } },
+          grid: { color: gridColor },
+          border: { display: false }
+        },
+        y: {
+          title: {
+            display: true,
+            text: '$/barrel',
+            color: textColor,
+            font: { family: "'Inter','Noto Sans JP',sans-serif", size: 11 }
+          },
+          ticks: {
+            color: textColor,
+            font: { family: "'Inter',sans-serif", size: 11 },
+            callback: function(v){ return '$' + v; }
+          },
+          grid: { color: gridColor },
+          border: { display: false }
+        }
+      }
+    }
+  });
+})();
+
+// ==========================================
+// Theme Toggle (light/dark)
+// ==========================================
+function toggleTheme(){
+  var html=document.documentElement;
+  var next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+  html.setAttribute('data-theme',next);
+  localStorage.setItem('atlas-theme',next);
+  var icon=next==='dark'?'☀️':'🌙';
+  document.querySelectorAll('.theme-toggle').forEach(function(b){b.textContent=icon;});
+  // Sync sector heatmap colors for dark theme
+  if(window._sectorAdjustDark) setTimeout(window._sectorAdjustDark, 50);
+}
+(function(){
+  var saved=localStorage.getItem('atlas-theme');
+  if(saved){document.documentElement.setAttribute('data-theme',saved)}
+  var icon=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
+  document.querySelectorAll('.theme-toggle').forEach(function(b){b.textContent=icon;});
+})();
+
+// ==========================================
+// Font Scale (4 levels)
+// ==========================================
+function updateFontBtns(level){
+  document.querySelectorAll('.font-scale-btn').forEach(function(b){
+    b.innerHTML='<span class="fs-sm">A</span><span class="fs-lg">A</span><span class="fs-level">'+level+'/4</span>';
+  });
+}
+function cycleFontScale(){
+  var html=document.documentElement;
+  var current=parseInt(html.getAttribute('data-font-scale')||'1',10);
+  var next=current>=4?1:current+1;
+  html.setAttribute('data-font-scale',next);
+  localStorage.setItem('atlas-font-scale',next);
+  updateFontBtns(next);
+}
+(function(){
+  var saved=localStorage.getItem('atlas-font-scale');
+  var level=saved?parseInt(saved,10):1;
+  if(level<1||level>4)level=1;
+  document.documentElement.setAttribute('data-font-scale',level);
+  updateFontBtns(level);
+})();
+</script>
+
+</body>
+</html>
