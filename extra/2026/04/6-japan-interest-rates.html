@@ -66,6 +66,18 @@ body {
   transition: background var(--transition), color var(--transition);
 }
 
+/* Radio Player */
+.radio-player {
+  margin-top: 18px; padding: 14px 20px; border-radius: var(--radius-md);
+  background: rgba(184,145,42,0.1); border: 1px solid rgba(184,145,42,0.25);
+  display: inline-flex; flex-direction: column; align-items: center; gap: 6px;
+}
+.radio-label { font-size: 11px; font-weight: 800; color: #D4A843; letter-spacing: .06em; }
+.radio-title { font-size: 13px; font-weight: 600; color: #ccc; }
+.radio-audio { width: 320px; max-width: 80vw; height: 36px; margin-top: 4px; border-radius: 20px; }
+.radio-audio::-webkit-media-controls-panel { background: rgba(26,37,64,0.8); border-radius: 20px; }
+@media (max-width: 480px) { .radio-audio { width: 100%; } .radio-player { width: 90%; } }
+
 /* Navigation */
 .nav { position: sticky; top: 0; z-index: 900; background: rgba(26,37,64,.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(184,145,42,.15); padding: 0 20px; height: 48px; display: flex; align-items: center; justify-content: space-between; }
 .nav-brand { font-family: var(--font-serif); font-size: 15px; font-weight: 700; color: #fff; letter-spacing: .08em; text-decoration: none; }
@@ -512,6 +524,14 @@ body {
   </div>
   <span class="paper-accent">Special Report — Interest Rates</span>
   <div><span class="paper-edition">号外</span></div>
+  <div class="radio-player">
+    <div class="radio-label">🎙️ ラジオで聴く</div>
+    <div class="radio-title">30年ぶりの金利復活と勝てる投資先</div>
+    <audio controls preload="metadata" class="radio-audio">
+      <source src="audio/japan-interest-rates-radio.m4a" type="audio/mp4">
+      お使いのブラウザはオーディオ再生に対応していません。
+    </audio>
+  </div>
 </header>
 
 <main class="main">
