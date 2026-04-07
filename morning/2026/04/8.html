@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light" data-font-scale="1">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas Daily — 2026年4月8日 朝刊</title>
+<meta property="og:title" content="Atlas Daily | 2026年4月8日 朝刊">
+<meta property="og:description" content="米軍カーグ島攻撃、Anthropic-Google-Broadcom 3.5GW契約 — 火曜夜の最終期限と火種">
+<meta property="og:image" content="https://atlasfinancials.github.io/ui-kabu-times/assets/og-image.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://atlasfinancials.github.io/ui-kabu-times/morning/2026/04/8.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="https://atlasfinancials.github.io/ui-kabu-times/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;700;800&family=Noto+Serif+JP:wght@300;400;700&family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3"></script>
+<style>
+/* ==========================================
+   CSS Variables — Atlas Brand
+   ========================================== */
+:root {
+  --navy: #1A2540;
+  --navy-mid: #243158;
+  --navy-deep: #0F1829;
+  --gold: #B8912A;
+  --gold-lt: #D4A843;
+  --gold-pale: #F0E6C8;
+  --paper: #F5F2EC;
+  --paper-dk: #ECE8DF;
+  --ink: #0F0E0C;
+  --slate: #4A5568;
+  --slate-lt: #718096;
+  --alert: #8B2020;
+  --font-heading: 'Shippori Mincho B1', serif;
+  --font-body: 'Noto Serif JP', serif;
+  --font-ui: 'Noto Sans JP', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-data: 'Inter', 'Noto Sans JP', sans-serif;
+  --surface: #FDFCFA;
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.04);
+  --tip-bg: #FDFCFA;
+  --tip-border: var(--paper-dk);
+  --tip-shadow: 0 8px 24px rgba(0,0,0,.08);
+  --badge-bg: rgba(184,145,42,0.06);
+  --gold-light: rgba(184,145,42,0.08);
+  --alert-light: rgba(139,32,32,0.08);
+  --gold-lt-light: rgba(212,168,67,0.08);
+  --navy-light: rgba(26,37,64,0.06);
+  --slate-light: rgba(74,85,104,0.06);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --transition: .25s cubic-bezier(.4,0,.2,1);
+  --max-w: 1100px;
+  --font-scale: 1;
+}
+
+/* Font Scale Levels */
+[data-font-scale="1"] { --font-scale: 1;    --lh-body: 2;   --lh-text: 1.9; --lh-card: 1.7; --lh-title: 1.5; }
+[data-font-scale="2"] { --font-scale: 1.15; --lh-body: 1.85; --lh-text: 1.8; --lh-card: 1.65; --lh-title: 1.45; }
+[data-font-scale="3"] { --font-scale: 1.3;  --lh-body: 1.75; --lh-text: 1.7; --lh-card: 1.6; --lh-title: 1.4; }
+[data-font-scale="4"] { --font-scale: 1.45; --lh-body: 1.65; --lh-text: 1.65; --lh-card: 1.55; --lh-title: 1.35; }
+
+/* Scaled text elements */
+[data-font-scale] .summary-text        { font-size: calc(15px * var(--font-scale)); line-height: var(--lh-body); }
+[data-font-scale] .top-story-body      { font-size: calc(15px * var(--font-scale)); line-height: var(--lh-text); }
+[data-font-scale] .news-card-excerpt   { font-size: calc(13px * var(--font-scale)); line-height: var(--lh-card); }
+[data-font-scale] .keyword-overview    { font-size: calc(15px * var(--font-scale)); line-height: var(--lh-text); }
+[data-font-scale] .keyword-perspective-text { font-size: calc(13px * var(--font-scale)); line-height: var(--lh-card); }
+[data-font-scale] .keyword-relation    { font-size: calc(14px * var(--font-scale)); line-height: var(--lh-card); }
+[data-font-scale] .editorial-body      { font-size: calc(15px * var(--font-scale)); line-height: var(--lh-text); }
+[data-font-scale] .editorial-note      { font-size: calc(13px * var(--font-scale)); line-height: var(--lh-card); }
+[data-font-scale] .why-box             { font-size: calc(13px * var(--font-scale)); line-height: var(--lh-card); }
+[data-font-scale] .calendar-event      { font-size: calc(14px * var(--font-scale)); }
+[data-font-scale] .calendar-detail     { font-size: calc(12px * var(--font-scale)); }
+[data-font-scale] .disclaimer-text     { font-size: calc(11px * var(--font-scale)); }
+[data-font-scale] .top-story-title     { font-size: calc(26px * var(--font-scale)); line-height: var(--lh-title); }
+[data-font-scale] .news-card-title     { font-size: calc(16px * var(--font-scale)); line-height: var(--lh-title); }
+[data-font-scale] .section-label-text  { font-size: calc(24px * var(--font-scale)); line-height: var(--lh-title); }
+[data-font-scale] .keyword-title       { font-size: calc(22px * var(--font-scale)); line-height: var(--lh-title); }
+
+/* Language switcher */
+.lang-switch {
+  display: inline-flex; align-items: center; gap: 2px;
+  margin-right: 4px;
+}
+.lang-switch a, .lang-switch span {
+  font-size: 13px; text-decoration: none; padding: 2px 4px;
+  border-radius: 3px; line-height: 1; transition: opacity .15s;
+}
+.lang-switch a { opacity: .5; cursor: pointer; }
+.lang-switch a:hover { opacity: .9; }
+.lang-switch .lang-active { opacity: 1; background: rgba(184,145,42,0.2); border-radius: 4px; }
+
+/* Font scale toggle button */
+.font-scale-btn {
+  background: none; border: 1px solid rgba(255,255,255,0.25); cursor: pointer;
+  font-family: var(--font-data); font-size: 11px; font-weight: 700;
+  padding: 3px 6px; line-height: 1; color: rgba(255,255,255,0.7);
+  border-radius: 4px; transition: all .15s; white-space: nowrap;
+  display: inline-flex; align-items: baseline; gap: 1px;
+}
+.font-scale-btn:hover { border-color: var(--gold); color: var(--gold); }
+.font-scale-btn .fs-sm { font-size: 10px; }
+.font-scale-btn .fs-lg { font-size: 15px; }
+.font-scale-btn .fs-level { font-size: 9px; margin-left: 3px; opacity: 0.6; }
+
+/* ==========================================
+   Base
+   ========================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--font-ui);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+.heading { color: var(--navy); }
+.sub { color: var(--slate); }
+.muted { color: var(--slate-lt); }
+.accent { color: var(--gold); }
+.up { color: var(--gold); }
+.down { color: var(--alert); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow .25s ease;
+}
+.card:hover { border-color: rgba(184,145,42,0.4); }
+.card-pad { padding: 28px; }
+
+/* ==========================================
+   Site Header — Atlas Nav
+   ========================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--navy-deep);
+  border-bottom: 1px solid rgba(184,145,42,0.2);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+}
+.nav-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(--gold); }
+.nav-sub {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: var(--slate-lt);
+  letter-spacing: 0.06em;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.nav-links a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color .15s;
+  letter-spacing: 0.02em;
+}
+.nav-links a:hover { color: var(--gold-lt); }
+.nav-links a.active { color: #fff; font-weight: 700; }
+.nav-cta {
+  background: var(--gold) !important;
+  color: var(--navy-deep) !important;
+  font-weight: 700 !important;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 12px !important;
+  letter-spacing: 0.04em;
+  transition: background .15s !important;
+}
+.nav-cta:hover { background: var(--gold-lt) !important; color: var(--navy-deep) !important; }
+
+/* Hamburger */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 20px;
+  cursor: pointer;
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  background: rgba(15,24,41,0.98);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(184,145,42,0.12);
+  padding: 16px 24px;
+  z-index: 99;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 12px 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.mobile-menu a:last-child { border-bottom: none; }
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none; border: none; cursor: pointer; font-size: 18px;
+  padding: 4px 8px; line-height: 1; color: rgba(255,255,255,0.7);
+  transition: opacity .15s;
+}
+.theme-toggle:hover { opacity: .8; }
+
+/* Mobile: theme toggle + hamburger side by side */
+.nav-mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================
+   Header
+   ========================================== */
+.paper-header {
+  border-bottom: 1px solid rgba(184,145,42,0.15);
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  background: var(--navy-deep);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.paper-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(184,145,42,0.08) 0%, transparent 60%);
+  z-index: 0;
+}
+.paper-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-lt), var(--gold));
+  z-index: 1;
+}
+.paper-header > * { position: relative; z-index: 1; }
+
+.paper-date {
+  font-family: var(--font-data);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: .1em;
+  margin-bottom: 16px;
+}
+
+.paper-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+.paper-logo::before,
+.paper-logo::after {
+  content: '';
+  width: 60px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+  opacity: .5;
+  flex-shrink: 0;
+}
+.paper-logo::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.paper-title {
+  font-family: var(--font-heading);
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.paper-accent {
+  display: block;
+  font-size: 13px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: .2em;
+  color: var(--gold);
+  opacity: .7;
+}
+
+/* ==========================================
+   Section Label
+   ========================================== */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--paper-dk);
+}
+.section-label-icon { font-size: 20px; }
+.section-label-text {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  color: var(--navy);
+}
+.section-label-line { flex: 1; height: 1px; background: var(--paper-dk); }
+.section-gap { margin-bottom: 40px; }
+
+/* ==========================================
+   Market Summary
+   ========================================== */
+.summary-text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 2;
+  color: var(--ink);
+}
+.summary-text p { margin-bottom: 0; padding: 18px 0; border-bottom: 1px solid var(--paper-dk); }
+.summary-text p:last-child { border-bottom: none; }
+.summary-text p:first-child { padding-top: 0; }
+.summary-num-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  font-family: var(--font-data);
+  font-size: 12px;
+  font-weight: 800;
+  margin-right: 8px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+[data-theme="dark"] .summary-text p { border-bottom-color: rgba(184,145,42,0.12); }
+
+.summary-topic {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  letter-spacing: -.01em;
+}
+.summary-topic.positive { color: var(--gold); }
+.summary-topic.negative { color: var(--alert); }
+.summary-topic.neutral { color: var(--navy); }
+
+.summary-num { font-family: var(--font-data); font-weight: 700; }
+.summary-num.up { color: var(--gold); }
+.summary-num.down { color: var(--alert); }
+.summary-label { font-weight: 700; }
+
+/* Sector Heatmap */
+.sector-perf {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--paper-dk);
+}
+.sector-perf-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 14px;
+  letter-spacing: .02em;
+}
+.sector-heatmap {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+.sector-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 16px 8px;
+  text-align: center;
+  min-height: 80px;
+  transition: transform .15s, box-shadow .15s;
+  position: relative;
+}
+.sector-tile:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.sector-tile-name {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.sector-tile-ticker {
+  font-family: var(--font-data);
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.6;
+  letter-spacing: .05em;
+  margin-bottom: 2px;
+}
+.sector-tile-chg {
+  font-family: var(--font-data);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+}
+.sector-tile-best {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 12px;
+}
+
+[data-theme="dark"] .sector-perf { border-top-color: rgba(184,145,42,0.12); }
+
+/* Market Indicator Panels */
+.market-panels {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--paper-dk);
+}
+.market-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 10px;
+  padding: 14px 10px;
+  text-align: center;
+  transition: border-color .2s;
+}
+.market-panel:hover { border-color: rgba(184,145,42,0.4); }
+.panel-name {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate);
+  letter-spacing: .03em;
+  margin-bottom: 4px;
+}
+.panel-val {
+  font-family: var(--font-data);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.panel-chg {
+  font-family: var(--font-data);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .market-panels { border-top-color: rgba(184,145,42,0.12); }
+[data-theme="dark"] .market-panel { background: #1A2540; border-color: rgba(184,145,42,0.12); }
+[data-theme="dark"] .market-panel:hover { border-color: rgba(184,145,42,0.3); }
+[data-theme="dark"] .panel-val { color: #F5F2EC; }
+
+/* ==========================================
+   Risk Meter
+   ========================================== */
+.risk-meter-card {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+}
+.risk-meter-top {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 28px;
+  align-items: center;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--paper-dk);
+}
+.risk-gauge-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.risk-gauge-canvas {
+  width: 100%;
+  height: 200px;
+}
+.risk-gauge-score {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.risk-gauge-num {
+  font-family: var(--font-data);
+  font-size: 54px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--navy);
+}
+.risk-gauge-num-suffix {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--slate-lt);
+  margin-left: 2px;
+}
+.risk-gauge-zone {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-top: 8px;
+  letter-spacing: .03em;
+}
+.risk-meter-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.risk-meter-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--navy);
+}
+.risk-meter-prev {
+  font-family: var(--font-data);
+  font-size: 12px;
+  color: var(--slate-lt);
+}
+.risk-signals {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.risk-signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--alert-light);
+  border: 1px solid var(--alert);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--alert);
+}
+.risk-signal-stars { color: var(--gold); font-weight: 800; }
+.risk-comment {
+  margin-top: 22px;
+  padding: 18px 20px;
+  background: var(--gold-light);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--ink);
+}
+.risk-bars-accordion {
+  margin: 20px 0 16px;
+  border: 1px solid var(--paper-dk);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+}
+.risk-bars-accordion[open] {
+  background: transparent;
+}
+.risk-bars-title {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 14px 18px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: .02em;
+  user-select: none;
+  transition: background .15s;
+}
+.risk-bars-title::-webkit-details-marker { display: none; }
+.risk-bars-title::before {
+  content: '▶';
+  font-size: 10px;
+  color: var(--gold);
+  transition: transform .2s;
+  display: inline-block;
+}
+.risk-bars-accordion[open] .risk-bars-title::before {
+  transform: rotate(90deg);
+}
+.risk-bars-title:hover { background: var(--badge-bg); }
+.risk-acc-hint {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--slate-lt);
+  margin-left: auto;
+  font-family: var(--font-ui);
+}
+.risk-bars-accordion .risk-bars { padding: 4px 18px 18px; }
+[data-theme="dark"] .risk-bars-accordion { border-color: rgba(184,145,42,0.15); background: rgba(184,145,42,0.04); }
+[data-theme="dark"] .risk-bars-title { color: #F5F2EC; }
+[data-theme="dark"] .risk-bars-title:hover { background: rgba(184,145,42,0.08); }
+.risk-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.risk-bar-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 90px 60px;
+  gap: 12px;
+  align-items: center;
+  font-size: 12px;
+}
+.risk-bar-label {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: var(--slate);
+}
+.risk-bar-track {
+  position: relative;
+  height: 12px;
+  background: var(--paper-dk);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.risk-bar-fill {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  border-radius: 100px;
+  transition: width .6s ease;
+}
+.risk-bar-val {
+  font-family: var(--font-data);
+  font-size: 11px;
+  color: var(--slate-lt);
+  text-align: right;
+}
+.risk-bar-score {
+  font-family: var(--font-data);
+  font-size: 13px;
+  font-weight: 800;
+  text-align: right;
+}
+[data-theme="dark"] .risk-meter-card,
+[data-theme="dark"] .risk-meter-top { border-color: rgba(184,145,42,0.12); }
+[data-theme="dark"] .risk-bar-track { background: rgba(184,145,42,0.1); }
+[data-theme="dark"] .risk-gauge-num { color: #F5F2EC; }
+[data-theme="dark"] .risk-meter-title { color: #F5F2EC; }
+[data-theme="dark"] .risk-comment { background: rgba(212,168,67,0.08); border-left-color: var(--gold); color: var(--ink); }
+
+/* ==========================================
+   Top Story
+   ========================================== */
+.top-story {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 16px;
+  transition: all .25s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  box-shadow: var(--shadow-card);
+}
+.top-story:hover { border-color: rgba(184,145,42,0.4); box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+
+.top-story-badge {
+  display: inline-block;
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: rgba(184,145,42,0.08);
+  color: var(--gold);
+  letter-spacing: .04em;
+  margin-bottom: 14px;
+  border: 1px solid transparent;
+}
+
+/* Section Hero Image */
+.section-hero {
+  width: calc(100% + 64px);
+  margin: 0 -32px 16px;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  overflow: hidden;
+}
+.section-hero img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.section-hero-caption {
+  font-size: 11px;
+  color: var(--slate-lt);
+  margin-top: -8px;
+  margin-bottom: 12px;
+  text-align: right;
+}
+
+.top-story-title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+  margin-bottom: 14px;
+  color: var(--navy);
+}
+.top-story-body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--slate);
+  line-height: 1.9;
+}
+.top-story-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--paper-dk);
+  font-size: 12px;
+  color: var(--slate-lt);
+}
+.top-story-source { font-weight: 700; color: var(--slate); }
+
+/* ==========================================
+   "Why Important?" Box
+   ========================================== */
+.why-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.why-box.positive { background: var(--gold-light); border: 1px solid var(--gold); color: var(--ink); }
+.why-box.negative { background: var(--alert-light); border: 1px solid var(--alert); color: var(--ink); }
+.why-box.warning { background: var(--gold-lt-light); border: 1px solid var(--gold-lt); color: var(--ink); }
+.why-box.default { background: var(--navy-light); border: 1px solid var(--navy); color: var(--ink); }
+.why-icon { font-size: 18px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+.why-label { font-weight: 700; color: var(--navy); margin-right: 4px; }
+
+/* ==========================================
+   Sub News Grid
+   ========================================== */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.news-card {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  padding: 22px;
+  transition: all .25s ease;
+  cursor: default;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: visible;
+  box-shadow: var(--shadow-card);
+}
+.news-card:hover { border-color: rgba(184,145,42,0.4); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.06); }
+
+/* News Card Image */
+.news-card-img-wrap {
+  margin: -22px -22px 12px -22px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px 12px 0 0;
+}
+.news-card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease;
+}
+.news-card:hover .news-card-img { transform: scale(1.03); }
+.news-card-img-caption {
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  font-size: 10px;
+  color: #fff;
+  background: rgba(0,0,0,.5);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.news-card-meta { display: flex; align-items: center; gap: 10px; }
+.news-card-tag {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  letter-spacing: .02em;
+}
+.news-card-tag.economy { background: var(--gold-light); color: var(--gold); }
+.news-card-tag.tech { background: var(--gold-lt-light); color: var(--gold-lt); }
+.news-card-tag.earnings { background: var(--gold-light); color: var(--gold); }
+.news-card-tag.geopolitics { background: var(--alert-light); color: var(--alert); }
+.news-card-tag.policy { background: var(--slate-light); color: var(--slate); }
+
+.news-card-source { font-size: 11px; color: var(--slate-lt); font-weight: 500; }
+.news-card-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+  color: var(--navy);
+}
+.news-card-excerpt {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.7;
+}
+.news-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--paper-dk);
+  font-size: 12px;
+  color: var(--slate-lt);
+}
+
+/* Editorial Take */
+.ed-take {
+  position: relative;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(184,145,42,0.05);
+  border: 1px solid rgba(184,145,42,0.15);
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.ed-take-icon { font-size: 14px; margin-right: 4px; }
+.ed-take-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: .02em;
+}
+.ed-take-label::after {
+  content: ' \25B8 \30DB\30D0\30FC\3067\8868\793A';
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--slate-lt);
+}
+.ed-take-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--slate);
+  transition: max-height .4s ease, opacity .3s ease, margin-top .3s ease;
+}
+.ed-take:hover .ed-take-body,
+.ed-take.open .ed-take-body {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: 10px;
+}
+.ed-take:hover { border-color: var(--gold); background: rgba(184,145,42,0.08); }
+.ed-take:hover .ed-take-label::after { content: ''; }
+[data-theme="dark"] .ed-take { background: rgba(184,145,42,0.06); border-color: rgba(184,145,42,0.12); }
+[data-theme="dark"] .ed-take:hover { background: rgba(184,145,42,0.1); border-color: var(--gold); }
+[data-theme="dark"] .ed-take-body { color: #8b949e; }
+[data-theme="dark"] .ed-take-body strong { color: #F5F2EC; }
+
+/* ==========================================
+   "Today's Keyword" Section
+   ========================================== */
+.keyword-card {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.keyword-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-lt));
+  border-radius: 12px 12px 0 0;
+}
+.keyword-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.keyword-sub {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--slate);
+  margin-bottom: 16px;
+}
+.keyword-overview {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.keyword-perspectives {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.keyword-perspective {
+  background: var(--badge-bg);
+  border: 1px solid var(--paper-dk);
+  border-radius: 8px;
+  padding: 16px;
+}
+.keyword-perspective-icon { font-size: 20px; margin-bottom: 4px; }
+.keyword-perspective-label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.keyword-perspective-text { font-size: 13px; line-height: 1.7; color: var(--slate); }
+
+.keyword-relation {
+  background: var(--gold-light);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.keyword-relation-label { font-weight: 700; color: var(--gold); margin-bottom: 4px; display: block; }
+.keyword-glossary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+}
+.keyword-glossary-link:hover { text-decoration: underline; }
+
+/* ==========================================
+   Editorial
+   ========================================== */
+.editorial-card {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.ed-hero {
+  padding: 28px 32px 24px;
+  background: linear-gradient(135deg, rgba(184,145,42,0.06) 0%, rgba(139,32,32,0.03) 50%, transparent 100%);
+  border-bottom: 1px solid var(--paper-dk);
+}
+.ed-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 100px;
+  background: rgba(184,145,42,0.1);
+  color: var(--gold);
+  letter-spacing: .04em;
+  margin-bottom: 12px;
+}
+.editorial-headline {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  color: var(--navy);
+}
+.editorial-sub {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+.editorial-body {
+  padding: 28px 32px;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--slate);
+}
+.editorial-body p { margin-bottom: 16px; }
+.editorial-body p:last-child { margin-bottom: 0; }
+.editorial-body strong { color: var(--ink); }
+.editorial-note {
+  font-size: 11px;
+  color: var(--slate-lt);
+  margin: 0;
+  padding: 16px 32px;
+  line-height: 1.6;
+  border-top: 1px solid var(--paper-dk);
+  background: rgba(74,85,104,0.02);
+}
+
+/* ==========================================
+   Economic Calendar
+   ========================================== */
+.calendar-list {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.calendar-day-block {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  border-bottom: 1px solid var(--paper-dk);
+}
+.calendar-day-block:last-child { border-bottom: none; }
+.calendar-day-label {
+  font-family: var(--font-data);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--gold);
+  padding: 18px 16px;
+  letter-spacing: .03em;
+  background: var(--badge-bg);
+  border-right: 1px solid var(--paper-dk);
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+.calendar-day-label .day-num {
+  font-size: 18px;
+  font-weight: 900;
+  display: block;
+  color: var(--navy);
+}
+.calendar-day-label .day-week {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  display: block;
+  margin-top: 2px;
+  letter-spacing: .05em;
+}
+.calendar-events {
+  display: flex;
+  flex-direction: column;
+}
+.calendar-item {
+  display: grid;
+  grid-template-columns: 64px 24px 70px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--paper-dk);
+  transition: background .15s ease;
+}
+.calendar-item:last-child { border-bottom: none; }
+.calendar-item:hover { background: var(--paper); }
+.calendar-item.is-star { background: linear-gradient(90deg, rgba(212,168,67,0.06) 0%, transparent 100%); }
+.calendar-item.is-star:hover { background: linear-gradient(90deg, rgba(212,168,67,0.12) 0%, rgba(212,168,67,0.02) 100%); }
+.calendar-time {
+  font-family: var(--font-data);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--slate);
+  text-align: left;
+  letter-spacing: .02em;
+}
+.calendar-time.no-time { color: var(--slate-lt); font-weight: 500; }
+.calendar-flag { font-size: 18px; text-align: center; }
+.calendar-importance {
+  font-family: var(--font-data);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 0;
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: .05em;
+}
+.calendar-importance.high { background: var(--alert-light); color: var(--alert); }
+.calendar-importance.medium { background: var(--gold-lt-light); color: var(--gold); }
+.calendar-importance.low { background: var(--badge-bg); color: var(--slate-lt); }
+.calendar-event-body {
+  min-width: 0;
+}
+.calendar-event {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.4;
+}
+.calendar-event .star-icon { color: var(--gold); margin-right: 4px; }
+.calendar-detail {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--slate-lt);
+  margin-top: 3px;
+  letter-spacing: .02em;
+}
+[data-theme="dark"] .calendar-day-label { background: rgba(184,145,42,0.08); border-right-color: rgba(184,145,42,0.12); }
+[data-theme="dark"] .calendar-day-label .day-num { color: #F5F2EC; }
+[data-theme="dark"] .calendar-day-block { border-bottom-color: rgba(184,145,42,0.12); }
+[data-theme="dark"] .calendar-item { border-bottom-color: rgba(184,145,42,0.08); }
+[data-theme="dark"] .calendar-event { color: #F5F2EC; }
+[data-theme="dark"] .calendar-time { color: #c9d1d9; }
+
+/* ==========================================
+   Earnings Preview
+   ========================================== */
+.earnings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+.earnings-item {
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all .25s ease;
+  box-shadow: var(--shadow-card);
+}
+.earnings-item:hover { border-color: rgba(184,145,42,0.4); transform: translateY(-2px); }
+.earnings-item-header { display: flex; align-items: center; gap: 6px; }
+.earnings-item-logo { height: 20px; width: auto; max-width: 60px; object-fit: contain; flex-shrink: 0; }
+.earnings-item-ticker { font-family: var(--font-data); font-size: 18px; font-weight: 800; color: var(--navy); }
+.earnings-item-timing {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--badge-bg);
+  color: var(--slate-lt);
+  border: 1px solid var(--paper-dk);
+  margin-left: auto;
+}
+.earnings-item-timing.bmo { background: var(--gold-lt-light); color: var(--gold-lt); border-color: transparent; }
+.earnings-item-timing.amc { background: var(--navy-light); color: var(--navy-mid); border-color: transparent; }
+.earnings-item-name { font-size: 13px; color: var(--slate); font-weight: 500; }
+.earnings-item-sector {
+  font-family: var(--font-data);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--slate-lt);
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--badge-bg);
+  border: 1px solid var(--paper-dk);
+  display: inline-block;
+  align-self: flex-start;
+  line-height: 1.4;
+}
+.earnings-item-consensus { font-size: 12px; color: var(--slate-lt); display: flex; gap: 12px; }
+.earnings-item-consensus span { font-family: var(--font-data); }
+.earnings-item-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity .25s ease;
+}
+.earnings-item-link:hover { opacity: .7; }
+.earnings-item-note {
+  font-size: 11px;
+  color: var(--gold);
+  font-weight: 600;
+  margin-top: 2px;
+}
+.earnings-item-result {
+  font-family: var(--font-data);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.earnings-item-result.beat { background: var(--gold-light); color: var(--gold); }
+.earnings-item-result.miss { background: var(--alert-light); color: var(--alert); }
+.earnings-item-result.inline { background: var(--badge-bg); color: var(--slate-lt); }
+
+/* ==========================================
+   Tooltip — fixed positioning
+   ========================================== */
+.term {
+  color: var(--gold);
+  font-weight: 600;
+  cursor: help;
+  position: relative;
+  border-bottom: 1px dotted var(--gold);
+}
+.term .tip {
+  display: none;
+  position: fixed;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  background: var(--tip-bg);
+  border: 1px solid var(--tip-border);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--ink);
+  box-shadow: var(--tip-shadow);
+  z-index: 1001;
+  pointer-events: none;
+}
+.term .tip.tip-visible { display: block; }
+.tip-title { display: block; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+
+/* Mobile overlay */
+.tip-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,.4);
+  z-index: 1000;
+}
+.tip-overlay.show { display: block; }
+
+.news-card.tip-active:hover { transform: none !important; }
+.top-story.tip-active:hover { transform: none !important; }
+
+/* ==========================================
+   Disclaimer
+   ========================================== */
+.disclaimer-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px 0;
+}
+.disclaimer-text {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--slate-lt);
+  padding: 16px 20px;
+  background: var(--paper-dk);
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+.paper-footer {
+  background: var(--navy-deep);
+  border-top: 3px solid var(--gold);
+  padding: 32px 20px;
+  text-align: center;
+}
+.footer-day-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-day-nav a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+}
+.footer-day-nav a:hover { text-decoration: underline; color: var(--gold-lt); }
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.footer-nav a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+}
+.footer-nav a:hover { text-decoration: underline; color: var(--gold-lt); }
+.footer-copy { font-family: var(--font-ui); font-size: 12px; color: var(--slate-lt); }
+
+/* ==========================================
+   Responsive
+   ========================================== */
+@media (min-width: 768px) {
+  .main { padding: 36px 40px 60px; }
+  .paper-header { padding: 48px 40px; }
+  .paper-title { font-size: 52px; }
+  .paper-logo::before, .paper-logo::after { width: 80px; }
+  .paper-logo { gap: 24px; }
+  .paper-date { margin-bottom: 20px; }
+}
+
+@media (max-width: 767px) {
+  .paper-header { padding: 28px 16px; }
+  .paper-title { font-size: 28px; letter-spacing: .08em; }
+  .paper-accent { font-size: 11px; letter-spacing: .15em; }
+  .paper-date { font-size: 11px; margin-bottom: 12px; }
+  .paper-logo { gap: 12px; margin-bottom: 8px; }
+  .paper-logo::before, .paper-logo::after { width: 24px; }
+  .news-grid { grid-template-columns: 1fr; }
+  .top-story { padding: 22px; }
+  .top-story-title { font-size: 20px; }
+  .earnings-grid { grid-template-columns: repeat(2, 1fr); }
+  .keyword-perspectives { grid-template-columns: 1fr; }
+  .section-hero { height: 160px; width: calc(100% + 44px); margin: 0 -22px 12px; }
+  .section-hero img { height: 160px; }
+  .news-card-img { height: 120px; }
+  .summary-topic { font-size: 18px; }
+  .section-label-text { font-size: 20px; }
+  .editorial-headline { font-size: 18px; }
+  .editorial-body { padding: 20px; }
+  .editorial-note { padding: 12px 20px; }
+
+  .nav-inner { padding: 0 16px; height: 48px; }
+  .nav-logo { font-size: 18px; }
+  .nav-sub { display: none; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: block; }
+  .nav-mobile-actions { display: flex; }
+
+  .sector-heatmap { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .sector-tile { padding: 12px 6px; min-height: 68px; }
+  .sector-tile-name { font-size: 11px; }
+  .sector-tile-ticker { font-size: 9px; }
+  .sector-tile-chg { font-size: 14px; }
+
+  .market-panels { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .market-panel { padding: 10px 6px; }
+  .panel-name { font-size: 10px; }
+  .panel-val { font-size: 16px; }
+  .panel-chg { font-size: 13px; }
+
+  .term .tip { pointer-events: auto; }
+
+  .calendar-day-block { grid-template-columns: 70px 1fr; }
+  .calendar-day-label { padding: 14px 10px; }
+  .calendar-day-label .day-num { font-size: 16px; }
+  .calendar-day-label .day-week { font-size: 10px; }
+  .calendar-item { grid-template-columns: 56px 22px 56px 1fr; gap: 8px; padding: 12px 12px; }
+  .calendar-time { font-size: 11px; }
+  .calendar-flag { font-size: 16px; }
+  .calendar-importance { font-size: 9px; padding: 2px 0; }
+  .calendar-event { font-size: 13px; }
+  .calendar-detail { font-size: 10px; }
+
+  .ed-take-label::after { content: ' \25B8 \30BF\30C3\30D7\3067\8868\793A'; }
+
+  /* Risk Meter mobile */
+  .risk-meter-card { padding: 20px; }
+  .risk-meter-top { grid-template-columns: 1fr; gap: 18px; padding-bottom: 18px; }
+  .risk-gauge-num { font-size: 44px; }
+  .risk-bar-row { grid-template-columns: 110px 1fr 56px; gap: 8px; font-size: 11px; }
+  .risk-bar-val { display: none; }
+}
+
+@media (max-width: 480px) {
+  .nav-links a:not(.nav-cta) { font-size: 10px; }
+  .earnings-grid { grid-template-columns: 1fr; }
+  .calendar-day-block { grid-template-columns: 56px 1fr; }
+  .calendar-item { grid-template-columns: 48px 20px 48px 1fr; gap: 6px; padding: 10px 10px; }
+  .calendar-time { font-size: 10px; }
+  .calendar-flag { font-size: 14px; }
+  .calendar-importance { font-size: 8px; }
+  .calendar-event { font-size: 12px; }
+  .calendar-detail { font-size: 9px; }
+}
+
+/* ==========================================
+   Print
+   ========================================== */
+@media print {
+  html { color-scheme: light; }
+  body { background: #fff !important; color: #333 !important; }
+  .site-header, .tip-overlay, .mobile-menu { display: none !important; }
+  .paper-header { background: none !important; color: #333 !important; }
+  .paper-header::before, .paper-header::after { display: none !important; }
+  .paper-title { color: #333 !important; }
+  .paper-date { color: #666 !important; }
+  .paper-accent { color: #666 !important; }
+  .card, .top-story, .news-card, .keyword-card, .calendar-list, .earnings-item, .editorial-card, .risk-meter-card {
+    box-shadow: none !important;
+    border-color: #ddd !important;
+    background: #fff !important;
+  }
+  .term .tip { display: none !important; }
+  .news-card:hover, .top-story:hover { transform: none !important; }
+  .section-hero img, .news-card-img { height: auto; max-height: 160px; }
+}
+
+/* ==========================================
+   Dark Theme Overrides — Atlas Navy
+   ========================================== */
+[data-theme="dark"]{
+  --paper:#0F1829;--paper-dk:#1A2540;
+  --ink:#F5F2EC;--slate:#8b949e;--slate-lt:#6e7681;
+  --gold:#D4A843;--gold-lt:#E8C96A;
+  --alert:#E05555;
+  --surface:#1A2540;
+  --shadow-card:0 2px 8px rgba(0,0,0,0.2);
+  --tip-bg:#1A2540;--tip-border:rgba(184,145,42,0.15);--tip-shadow:0 8px 24px rgba(0,0,0,.3);
+  --badge-bg:rgba(212,168,67,0.1);
+  --gold-light:rgba(212,168,67,0.1);
+  --alert-light:rgba(224,85,85,0.1);
+  --gold-lt-light:rgba(232,201,106,0.1);
+  --navy-light:rgba(26,37,64,0.3);
+  --slate-light:rgba(139,148,158,0.1);
+}
+
+[data-theme="dark"] body{background:var(--paper);color:var(--ink)}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .top-story,
+[data-theme="dark"] .news-card,
+[data-theme="dark"] .keyword-card,
+[data-theme="dark"] .calendar-list,
+[data-theme="dark"] .earnings-item,
+[data-theme="dark"] .editorial-card,
+[data-theme="dark"] .risk-meter-card{
+  background:#1A2540;border-color:rgba(184,145,42,0.12);
+}
+
+[data-theme="dark"] .card:hover,
+[data-theme="dark"] .top-story:hover,
+[data-theme="dark"] .news-card:hover,
+[data-theme="dark"] .earnings-item:hover{
+  border-color:rgba(212,168,67,0.35);
+  box-shadow:0 4px 20px rgba(0,0,0,.25);
+}
+
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,
+[data-theme="dark"] .top-story-title,
+[data-theme="dark"] .news-card-title,
+[data-theme="dark"] .keyword-title,
+[data-theme="dark"] .calendar-event,
+[data-theme="dark"] .earnings-item-ticker,
+[data-theme="dark"] .editorial-headline{color:#F5F2EC}
+
+[data-theme="dark"] .section-label-text{color:#F5F2EC}
+[data-theme="dark"] .section-label{border-bottom-color:rgba(184,145,42,0.15)}
+
+[data-theme="dark"] .summary-text{color:var(--ink)}
+[data-theme="dark"] .summary-topic.neutral{color:#F5F2EC}
+[data-theme="dark"] .top-story-body{color:var(--slate)}
+[data-theme="dark"] .news-card-excerpt{color:var(--slate)}
+[data-theme="dark"] .keyword-overview{color:var(--ink)}
+[data-theme="dark"] .keyword-perspective-text{color:var(--slate)}
+
+[data-theme="dark"] .why-box.positive{background:rgba(212,168,67,0.08);border-color:var(--gold);color:var(--ink)}
+[data-theme="dark"] .why-box.negative{background:rgba(224,85,85,0.08);border-color:var(--alert);color:var(--ink)}
+[data-theme="dark"] .why-box.warning{background:rgba(232,201,106,0.08);border-color:var(--gold-lt);color:var(--ink)}
+[data-theme="dark"] .why-box.default{background:rgba(26,37,64,0.4);border-color:rgba(184,145,42,0.2);color:var(--ink)}
+[data-theme="dark"] .why-label{color:var(--gold)}
+
+[data-theme="dark"] .up{color:#D4A843}
+[data-theme="dark"] .down{color:#E05555}
+[data-theme="dark"] .summary-num.up{color:#D4A843}
+[data-theme="dark"] .summary-num.down{color:#E05555}
+
+[data-theme="dark"] .news-card-tag.economy{background:rgba(212,168,67,0.12);color:var(--gold)}
+[data-theme="dark"] .news-card-tag.tech{background:rgba(232,201,106,0.12);color:var(--gold-lt)}
+[data-theme="dark"] .news-card-tag.earnings{background:rgba(212,168,67,0.12);color:var(--gold)}
+[data-theme="dark"] .news-card-tag.geopolitics{background:rgba(224,85,85,0.12);color:var(--alert)}
+[data-theme="dark"] .news-card-tag.policy{background:rgba(139,148,158,0.12);color:var(--slate)}
+
+[data-theme="dark"] .keyword-perspective{background:rgba(212,168,67,0.06);border-color:rgba(184,145,42,0.12)}
+[data-theme="dark"] .keyword-relation{background:rgba(212,168,67,0.08);border-color:var(--gold)}
+
+[data-theme="dark"] .calendar-item:hover{background:rgba(26,37,64,0.5)}
+[data-theme="dark"] .calendar-item{border-bottom-color:rgba(184,145,42,0.08)}
+
+[data-theme="dark"] .disclaimer-text{background:#1A2540;color:var(--slate-lt);border-color:rgba(184,145,42,0.08)}
+
+[data-theme="dark"] .top-story-footer,
+[data-theme="dark"] .news-card-footer{border-top-color:rgba(184,145,42,0.1)}
+
+[data-theme="dark"] .editorial-body{color:#8b949e}
+[data-theme="dark"] .editorial-body strong{color:#F5F2EC}
+[data-theme="dark"] .editorial-note{background:rgba(74,85,104,0.1);border-top-color:rgba(184,145,42,0.12)}
+[data-theme="dark"] .ed-hero{background:linear-gradient(135deg,rgba(212,168,67,0.06) 0%,rgba(224,85,85,0.03) 50%,rgba(15,24,41,0) 100%)}
+[data-theme="dark"] .section-hero-caption{background:transparent}
+[data-theme="dark"] .mobile-menu{background:rgba(15,24,41,0.98)}
+</style>
+</head>
+<body>
+
+<!-- ===== Atlas Nav Header ===== -->
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="https://atlasfinancials.github.io/ui-kabu-reports/" class="nav-brand">
+      <span class="nav-logo">Atlas<span>.</span></span>
+      <span class="nav-sub">Powered by U&amp;I CO., LTD.</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://atlasfinancials.github.io/ui-kabu-times/morning/">朝刊アーカイブ</a>
+      <a href="https://atlasfinancials.github.io/ui-kabu-times/" class="active">朝刊</a>
+      <a href="https://atlasfinancials.github.io/ui-kabu-times/extra/">号外</a>
+      <a href="https://atlasfinancials.github.io/ui-kabu-reports/">決算分析</a>
+      <a href="https://atlasfinancials.github.io/ui-kabu-times/glossary/">用語辞典</a>
+      <a href="https://atlasfinancials.github.io/ui-kabu-reports/join.html" class="nav-cta">入会する</a>
+      <div class="lang-switch"><span class="lang-active">🇯🇵</span><a href="8-en.html">🇺🇸</a><a href="8-zh.html">🇭🇰</a><a href="8-ko.html">🇰🇷</a></div>
+      <button class="font-scale-btn" aria-label="文字サイズ切替" onclick="cycleFontScale()"><span class="fs-sm">A</span><span class="fs-lg">A</span><span class="fs-level">1/4</span></button>
+      <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替" onclick="toggleTheme()">🌙</button>
+    </div>
+    <div class="nav-mobile-actions">
+      <div class="lang-switch"><span class="lang-active">🇯🇵</span><a href="8-en.html">🇺🇸</a><a href="8-zh.html">🇭🇰</a><a href="8-ko.html">🇰🇷</a></div>
+      <button class="font-scale-btn" aria-label="文字サイズ切替" onclick="cycleFontScale()"><span class="fs-sm">A</span><span class="fs-lg">A</span><span class="fs-level">1/4</span></button>
+      <button class="theme-toggle" id="themeToggleMobile" aria-label="テーマ切替" onclick="toggleTheme()">🌙</button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="メニュー">☰</button>
+    </div>
+  </nav>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="https://atlasfinancials.github.io/ui-kabu-times/morning/">朝刊アーカイブ</a>
+  <a href="https://atlasfinancials.github.io/ui-kabu-times/extra/">号外</a>
+  <a href="https://atlasfinancials.github.io/ui-kabu-times/glossary/">用語辞典</a>
+  <a href="https://atlasfinancials.github.io/ui-kabu-reports/">決算分析</a>
+</div>
+
+<!-- ===== Newspaper Header ===== -->
+<header class="paper-header">
+  <div class="paper-date">2026年4月8日（水曜日）</div>
+  <div class="paper-logo">
+    <h1 class="paper-title">Atlas Daily</h1>
+  </div>
+  <span class="paper-accent">The Morning Briefing</span>
+</header>
+
+<!-- ===== Main ===== -->
+<main class="main" style="max-width:1100px;margin:0 auto;padding:28px 20px 60px">
+
+  <!-- ===== 1. Market Summary ===== -->
+  <section class="section-gap">
+    <div class="section-label">
+      <span class="section-label-icon">📝</span>
+      <span class="section-label-text">昨夜のマーケットサマリー</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="card card-pad">
+      <div class="summary-text">
+        <p><span class="summary-num-label">1</span><span class="term">ホルムズ海峡<span class="tip"><span class="tip-title">ホルムズ海峡（Strait of Hormuz）</span>世界の海上石油輸送の約20%が通過するイランとオマーンの間の狭い水路。封鎖による原油価格急騰の最大要因。</span></span>最終期限の緊張高まる中、米株式は反落。S&amp;P 500は<span class="summary-num down">-0.58%</span>の<span class="summary-num">6,573.18</span>、ダウは<span class="summary-num down">-0.29%</span>の<span class="summary-num">46,535.05</span>。<span class="term">Mag7<span class="tip"><span class="tip-title">Mag7（Magnificent Seven・マグニフィセント・セブン）</span>米国を代表する巨大テック株7銘柄の総称（Apple / Microsoft / Alphabet / Amazon / Nvidia / Meta / Tesla）。S&amp;P 500の時価総額の約3割を占め、指数全体の動きを大きく左右する。</span></span>と半導体株がリスクオフで売られ、テクノロジーセクター<span class="summary-num down">-0.74%</span>・半導体<span class="summary-num down">-1.05%</span>が下落を主導。一方、エネルギー<span class="summary-num up">+0.28%</span>と公益<span class="summary-num up">+0.19%</span>のディフェンシブが小幅上昇した。</p>
+        <p><span class="summary-num-label">2</span>火曜午後、米軍がイラン・カーグ島の軍事拠点50ヶ所超を空爆。原油施設は標的外だったが<span class="term">WTI<span class="tip"><span class="tip-title">WTI / Brent（原油指標）</span>WTI（West Texas Intermediate）は米国産、Brentは北海産の代表的な原油指標。WTIは米国市場、Brentは国際市場のベンチマーク。</span></span>は<span class="summary-num">$115.21</span>まで急騰し2022年6月以来の高値。トランプ大統領は20時（ET）を「最終期限」と宣言し、応じなければ「全文明が今夜消える」と警告。一方で交渉も並行し、パキスタン首相が2週間延長を打診中。</p>
+        <p><span class="summary-num-label">3</span>テック分野の最大ニュースはAnthropic-Google-Broadcomの3.5ギガワット<span class="term">TPU<span class="tip"><span class="tip-title">TPU（Tensor Processing Unit）</span>GoogleがAI向けに開発した独自カスタムASIC（特定用途向け集積回路）。NVIDIAのGPUに対抗する演算チップで、大規模言語モデルの学習・推論に特化して設計されている。Broadcomが製造パートナー。</span></span>契約。Anthropicの売上ランレートが<span class="summary-num">$30B</span>（前年末$9B）に到達し、2027年から大規模TPUを追加調達。Broadcom株は<span class="summary-num up">+4〜5%</span>急騰し2026年で2番目の好成績日を記録。市場のリスクオフの中、明確な勝者となった。</p>
+      </div>
+
+      <!-- Sector Heatmap -->
+      <div class="sector-perf">
+        <div class="sector-perf-title">📊 セクター別パフォーマンス（4月7日終値）</div>
+        <div class="sector-heatmap">
+          <div class="sector-tile" data-chg="0.28">
+            <span class="sector-tile-name">エネルギー</span>
+            <span class="sector-tile-ticker">XLE</span>
+            <span class="sector-tile-chg">+0.28%</span>
+          </div>
+          <div class="sector-tile" data-chg="0.19">
+            <span class="sector-tile-name">公益事業</span>
+            <span class="sector-tile-ticker">XLU</span>
+            <span class="sector-tile-chg">+0.19%</span>
+          </div>
+          <div class="sector-tile" data-chg="0.05">
+            <span class="sector-tile-name">生活必需品</span>
+            <span class="sector-tile-ticker">XLP</span>
+            <span class="sector-tile-chg">+0.05%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.08">
+            <span class="sector-tile-name">素材</span>
+            <span class="sector-tile-ticker">XLB</span>
+            <span class="sector-tile-chg">-0.08%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.22">
+            <span class="sector-tile-name">ヘルスケア</span>
+            <span class="sector-tile-ticker">XLV</span>
+            <span class="sector-tile-chg">-0.22%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.35">
+            <span class="sector-tile-name">不動産</span>
+            <span class="sector-tile-ticker">XLRE</span>
+            <span class="sector-tile-chg">-0.35%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.48">
+            <span class="sector-tile-name">通信サービス</span>
+            <span class="sector-tile-ticker">XLC</span>
+            <span class="sector-tile-chg">-0.48%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.52">
+            <span class="sector-tile-name">一般消費財</span>
+            <span class="sector-tile-ticker">XLY</span>
+            <span class="sector-tile-chg">-0.52%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.54">
+            <span class="sector-tile-name">金融</span>
+            <span class="sector-tile-ticker">XLF</span>
+            <span class="sector-tile-chg">-0.54%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.66">
+            <span class="sector-tile-name">資本財</span>
+            <span class="sector-tile-ticker">XLI</span>
+            <span class="sector-tile-chg">-0.66%</span>
+          </div>
+          <div class="sector-tile" data-chg="-0.74">
+            <span class="sector-tile-name">テクノロジー</span>
+            <span class="sector-tile-ticker">XLK</span>
+            <span class="sector-tile-chg">-0.74%</span>
+          </div>
+          <div class="sector-tile" data-chg="-1.05">
+            <span class="sector-tile-name">半導体</span>
+            <span class="sector-tile-ticker">SMH</span>
+            <span class="sector-tile-chg">-1.05%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Market Indicator Panels -->
+      <div class="market-panels">
+        <div class="market-panel" data-chg="-0.58">
+          <span class="panel-name">S&amp;P 500</span>
+          <span class="panel-val">6,573.18</span>
+          <span class="panel-chg">-0.58%</span>
+        </div>
+        <div class="market-panel" data-chg="-0.03">
+          <span class="panel-name">NASDAQ</span>
+          <span class="panel-val">21,990.32</span>
+          <span class="panel-chg">-0.03%</span>
+        </div>
+        <div class="market-panel" data-chg="-0.29">
+          <span class="panel-name">ダウ</span>
+          <span class="panel-val">46,535.05</span>
+          <span class="panel-chg">-0.29%</span>
+        </div>
+        <div class="market-panel" data-chg="-0.68">
+          <span class="panel-name">Russell 2000</span>
+          <span class="panel-val">2,521.40</span>
+          <span class="panel-chg">-0.68%</span>
+        </div>
+        <div class="market-panel" data-chg="2.6">
+          <span class="panel-name"><span class="term">VIX<span class="tip"><span class="tip-title">VIX（恐怖指数・Volatility Index）</span>S&amp;P 500オプションの予想ボラティリティを示す指数。20以下が平穏、20〜30が警戒、30超が恐怖、40超がパニックの目安。</span></span></span>
+          <span class="panel-val">24.50</span>
+          <span class="panel-chg">+2.6%</span>
+        </div>
+        <div class="market-panel" data-chg="0.05">
+          <span class="panel-name">米10年債</span>
+          <span class="panel-val">4.32%</span>
+          <span class="panel-chg">+1bp</span>
+        </div>
+        <div class="market-panel" data-chg="0.14">
+          <span class="panel-name">USD/JPY</span>
+          <span class="panel-val">159.45</span>
+          <span class="panel-chg">+0.14%</span>
+        </div>
+        <div class="market-panel" data-chg="1.99">
+          <span class="panel-name">WTI</span>
+          <span class="panel-val">$115.21</span>
+          <span class="panel-chg">+1.99%</span>
+        </div>
+        <div class="market-panel" data-chg="-0.11">
+          <span class="panel-name">Gold</span>
+          <span class="panel-val">$4,685.80</span>
+          <span class="panel-chg">-0.11%</span>
+        </div>
+        <div class="market-panel" data-chg="-1.20">
+          <span class="panel-name">BTC</span>
+          <span class="panel-val">$68,920</span>
+          <span class="panel-chg">-1.20%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 1.5 Risk Meter ===== -->
+  <section class="section-gap">
+    <div class="section-label">
+      <span class="section-label-icon">🌡️</span>
+      <span class="section-label-text">Atlas リスクメーター</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="risk-meter-card">
+      <div class="risk-meter-top">
+        <div class="risk-gauge-wrap">
+          <canvas id="riskGaugeChart" class="risk-gauge-canvas" data-score="41"></canvas>
+          <div class="risk-gauge-score">
+            <div><span class="risk-gauge-num">41</span><span class="risk-gauge-num-suffix">/100</span></div>
+            <div class="risk-gauge-zone" style="background:rgba(234,179,8,0.15);color:#a16207;border:1px solid #eab308">🟡 注意圏</div>
+          </div>
+        </div>
+        <div class="risk-meter-info">
+          <div class="risk-meter-title">8指標の総合評価 — 注意圏（31〜50）</div>
+          <div class="risk-meter-prev">基準日: 4月7日終値時点 ｜ 前日比: 43 → 41（-2pt ↓ わずかに改善）</div>
+          <div class="risk-signals">
+            <div class="risk-signal">⚠️ ブレッス急落（<span class="term">SPXA50R<span class="tip"><span class="tip-title">SPXA50R（S&amp;P 500 50日線上位銘柄比率）</span>S&amp;P 500構成銘柄のうち、株価が50日移動平均線を上回っている銘柄の比率（%）。市場の「広がり（Breadth）」を測る指標で、30%未満は急落水準、70%超は過熱感を示す。指数自体の動きと乖離する場合、反転シグナルとされる。</span></span> 28.0% &lt; 30%）<span class="risk-signal-stars">★★★</span></div>
+          </div>
+        </div>
+      </div>
+
+      <details class="risk-bars-accordion">
+        <summary class="risk-bars-title">📊 8指標の内訳スコアを表示 <span class="risk-acc-hint">（クリックで開閉）</span></summary>
+      <div class="risk-bars">
+        <div class="risk-bar-row">
+          <div class="risk-bar-label"><span class="term">VIX<span class="tip"><span class="tip-title">VIX（恐怖指数）</span>S&amp;P 500オプションの予想ボラティリティを示す指数。20超で警戒圏、30超で恐怖圏。</span></span>（恐怖指数）</div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-score="42"></div></div>
+          <div class="risk-bar-val">24.50</div>
+          <div class="risk-bar-score">42</div>
+        </div>
+        <div class="risk-bar-row">
+          <div class="risk-bar-label">SKEW（テールリスク）</div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-score="78"></div></div>
+          <div class="risk-bar-val">147.20</div>
+          <div class="risk-bar-score">78</div>
+        </div>
+        <div class="risk-bar-row">
+          <div class="risk-bar-label"><span class="term">イールドカーブ<span class="tip"><span class="tip-title">イールドカーブ（10年-2年スプレッド）</span>米国債10年物利回りから2年物利回りを差し引いたもの。プラスなら正常（長期金利＞短期金利）、マイナスなら逆イールドで景気後退の前兆とされる。</span></span>（10Y-2Y）</div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-score="28"></div></div>
+          <div class="risk-bar-val">+0.51%</div>
+          <div class="risk-bar-score">28</div>
+        </div>
+        <div class="risk-bar-row">
+          <div class="risk-bar-label">10年債利回り</div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-score="42"></div></div>
+          <div class="risk-bar-val">4.32%</div>
+          <div class="risk-bar-score">42</div>
+        </div>
+        <div class="risk-bar-row">
+          <div class="risk-bar-label"><span class="term">EPS<span class="tip"><span class="tip-title">EPS（Earnings Per Share・1株当たり利益）</span>企業の純利益を発行済株式数で割った値。株価の収益性を測る最重要指標。「EPSリビジョン」はアナリストのEPS予想の上方/下方修正動向を指す。</span></span>リビジョン</div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-score="20"></div></div>
+          <div class="risk-bar-val">やや上方</div>
+          <div class="risk-bar-score">20</div>
+        </div>
+        <div class="risk-bar-row">
+          <div class="risk-bar-label"><span class="term">Fear &amp; Greed<span class="tip"><span class="tip-title">Fear &amp; Greed Index（恐怖と強欲指数）</span>CNNが算出する市場センチメント指数（0〜100）。0〜25が「Extreme Fear（極端な恐怖）」、25〜45が「Fear」、45〜55が「Neutral」、55〜75が「Greed」、75〜100が「Extreme Greed」。逆張り指標として参照される。</span></span></div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-score="42"></div></div>
+          <div class="risk-bar-val">23</div>
+          <div class="risk-bar-score">42</div>
+        </div>
+        <div class="risk-bar-row">
+          <div class="risk-bar-label">SPXA50R（ブレッス）</div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-score="62"></div></div>
+          <div class="risk-bar-val">28.0%</div>
+          <div class="risk-bar-score">62</div>
+        </div>
+        <div class="risk-bar-row">
+          <div class="risk-bar-label">200日線乖離率</div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-score="48"></div></div>
+          <div class="risk-bar-val">-1.04%</div>
+          <div class="risk-bar-score">48</div>
+        </div>
+      </div>
+      </details>
+
+      <div class="risk-comment">
+        <strong>Fear &amp; Greed指数</strong>が19→23へわずかに改善し、極端な恐怖から通常の恐怖圏へ。一方で<strong>SPXA50R（50日線上位比率）</strong>は28.0%と急落水準を維持し、市場の参加銘柄数は依然として限定的です。VIXは<strong>24.5</strong>まで上昇し、ホルムズ最終期限を前にした緊張感が反映されています。総合スコアは43→41と微減ですが、<strong>火曜夜の交渉結果次第で水曜のスコアが大きく動く可能性</strong>があります。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. Top News ===== -->
+  <section class="section-gap">
+    <div class="section-label">
+      <span class="section-label-icon">📰</span>
+      <span class="section-label-text">主要ニュース</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <!-- Top Story -->
+    <div class="top-story">
+      <span class="top-story-badge">TOP STORY</span>
+      <div class="section-hero">
+        <img src="https://images.pexels.com/photos/2059628/pexels-photo-2059628.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="戦闘機" loading="lazy">
+      </div>
+      <div class="section-hero-caption">Photo: Pexels</div>
+      <span class="news-card-tag geopolitics" style="margin-bottom:10px;display:inline-block">GEOPOLITICS</span>
+      <h2 class="top-story-title">米軍カーグ島を空爆 — トランプ「最終期限」20時、「全文明が今夜消える」と警告</h2>
+      <p class="top-story-body">
+        米軍は4月7日、イラン・カーグ島の軍事拠点50ヶ所超を空爆した。同島はイラン原油輸出の約9割を扱う中核施設だが、今回の攻撃は軍事目標に限定され石油インフラは標的外だった。それでもWTI原油は3%急騰し$115台に。トランプ大統領は同日、「20時（ET）が最終期限」と宣言し、ホルムズ海峡再開と停戦合意がなければ「全文明が今夜消える」「電力網と橋梁を破壊する」と警告。一方で交渉は並行しており、パキスタンのシャリフ首相がトランプに2週間延長を打診中とされる。ロシアと中国は同日、ホルムズ再開を求める国連決議に拒否権を行使。イスラエル軍も火曜にイラン国内の橋梁8ヶ所を攻撃し、緊張は最大化している。
+      </p>
+      <div class="why-box negative">
+        <span class="why-icon">⚠️</span>
+        <div><span class="why-label">なぜ重要か:</span> 火曜20時（ET）以降の数時間が今週の市場最大の分岐点。攻撃発動なら原油$130超・S&amp;P -3〜5%の急落、延長合意なら$95台への急落＋株式リリーフラリーの両極シナリオ</div>
+      </div>
+      <div class="top-story-footer">
+        <span class="top-story-source">NBC / CNN / Al Jazeera / Fox News / NPR</span>
+        <span>·</span>
+        <span>2026年4月7日</span>
+        <span>·</span>
+        <span>Geopolitics</span>
+      </div>
+    </div>
+
+    <!-- Sub News Grid -->
+    <div class="news-grid">
+
+      <!-- サブニュース1: Anthropic-Google-Broadcom -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/586030/pexels-photo-586030.jpeg?auto=compress&cs=tinysrgb&w=800" alt="テクノロジーとデータセンター" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag tech">TECH</span>
+          <span class="news-card-source">Bloomberg / CNBC / TechCrunch / Anthropic公式</span>
+        </div>
+        <div class="news-card-title">Anthropic、Google・Broadcomと3.5GWの史上最大級TPUディール — 売上ランレート$30B到達</div>
+        <div class="news-card-excerpt">AnthropicとGoogle、Broadcomが4月7日、3社共同での次世代AI演算インフラ拡張を発表した。AnthropicはGoogleの<span class="term">TPU<span class="tip"><span class="tip-title">TPU（Tensor Processing Unit）</span>GoogleがAI向けに開発した独自カスタムASIC。NVIDIAのGPUに対抗する演算チップで、大規模言語モデルの学習・推論に特化。Broadcomが製造パートナー。</span></span>を2027年から3.5ギガワット規模で調達する。これは2026年に既に供給されている1ギガワットに上乗せされる形で、業界史上最大級のコンピュート契約となる。Anthropicの売上ランレートは2025年末の$9Bから$30Bへと約3.3倍に急拡大しており、年間$1M以上を支払う法人顧客は1,000社を超え、わずか2ヶ月で倍増した。インフラの大半は米国内に建設される見通し。Broadcomは別途Googleと2031年まで続くTPU設計・供給契約も締結し、今後数年で数十億ドル規模の追加収益が期待されている。</div>
+        <div class="why-box positive">
+          <span class="why-icon">💡</span>
+          <div><span class="why-label">なぜ重要か:</span> AIハードウェアの覇権がGPU独占からTPU/カスタムASICへとシフトしつつあるサイン。NVIDIA一極集中への警告でもあり、Anthropicの急成長は「Claude経済圏」の本格的な離陸を示す</div>
+        </div>
+      </div>
+
+      <!-- サブニュース2: Broadcom株急騰 -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=800" alt="半導体チップ" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag earnings">EARNINGS</span>
+          <span class="news-card-source">CNBC / Investing.com / Motley Fool</span>
+        </div>
+        <div class="news-card-title">Broadcom株 +4〜5%急騰 — 2026年2番目の好成績日、AI銘柄の明確な勝者に</div>
+        <div class="news-card-excerpt">Broadcom（AVGO）株は4月7日、Anthropic-Google両社との大型契約発表を受けて+4〜5%急騰し、2026年で2番目に良い1日を記録した。Googleとの5年契約で2031年までカスタムTPUと次世代AIデータラックのネットワーク部品を供給。Anthropicとは複数ギガワット規模のTPU供給契約を新たに結ぶ。投資家は「Broadcomが世界最大級のテック企業から長期で安定した収益を確保した」と評価。アナリストの中には「これらの契約により、従来予想を数十億ドル上回る増収が期待できる」との声も。一部のWall Street予想では今後の株価上昇余地を最大80%とする強気見通しも出ている。</div>
+        <div class="why-box positive">
+          <span class="why-icon">💡</span>
+          <div><span class="why-label">なぜ重要か:</span> <span class="term">Mag7<span class="tip"><span class="tip-title">Mag7（Magnificent Seven）</span>米国を代表する巨大テック株7銘柄（Apple / Microsoft / Alphabet / Amazon / Nvidia / Meta / Tesla）。</span></span>と半導体が全体的に売られた1日に、AVGOだけが逆行高。AI関連で勝ち組と負け組の選別が始まったシグナル</div>
+        </div>
+      </div>
+
+      <!-- サブニュース3: 原油WTI -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg?auto=compress&cs=tinysrgb&w=800" alt="石油精製施設" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag economy">ECONOMY</span>
+          <span class="news-card-source">CNN / NBC / EIA / AAA</span>
+        </div>
+        <div class="news-card-title">原油WTI $115台へ急騰 — カーグ島攻撃で2022年6月以来の高値、ガソリン$4.13/ガロン</div>
+        <div class="news-card-excerpt">WTI原油先物は4月7日、米軍によるイラン・カーグ島攻撃を受けて+3%急騰し$115.21まで上昇。2022年6月以来の高値水準に達した。<span class="term">Brent<span class="tip"><span class="tip-title">Brent（北海原油）</span>北海産の原油で、国際市場のベンチマーク指標。WTIが米国内指標であるのに対し、Brentはヨーロッパ・アジアで広く参照される。通常WTIより$3〜$5高い水準で推移する。</span></span>原油も$110を突破。米AAAによれば、米国内のガソリン平均小売価格は$4.13/ガロンと、1ヶ月前から+89セント上昇。インフレ圧力が消費者を直撃しつつある。エネルギー株のXLE ETFは+0.28%と微増にとどまり、原油急騰の割に上昇は限定的。「停戦への期待が織り込まれているのか、それとも需要破壊への懸念が利益確定を促しているのか」と市場関係者は分析している。</div>
+        <div class="why-box warning">
+          <span class="why-icon">⚠️</span>
+          <div><span class="why-label">なぜ重要か:</span> 金曜の<span class="term">CPI<span class="tip"><span class="tip-title">CPI（Consumer Price Index・消費者物価指数）</span>米労働省が毎月発表する物価指数。約8万品目の価格変動を集計し、インフレ率の主要指標として参照される。FRBの金融政策判断の中核データ。</span></span>（3月分）にこの原油高が反映される。ヘッドラインインフレが2.4%→3%超に跳ね返る可能性も</div>
+        </div>
+      </div>
+
+      <!-- サブニュース4: 露中拒否権 -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/417070/pexels-photo-417070.jpeg?auto=compress&cs=tinysrgb&w=800" alt="国連本部" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag geopolitics">GEOPOLITICS</span>
+          <span class="news-card-source">Fox News / Al Jazeera / Reuters</span>
+        </div>
+        <div class="news-card-title">露中、ホルムズ国連決議に拒否権 — 米単独行動の包囲網形成</div>
+        <div class="news-card-excerpt">ロシアと中国は4月7日、米国主導の「ホルムズ海峡再開を求める国連安保理決議」に対して拒否権を行使した。トランプ大統領の20時最終期限のわずか数時間前のタイミング。ロ中両国は「米国とイスラエルの軍事行動こそ国際法違反」と主張し、安保理での米国の正当性を切り崩した形。これにより米国の単独行動色がより強まり、欧州諸国の態度も注目される。一方でイスラエル軍は同日、イラン国内の橋梁8ヶ所を空爆し、地上インフラへの圧力を強化。米イ連合 vs 露中イラン軸の構図が国際的に固まりつつある。</div>
+        <div class="why-box negative">
+          <span class="why-icon">⚠️</span>
+          <div><span class="why-label">なぜ重要か:</span> 安保理での合意形成が崩れたことで、米国の軍事行動には外交的な後ろ盾が薄い。長期化リスクが高まる</div>
+        </div>
+      </div>
+
+      <!-- サブニュース5: デルタ航空 -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=800" alt="空港の旅客機" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag earnings">EARNINGS</span>
+          <span class="news-card-source">MarketBeat / Zacks / Yahoo Finance / EBC</span>
+        </div>
+        <div class="news-card-title">デルタ航空、4月8日朝に決算発表 — Q1決算シーズンの口火、原油高下の利益率が焦点</div>
+        <div class="news-card-excerpt">デルタ航空（DAL）は4月8日朝6:30（ET）にQ1 2026決算を発表する。Q1決算シーズンの幕開けとなる注目イベント。アナリストコンセンサスはEPS <span class="summary-num">$0.64</span>（前年比+39.1%）、売上<span class="summary-num">$14.82B</span>（+5.6%）。会社ガイダンスは売上$15.0-15.3B、EPS $0.50-0.90。3月の好調な需要を受けて2月時点で売上見通しを上方修正済み。原油$115環境下で、燃料費高騰がどこまで業績を圧迫したか、また経営陣のQ2以降のガイダンス次第では航空セクター全体に波及する可能性がある。通年EPSガイダンスは$6.50-7.50（中央値で前年比+20%）。発表は<span class="term">BMO<span class="tip"><span class="tip-title">BMO / AMC（Before Market Open / After Market Close）</span>BMOは「寄り付き前の決算発表」、AMCは「引け後の決算発表」を意味する。BMO発表は当日の寄り付きから市場が反応し、AMC発表は翌日の寄り付きで反応する。</span></span>（寄り付き前）。</div>
+        <div class="why-box default">
+          <span class="why-icon">💡</span>
+          <div><span class="why-label">なぜ重要か:</span> Q1決算シーズンの先陣。航空業界は原油高に最も敏感なセクターの一つ。経営陣の強気/弱気コメントが今週の市場心理を左右</div>
+        </div>
+      </div>
+
+      <!-- サブニュース6: Mag7売り -->
+      <div class="news-card">
+        <div class="news-card-img-wrap">
+          <img class="news-card-img" src="https://images.pexels.com/photos/8369770/pexels-photo-8369770.jpeg?auto=compress&cs=tinysrgb&w=800" alt="株式相場ボード" loading="lazy">
+          <span class="news-card-img-caption">Photo: Pexels</span>
+        </div>
+        <div class="news-card-meta">
+          <span class="news-card-tag earnings">EARNINGS</span>
+          <span class="news-card-source">Investing.com / Schwab / Fortune</span>
+        </div>
+        <div class="news-card-title">Mag7に売り圧力 — Tesla年初来-22%、Nvidia/Apple小幅安、リスクオフ鮮明</div>
+        <div class="news-card-excerpt">4月7日の米株式市場ではマグニフィセント・セブン（<span class="term">Mag7<span class="tip"><span class="tip-title">Mag7（Magnificent Seven）</span>米国を代表する巨大テック株7銘柄の総称（Apple / Microsoft / Alphabet / Amazon / Nvidia / Meta / Tesla）。S&amp;P 500の時価総額の約3割を占める。</span></span>）に売り圧力が広がった。Tesla（TSLA）は前日のJPモルガン60%下落警告に続いて続落し、年初来パフォーマンスは-22%まで悪化。Nvidia（NVDA）とApple（AAPL）も1%以上下落した。半導体ETF（SMH）は-1.05%と全セクター中最大の下げ幅。「ホルムズ最終期限を前にしたリスクオフ」と「Anthropic-Google-Broadcomディールによる競争環境変化」のダブルパンチ。一方でBroadcom（AVGO）は逆行高となり、AI関連内での勝者選別が鮮明化している。</div>
+        <div class="why-box default">
+          <span class="why-icon">💡</span>
+          <div><span class="why-label">なぜ重要か:</span> Mag7一極集中の終焉のサインか。今後の四半期決算でAIインフラの「払い手」と「受け手」の利益配分構図が明らかになる</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 5. Economic Calendar ===== -->
+  <section class="section-gap">
+    <div class="section-label">
+      <span class="section-label-icon">📅</span>
+      <span class="section-label-text">今週の注目イベント</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div class="calendar-list">
+      <div class="calendar-day-block">
+        <div class="calendar-day-label"><div><span class="day-num">4/8</span><span class="day-week">水</span></div></div>
+        <div class="calendar-events">
+          <div class="calendar-item is-star">
+            <span class="calendar-time">06:30 ET</span>
+            <span class="calendar-flag">🇺🇸</span>
+            <span class="calendar-importance high">HIGH</span>
+            <div class="calendar-event-body">
+              <div class="calendar-event"><span class="star-icon">★</span>デルタ航空 Q1決算（BMO）</div>
+              <span class="calendar-detail">Q1決算シーズン幕開け ・ EPS予想 $0.64 ／ 売上予想 $14.82B</span>
+            </div>
+          </div>
+          <div class="calendar-item">
+            <span class="calendar-time">14:00 ET</span>
+            <span class="calendar-flag">🇺🇸</span>
+            <span class="calendar-importance medium">MID</span>
+            <div class="calendar-event-body">
+              <div class="calendar-event">FOMC議事要旨（3月会合分）</div>
+              <span class="calendar-detail">利下げ議論の温度感に注目</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calendar-day-block">
+        <div class="calendar-day-label"><div><span class="day-num">4/9</span><span class="day-week">木</span></div></div>
+        <div class="calendar-events">
+          <div class="calendar-item">
+            <span class="calendar-time">08:30 ET</span>
+            <span class="calendar-flag">🇺🇸</span>
+            <span class="calendar-importance high">HIGH</span>
+            <div class="calendar-event-body">
+              <div class="calendar-event">PCEデフレーター（2月）／個人消費</div>
+              <span class="calendar-detail">FRBが最重視するインフレ指標</span>
+            </div>
+          </div>
+          <div class="calendar-item">
+            <span class="calendar-time">08:30 ET</span>
+            <span class="calendar-flag">🇺🇸</span>
+            <span class="calendar-importance medium">MID</span>
+            <div class="calendar-event-body">
+              <div class="calendar-event">新規失業保険申請件数</div>
+              <span class="calendar-detail">週次の労働市場指標</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calendar-day-block">
+        <div class="calendar-day-label"><div><span class="day-num">4/10</span><span class="day-week">金</span></div></div>
+        <div class="calendar-events">
+          <div class="calendar-item is-star">
+            <span class="calendar-time">08:30 ET</span>
+            <span class="calendar-flag">🇺🇸</span>
+            <span class="calendar-importance high">HIGH</span>
+            <div class="calendar-event-body">
+              <div class="calendar-event"><span class="star-icon">★</span>消費者物価指数 CPI（3月）</div>
+              <span class="calendar-detail">前回: +2.4% YoY ／ 今週最重要 ・ 原油$115の反映度</span>
+            </div>
+          </div>
+          <div class="calendar-item">
+            <span class="calendar-time">08:30 ET</span>
+            <span class="calendar-flag">🇺🇸</span>
+            <span class="calendar-importance high">HIGH</span>
+            <div class="calendar-event-body">
+              <div class="calendar-event">BlackRock Q1決算（BMO）</div>
+              <span class="calendar-detail">金融セクターの幕開け</span>
+            </div>
+          </div>
+          <div class="calendar-item">
+            <span class="calendar-time">10:00 ET</span>
+            <span class="calendar-flag">🇺🇸</span>
+            <span class="calendar-importance medium">MID</span>
+            <div class="calendar-event-body">
+              <div class="calendar-event">ミシガン大消費者信頼感（4月速報）</div>
+              <span class="calendar-detail">期待インフレ率の動向に注目</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calendar-day-block">
+        <div class="calendar-day-label"><div><span class="day-num">4/16</span><span class="day-week">水</span></div></div>
+        <div class="calendar-events">
+          <div class="calendar-item">
+            <span class="calendar-time no-time">—</span>
+            <span class="calendar-flag">🇺🇸</span>
+            <span class="calendar-importance high">HIGH</span>
+            <div class="calendar-event-body">
+              <div class="calendar-event">TSMC ／ Netflix Q1決算</div>
+              <span class="calendar-detail">来週の最大注目イベント（AI需要・ストリーミング動向）</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. Earnings ===== -->
+  <section class="section-gap">
+    <div class="section-label">
+      <span class="section-label-icon">📊</span>
+      <span class="section-label-text">今週の注目決算</span>
+      <span class="section-label-line"></span>
+    </div>
+
+    <div style="font-size:13px;font-weight:700;color:var(--navy-mid);margin-bottom:10px;letter-spacing:.02em">📅 今週発表予定</div>
+    <div class="earnings-grid">
+      <div class="earnings-item" data-ticker="DAL">
+        <div class="earnings-item-header">
+          <span class="earnings-item-ticker">DAL</span>
+          <span class="earnings-item-timing bmo">BMO</span>
+        </div>
+        <div class="earnings-item-name">Delta Air Lines</div>
+        <div class="earnings-item-sector">航空</div>
+        <div class="earnings-item-consensus">
+          <span>EPS: $0.64</span>
+          <span>売上: $14.82B</span>
+        </div>
+        <div class="earnings-item-note">★ 4/8発表 — 原油高下の利益率が焦点</div>
+      </div>
+      <div class="earnings-item" data-ticker="BLK">
+        <div class="earnings-item-header">
+          <span class="earnings-item-ticker">BLK</span>
+          <span class="earnings-item-timing bmo">BMO</span>
+        </div>
+        <div class="earnings-item-name">BlackRock</div>
+        <div class="earnings-item-sector">金融</div>
+        <div class="earnings-item-consensus">
+          <span>4/10発表</span>
+        </div>
+        <div class="earnings-item-note">金融セクターの先陣</div>
+      </div>
+      <div class="earnings-item" data-ticker="TSM">
+        <div class="earnings-item-header">
+          <span class="earnings-item-ticker">TSM</span>
+          <span class="earnings-item-timing bmo">BMO</span>
+        </div>
+        <div class="earnings-item-name">TSMC</div>
+        <div class="earnings-item-sector">テクノロジー</div>
+        <div class="earnings-item-consensus">
+          <span>来週 4/16</span>
+        </div>
+        <div class="earnings-item-note">来週注目</div>
+      </div>
+      <div class="earnings-item" data-ticker="NFLX">
+        <div class="earnings-item-header">
+          <span class="earnings-item-ticker">NFLX</span>
+          <span class="earnings-item-timing amc">AMC</span>
+        </div>
+        <div class="earnings-item-name">Netflix</div>
+        <div class="earnings-item-sector">エンターテイメント</div>
+        <div class="earnings-item-consensus">
+          <span>来週 4/16</span>
+        </div>
+        <div class="earnings-item-note">来週注目</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Disclaimer ===== -->
+<div class="disclaimer-section">
+  <p class="disclaimer-text">本記事はAIによる情報収集・要約を基に作成されています。正確性・完全性を保証するものではありません。本記事は情報提供を目的としており、特定の金融商品の売買を推奨するものではありません。投資判断はご自身の責任で行ってください。</p>
+</div>
+
+<!-- ===== Footer ===== -->
+<footer class="paper-footer">
+  <div class="footer-day-nav">
+    <a href="7.html">← 前号: 4月7日</a>
+  </div>
+  <nav class="footer-nav">
+    <a href="https://atlasfinancials.github.io/ui-kabu-reports/about.html">Atlasとは</a>
+    <a href="https://atlasfinancials.github.io/ui-kabu-reports/">📊 決算分析</a>
+    <a href="https://atlasfinancials.github.io/ui-kabu-times/glossary/">📖 用語辞典</a>
+    <a href="https://atlasfinancials.github.io/ui-kabu-reports/faq.html">FAQ</a>
+    <a href="https://atlasfinancials.github.io/ui-kabu-reports/terms.html">利用規約</a>
+  </nav>
+  <div class="footer-copy">&copy; 2026 Atlas Daily — U&amp;I CO., LTD.</div>
+</footer>
+
+<script>
+// ==========================================
+// Mobile Hamburger Menu
+// ==========================================
+(function() {
+  var btn = document.getElementById('navHamburger');
+  var menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', function() {
+      menu.classList.toggle('open');
+      btn.textContent = menu.classList.contains('open') ? '\u2715' : '\u2630';
+    });
+  }
+})();
+
+// ==========================================
+// Earnings — Portal Logo + Link Auto-Insert
+// ==========================================
+(function(){
+  var logoBase = 'https://raw.githubusercontent.com/AtlasFinancials/reports/main/logos/';
+  var portalBase = 'https://atlasfinancials.github.io/ui-kabu-reports/';
+  var portalTickers = ['ACN','ADBE','ADI','ALAB','AMZN','AVGO','BABA','CCL','CIEN','COST','DAL','DDOG','DG','DOCU','FDX','FN','GOOGL','IOT','LLY','LULU','META','MRVL','MSFT','MU','NKE','NVDA','OKTA','ORCL','PANW','PATH','PAYP','RBRK','RDDT','S','SMCI','SNAP','TM','TSLA','TSM','TXN','VFC','WMT','ZS'];
+  var pngLogos = ['CIEN','S'];
+
+  document.querySelectorAll('.earnings-item[data-ticker]').forEach(function(item){
+    var ticker = item.getAttribute('data-ticker');
+    if(portalTickers.indexOf(ticker)===-1) return;
+    var header = item.querySelector('.earnings-item-header');
+    if(header){
+      var ext = pngLogos.indexOf(ticker)!==-1 ? '.png' : '.svg';
+      var logo = document.createElement('img');
+      logo.src = logoBase + ticker + ext;
+      logo.alt = ticker;
+      logo.className = 'earnings-item-logo';
+      if(ext==='.png') logo.style.borderRadius='4px';
+      header.insertBefore(logo, header.firstChild);
+    }
+    var link = document.createElement('a');
+    link.href = portalBase + ticker + '/';
+    link.target = '_blank';
+    link.className = 'earnings-item-link';
+    link.innerHTML = '📊 過去の決算分析を見る →';
+    item.appendChild(link);
+  });
+})();
+
+// ==========================================
+// Editorial Take — tap toggle for mobile
+// ==========================================
+document.querySelectorAll('.ed-take').forEach(function(el){
+  el.addEventListener('click', function(){ el.classList.toggle('open'); });
+});
+
+// ==========================================
+// Sector heatmap tile coloring
+// ==========================================
+(function(){
+  var bestTile = null; var bestVal = -Infinity;
+  document.querySelectorAll('.sector-tile').forEach(function(t){
+    var v = parseFloat(t.getAttribute('data-chg')) || 0;
+    if(v > bestVal){ bestVal = v; bestTile = t; }
+  });
+  if(bestTile){
+    var badge = document.createElement('span');
+    badge.className = 'sector-tile-best';
+    badge.textContent = '🔥';
+    bestTile.appendChild(badge);
+  }
+
+  document.querySelectorAll('.sector-tile').forEach(function(tile){
+    var chg = parseFloat(tile.getAttribute('data-chg')) || 0;
+    var abs = Math.abs(chg);
+    var alpha;
+    if(abs >= 3) alpha = 0.35;
+    else if(abs >= 2) alpha = 0.25;
+    else if(abs >= 1) alpha = 0.16;
+    else if(abs > 0) alpha = 0.09;
+    else alpha = 0.08;
+
+    var textAlpha;
+    if(abs >= 3) textAlpha = 1;
+    else if(abs >= 2) textAlpha = 0.85;
+    else if(abs >= 1) textAlpha = 0.7;
+    else if(abs > 0) textAlpha = 0.55;
+    else textAlpha = 0.6;
+
+    if(chg > 0){
+      tile.style.background = 'rgba(34,197,94,' + alpha + ')';
+      tile.querySelector('.sector-tile-chg').style.color = 'rgba(22,163,74,' + textAlpha + ')';
+      tile.querySelector('.sector-tile-name').style.color = 'rgba(22,101,52,0.85)';
+    } else if(chg < 0){
+      tile.style.background = 'rgba(239,68,68,' + alpha + ')';
+      tile.querySelector('.sector-tile-chg').style.color = 'rgba(220,38,38,' + textAlpha + ')';
+      tile.querySelector('.sector-tile-name').style.color = 'rgba(153,27,27,0.85)';
+    } else {
+      tile.style.background = 'rgba(139,148,158,0.08)';
+      tile.querySelector('.sector-tile-chg').style.color = 'rgba(139,148,158,0.8)';
+      tile.querySelector('.sector-tile-name').style.color = 'var(--slate)';
+    }
+  });
+
+  function adjustDark(){
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.querySelectorAll('.sector-tile').forEach(function(tile){
+      var chg = parseFloat(tile.getAttribute('data-chg')) || 0;
+      if(isDark){
+        if(chg > 0) tile.querySelector('.sector-tile-name').style.color = 'rgba(187,247,208,0.9)';
+        else if(chg < 0) tile.querySelector('.sector-tile-name').style.color = 'rgba(254,202,202,0.9)';
+        else tile.querySelector('.sector-tile-name').style.color = '#8b949e';
+      }
+    });
+  }
+  adjustDark();
+  window._sectorAdjustDark = adjustDark;
+})();
+
+// ==========================================
+// Market panel change color intensity
+// ==========================================
+(function(){
+  function chgColor(val){
+    var abs = Math.abs(val);
+    var alpha;
+    if(abs >= 3) alpha = 1;
+    else if(abs >= 2) alpha = 0.8;
+    else if(abs >= 1) alpha = 0.6;
+    else if(abs > 0) alpha = 0.4;
+    else return 'rgba(139,148,158,0.8)';
+    if(val > 0) return 'rgba(34,197,94,' + alpha + ')';
+    return 'rgba(239,68,68,' + alpha + ')';
+  }
+  document.querySelectorAll('.market-panel').forEach(function(panel){
+    var chg = parseFloat(panel.getAttribute('data-chg')) || 0;
+    var el = panel.querySelector('.panel-chg');
+    if(el) el.style.color = chgColor(chg);
+  });
+})();
+
+// ==========================================
+// Risk Meter — Gauge & Bars
+// ==========================================
+(function(){
+  // Bar fill animation + color by score
+  function scoreColor(s){
+    if(s <= 30) return '#22c55e';        // safe (green)
+    if(s <= 50) return '#eab308';        // caution (yellow)
+    if(s <= 70) return '#f97316';        // warning (orange)
+    return '#ef4444';                     // danger (red)
+  }
+  document.querySelectorAll('.risk-bar-fill').forEach(function(el){
+    var s = parseFloat(el.getAttribute('data-score')) || 0;
+    el.style.width = s + '%';
+    el.style.background = scoreColor(s);
+  });
+
+  // Gauge: half-doughnut with needle
+  var ctx = document.getElementById('riskGaugeChart');
+  if(!ctx) return;
+  var totalScore = 41;
+  var zoneColor = '#eab308';
+
+  // Needle plugin
+  var needlePlugin = {
+    id: 'needle',
+    afterDatasetDraw: function(chart){
+      var ctx2 = chart.ctx;
+      var meta = chart.getDatasetMeta(0);
+      if(!meta.data[0]) return;
+      var arc = meta.data[0];
+      var cx = arc.x;
+      var cy = arc.y;
+      var radius = arc.outerRadius * 0.86;
+      // Map score 0..100 to angle from -PI (left) to 0 (right) — half circle
+      var angle = Math.PI + (totalScore / 100) * Math.PI;
+      var nx = cx + Math.cos(angle) * radius;
+      var ny = cy + Math.sin(angle) * radius;
+
+      ctx2.save();
+      // Needle
+      ctx2.beginPath();
+      ctx2.moveTo(cx, cy);
+      ctx2.lineTo(nx, ny);
+      ctx2.strokeStyle = '#1A2540';
+      ctx2.lineWidth = 3;
+      ctx2.lineCap = 'round';
+      ctx2.stroke();
+      // Center pin
+      ctx2.beginPath();
+      ctx2.arc(cx, cy, 7, 0, Math.PI * 2);
+      ctx2.fillStyle = '#B8912A';
+      ctx2.fill();
+      ctx2.strokeStyle = '#1A2540';
+      ctx2.lineWidth = 2;
+      ctx2.stroke();
+      ctx2.restore();
+    }
+  };
+
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [15, 15, 20, 20, 15, 15],
+        backgroundColor: [
+          '#22c55e', // 0-15 safe
+          '#84cc16', // 15-30
+          '#eab308', // 30-50 caution
+          '#f97316', // 50-70 warning
+          '#ef4444', // 70-85 danger
+          '#b91c1c'  // 85-100 extreme
+        ],
+        borderWidth: 0,
+        circumference: 180,
+        rotation: 270
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '70%',
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false }
+      }
+    },
+    plugins: [needlePlugin]
+  });
+})();
+
+// ==========================================
+// Tooltip — unified PC hover + mobile tap
+// ==========================================
+(function() {
+  var overlay = document.createElement('div');
+  overlay.className = 'tip-overlay';
+  document.body.appendChild(overlay);
+
+  var activeTerm = null;
+  var isMobile = function(){ return window.innerWidth <= 767; };
+
+  function positionTip(term, tip) {
+    var rect = term.getBoundingClientRect();
+    var tipW = 320;
+    var pad = 16;
+
+    if (isMobile()) {
+      tip.style.top = '50%';
+      tip.style.left = '50%';
+      tip.style.transform = 'translate(-50%, -50%)';
+      tip.style.width = 'calc(100vw - 48px)';
+      tip.style.maxWidth = '320px';
+    } else {
+      tip.style.transform = 'none';
+      tip.style.width = tipW + 'px';
+
+      var centerX = rect.left + rect.width / 2 - tipW / 2;
+      var clampedX = Math.max(pad, Math.min(centerX, window.innerWidth - tipW - pad));
+      tip.style.left = clampedX + 'px';
+
+      tip.style.top = '';
+      tip.style.bottom = '';
+      var spaceAbove = rect.top;
+      if (spaceAbove > 200) {
+        tip.style.bottom = (window.innerHeight - rect.top + 8) + 'px';
+      } else {
+        tip.style.top = (rect.bottom + 8) + 'px';
+      }
+    }
+  }
+
+  function showTip(term) {
+    var tip = term.querySelector('.tip');
+    if (!tip) return;
+    closeTip();
+    activeTerm = term;
+    positionTip(term, tip);
+    tip.classList.add('tip-visible');
+    var card = term.closest('.news-card, .top-story');
+    if (card) card.classList.add('tip-active');
+    if (isMobile()) overlay.classList.add('show');
+  }
+
+  function closeTip() {
+    if (activeTerm) {
+      var tip = activeTerm.querySelector('.tip');
+      if (tip) { tip.classList.remove('tip-visible'); tip.style.cssText = ''; }
+      var card = activeTerm.closest('.news-card, .top-story');
+      if (card) card.classList.remove('tip-active');
+      activeTerm = null;
+    }
+    overlay.classList.remove('show');
+  }
+
+  overlay.addEventListener('click', function(e) { e.stopPropagation(); closeTip(); });
+
+  document.querySelectorAll('.term').forEach(function(term) {
+    term.addEventListener('click', function(e) {
+      if (!isMobile()) return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (activeTerm === this) { closeTip(); return; }
+      showTip(this);
+    });
+
+    term.addEventListener('mouseenter', function() {
+      if (isMobile()) return;
+      showTip(this);
+    });
+    term.addEventListener('mouseleave', function() {
+      if (isMobile()) return;
+      closeTip();
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (activeTerm && !activeTerm.contains(e.target)) closeTip();
+  });
+
+  window.addEventListener('scroll', function() {
+    if (!isMobile() && activeTerm) closeTip();
+  }, { passive: true });
+})();
+
+// ==========================================
+// Theme Toggle (light/dark)
+// ==========================================
+function toggleTheme(){
+  var html=document.documentElement;
+  var next=html.getAttribute('data-theme')==='dark'?'light':'dark';
+  html.setAttribute('data-theme',next);
+  localStorage.setItem('atlas-theme',next);
+  var icon=next==='dark'?'☀️':'🌙';
+  document.querySelectorAll('.theme-toggle').forEach(function(b){b.textContent=icon;});
+  if(window._sectorAdjustDark) setTimeout(window._sectorAdjustDark, 50);
+}
+(function(){
+  var saved=localStorage.getItem('atlas-theme');
+  if(saved){document.documentElement.setAttribute('data-theme',saved)}
+  var icon=document.documentElement.getAttribute('data-theme')==='dark'?'☀️':'🌙';
+  document.querySelectorAll('.theme-toggle').forEach(function(b){b.textContent=icon;});
+})();
+
+// ==========================================
+// Font Scale (4 levels)
+// ==========================================
+function updateFontBtns(level){
+  document.querySelectorAll('.font-scale-btn').forEach(function(b){
+    b.innerHTML='<span class="fs-sm">A</span><span class="fs-lg">A</span><span class="fs-level">'+level+'/4</span>';
+  });
+}
+function cycleFontScale(){
+  var html=document.documentElement;
+  var current=parseInt(html.getAttribute('data-font-scale')||'1',10);
+  var next=current>=4?1:current+1;
+  html.setAttribute('data-font-scale',next);
+  localStorage.setItem('atlas-font-scale',next);
+  updateFontBtns(next);
+}
+(function(){
+  var saved=localStorage.getItem('atlas-font-scale');
+  var level=saved?parseInt(saved,10):1;
+  if(level<1||level>4)level=1;
+  document.documentElement.setAttribute('data-font-scale',level);
+  updateFontBtns(level);
+})();
+</script>
+
+</body>
+</html>
