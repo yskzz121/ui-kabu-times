@@ -1099,6 +1099,104 @@ body {
   background: rgba(74,85,104,0.02);
 }
 
+/* Company Profile Cards (Editorial) */
+.ed-company-card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--paper-dk);
+  border-radius: 12px;
+  padding: 22px 24px;
+  margin: 20px 0;
+  transition: border-color .2s;
+}
+.ed-company-card:hover { border-color: rgba(184,145,42,0.35); }
+.ed-company-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 2px;
+}
+.ed-company-logo-text {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 8px;
+  font-family: var(--font-data);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+.ed-company-body { min-width: 0; }
+.ed-company-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.ed-company-name {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--navy);
+}
+.ed-company-ticker {
+  font-family: var(--font-data);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  background: rgba(184,145,42,0.08);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.ed-company-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: var(--font-data);
+  font-size: 11px;
+  color: var(--slate-lt);
+  margin-bottom: 10px;
+}
+.ed-company-meta strong { color: var(--slate); font-weight: 700; }
+.ed-company-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--slate);
+  margin-bottom: 8px;
+}
+.ed-company-verdict {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+.ed-company-verdict.bullish { background: rgba(34,197,94,0.1); color: #16a34a; border: 1px solid rgba(34,197,94,0.3); }
+.ed-company-verdict.neutral { background: rgba(234,179,8,0.1); color: #a16207; border: 1px solid rgba(234,179,8,0.3); }
+.ed-company-verdict.strong-bull { background: rgba(34,197,94,0.15); color: #15803d; border: 1px solid rgba(34,197,94,0.4); }
+[data-theme="dark"] .ed-company-card { background: #1A2540; border-color: rgba(184,145,42,0.12); }
+[data-theme="dark"] .ed-company-card:hover { border-color: rgba(184,145,42,0.3); }
+[data-theme="dark"] .ed-company-name { color: #F5F2EC; }
+[data-theme="dark"] .ed-company-desc { color: #8b949e; }
+[data-theme="dark"] .ed-company-logo-text { background: var(--gold); color: var(--navy); }
+@media (max-width: 767px) {
+  .ed-company-card { grid-template-columns: 40px 1fr; gap: 12px; padding: 16px; }
+  .ed-company-logo, .ed-company-logo-text { width: 40px; height: 40px; font-size: 10px; }
+  .ed-company-name { font-size: 14px; }
+  .ed-company-meta { font-size: 10px; gap: 10px; }
+}
+
 /* ==========================================
    Economic Calendar
    ========================================== */
@@ -2038,13 +2136,89 @@ body {
 
         <p>Mythosクラスの出現は攻撃者の能力を指数関数的に向上させる。だが「AIで攻撃」に対しては「AIで防御」しなければならず、セキュリティ企業の役割は消えるのではなく「AIのオーケストレーター」に進化する。Anthropic自身が「Project Glasswing」としてCrowdStrike・Palo Alto・Cisco・Google・Microsoft等12社をパートナーに選び、$1億のクレジットを投じている事実がこれを裏付ける。</p>
 
-        <p><strong>CrowdStrike（CRWD）— Glasswing創設パートナー、追い風</strong><br>Falconプラットフォームは「全ノードから脅威データを収集し、1箇所で新型攻撃を学習すれば全ノードを守る」自己強化シールド。Mythosが発見した脆弱性情報がCrowdStrikeの脅威インテリジェンスDBを直接強化する構造。Charlotte AIとMythosの能力差が拡大すれば課題だが、Glasswing参加による情報優位は大きい。</p>
+        <div class="ed-company-card">
+          <div class="ed-company-logo-text">CRWD</div>
+          <div class="ed-company-body">
+            <div class="ed-company-header">
+              <span class="ed-company-name">CrowdStrike</span>
+              <span class="ed-company-ticker">CRWD</span>
+            </div>
+            <div class="ed-company-meta">
+              <span>時価総額: <strong>$101B</strong></span>
+              <span>ARR: <strong>$5.25B</strong> (+24% YoY)</span>
+              <span>Glasswing: <strong>✅ 創設パートナー</strong></span>
+            </div>
+            <div class="ed-company-desc">
+              <strong>事業:</strong> エンドポイントセキュリティ＋脅威インテリジェンスのSaaSプラットフォーム。<br>
+              <strong>主要製品:</strong> Falconプラットフォーム（EDR/XDR/SIEM/Identity統合）、Charlotte AI（AIアシスタント）。<br>
+              <strong>Mythos評価:</strong> Falconは「全ノードから脅威データを収集し、新型攻撃を学習すれば全ノードを守る」自己強化シールド構造。Mythosが発見した脆弱性情報がCrowdStrikeの脅威インテリジェンスDBを直接強化する。Glasswing参加で情報優位。
+            </div>
+            <span class="ed-company-verdict bullish">📈 追い風・継続強化</span>
+          </div>
+        </div>
 
-        <p><strong>Palo Alto Networks（PANW）— セクター内で構造的に最優位</strong><br>Prisma AIRS（AI Runtime Security）はプロンプトインジェクション・データポイゾニングを防御する製品として既に展開済み。Cortex XSIAMがMTTR（平均修復時間）を数日→10分以内に短縮。「XSIAM × Mythos統合」が実現すればSOC自動化が質的に跳躍する。Glasswing創設パートナー。</p>
+        <div class="ed-company-card">
+          <img class="ed-company-logo" src="https://raw.githubusercontent.com/AtlasFinancials/reports/main/logos/PANW.svg" alt="PANW">
+          <div class="ed-company-body">
+            <div class="ed-company-header">
+              <span class="ed-company-name">Palo Alto Networks</span>
+              <span class="ed-company-ticker">PANW</span>
+            </div>
+            <div class="ed-company-meta">
+              <span>時価総額: <strong>$132B</strong></span>
+              <span>売上: <strong>~$10.5B</strong> (+14% YoY)</span>
+              <span>Glasswing: <strong>✅ 創設パートナー</strong></span>
+            </div>
+            <div class="ed-company-desc">
+              <strong>事業:</strong> ネットワーク・クラウド・SOCの統合セキュリティプラットフォーム。<br>
+              <strong>主要製品:</strong> Strata（ネットワーク）、Prisma（クラウド＋AI Runtime Security）、Cortex XSIAM（SOC自動化、MTTR 10分以内）。<br>
+              <strong>Mythos評価:</strong> Prisma AIRSはプロンプトインジェクション・データポイゾニング防御を既に展開済み。「XSIAM × Mythos統合」でSOC自動化が質的に跳躍する可能性。セクター内で構造的に最も優位。
+            </div>
+            <span class="ed-company-verdict strong-bull">🚀 セクター最優位</span>
+          </div>
+        </div>
 
-        <p><strong>Zscaler（ZS）— 中立、ただしGlaswing不参加が情報劣位リスク</strong><br>Zero Trustモデルは「侵入を前提とした設計」のため、パターン認識の陳腐化から最も遠い。しかしProject Glasswingに参加していないため、MythosレベルのAI情報へのアクセスで競合に遅れを取るリスク。「Zero Trust for AI Agents」（Shadow AI対策）が次の競争軸。</p>
+        <div class="ed-company-card">
+          <img class="ed-company-logo" src="https://raw.githubusercontent.com/AtlasFinancials/reports/main/logos/ZS.svg" alt="ZS">
+          <div class="ed-company-body">
+            <div class="ed-company-header">
+              <span class="ed-company-name">Zscaler</span>
+              <span class="ed-company-ticker">ZS</span>
+            </div>
+            <div class="ed-company-meta">
+              <span>時価総額: <strong>$22B</strong></span>
+              <span>ARR: <strong>$3.2B</strong> (+21% YoY)</span>
+              <span>Glasswing: <strong>❌ 不参加</strong></span>
+            </div>
+            <div class="ed-company-desc">
+              <strong>事業:</strong> Zero Trustアーキテクチャベースのクラウドセキュリティ（SASE）。<br>
+              <strong>主要製品:</strong> Zscaler Internet Access（ZIA）、Zscaler Private Access（ZPA）、Zero Trust Exchange。FCFマージン52%。<br>
+              <strong>Mythos評価:</strong> 「侵入を前提とした設計」のためパターン認識の陳腐化から最も遠い。だがGlaswing不参加でMythosレベルのAI情報へのアクセスに遅れ。「Zero Trust for AI Agents」（Shadow AI対策）が次の競争軸。
+            </div>
+            <span class="ed-company-verdict neutral">⏸️ 中立・情報劣位リスク</span>
+          </div>
+        </div>
 
-        <p><strong>Rubrik（RBRK）— 攻撃激化の最も純粋な受益者</strong><br>Rubrikが提供するのは「攻撃が成功した後に、ビジネスが死なない権利」。これは保険業と同じ構造で、Mythosクラスが悪用されるほど攻撃が高度化・増加し、侵入を防ぐことが難しくなるほど復旧の価値が増大する。新製品Agent RewindはAIエージェントのミス巻き戻し機能で、市場をランサムウェア対策からAIエンタープライズ全体のセーフティネットに拡張。ディスラプトリスク極低。</p>
+        <div class="ed-company-card">
+          <img class="ed-company-logo" src="https://raw.githubusercontent.com/AtlasFinancials/reports/main/logos/RBRK.svg" alt="RBRK">
+          <div class="ed-company-body">
+            <div class="ed-company-header">
+              <span class="ed-company-name">Rubrik</span>
+              <span class="ed-company-ticker">RBRK</span>
+            </div>
+            <div class="ed-company-meta">
+              <span>時価総額: <strong>$10B</strong></span>
+              <span>サブスクARR: <strong>$1.46B</strong> (+34% YoY)</span>
+              <span>売上: <strong>$1.32B</strong> (+48% YoY)</span>
+            </div>
+            <div class="ed-company-desc">
+              <strong>事業:</strong> イミュータブルバックアップ＋ランサムウェア復旧。「攻撃が成功した後にビジネスが死なない権利」を提供する保険型モデル。<br>
+              <strong>主要製品:</strong> Zero Trust Data Security、Agent Rewind（AIエージェントのミス巻き戻し）、RUBY AI、SENTRYAI。<br>
+              <strong>Mythos評価:</strong> 攻撃が高度化・増加するほど「侵入後の巻き戻し」需要が構造的に増加。Agent Rewindで市場をランサムウェア→AIエンタープライズ全体のセーフティネットに拡張中。ディスラプトリスク極低。
+            </div>
+            <span class="ed-company-verdict strong-bull">🛡️ 攻撃増加の純粋受益者</span>
+          </div>
+        </div>
 
         <p><strong>セキュリティ予算はITバジェットの5%→10%への倍増が予測されている。</strong>AI攻撃の高度化は脅威ではなく需要の触媒として機能する。短期的な恐怖売りが中長期的には業界全体の拡大を加速させる——この逆説を理解した投資家が、今回の下落で選別買いに動く局面と見ている。</p>
       </div>
